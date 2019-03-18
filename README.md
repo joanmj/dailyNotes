@@ -1,1 +1,2 @@
 # dailyNotes
+study
