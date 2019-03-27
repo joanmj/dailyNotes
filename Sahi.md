@@ -117,19 +117,25 @@ Sahi 会自动去侦探您系统里安装的一些浏览器，并在 Sahi Dashbo
 
 ![Sahi èªå¨çæèæ¬ç²¾ç¼](assets/image027.jpg)
 
-```
-`_popup("Sahi Web Test Automation Tool")_highlight(_link("Community Forums"));`
+```sahi
+_popup("Sahi Web Test Automation Tool")
+_highlight(_link("Community Forums"));
 ```
 
 或者您想在 Sahi 脚本代码中调用内置的 Java 类，例如：
 
-```
-`functionprintThroughJava(s){``java.lang.System.out.println("Through Java: "+s);}``printThroughJava("Hi there");`
+```java
+function printThroughJava(s)
+{
+	java.lang.System.out.println("Through Java: "+s);
+}
+printThroughJava("Hi there");
+	
 ```
 
 “Through Java: Hi there”将在 sahi 的命令行中输出。
 
-回放的时候，只需要在 Sahi 控制台上切换到“Playback”tab 页面，找到脚本存放的路径，下面就有开始、暂停和结束等按钮来进行操作。需要注意的是，开始以前必须给它设置一个“Stat URL”否则无法回放脚本。脚本回放的时候，在“Statements”里可以看到脚本运行的日志，比如操作步骤和一些错误信息等。
+回放的时候，只需要在 Sahi 控制台上切换到“Playback”tab 页面，找到脚本存放的路径，下面就有开始、暂停和结束等按钮来进行操作。需要注意的是，开始以前必须给它设置一个“Start URL”否则无法回放脚本。脚本回放的时候，在“Statements”里可以看到脚本运行的日志，比如操作步骤和一些错误信息等。
 
 通过点击右下角的“View Logs”可以查看详细的 Sahi 运行日志报告：
 
@@ -148,37 +154,50 @@ Sahi 脚本是基于 JavaScript 的，而 Sahi 脚本是通过代理解析的，
 Sahi 操作的代码**声明**是一句以分号结尾的普通代码行，如：
 
 ```
-`_click(_link("Login"));`
+_click(_link("Login"));
 ```
 
 **变量声明**：
 
 ```
-`var$variableName =value;`
+var$variableName =value;
 ```
 
 或者先声明再赋值：
 
-```
-`var$variableName;// declaration``$variableName =value;// assignment`
+```js
+ var $variableName;// declaration
+ $variableName =value;// assignment
 ```
 
 所有的变量都是以$符号开头的，关键字 var 用于局部变量，如：
 
-```
-`var$username ="SahiTestUser";``var$password;// declaration;``$password =$username +"_password";// "SahiTestUser_password"`
+```js
+var $username ="SahiTestUser";
+var $password;
+// declaration;
+$password =$username +"_password";
+// "SahiTestUser_password"
 ```
 
 **函数声明**：
 
 ```
-`// function ``declarationfunctionlogin($usr,$pwd){``_click(_link("Login"));``_setValue(_textbox("username"),$usr);``_setValue(_password("password"),$pwd);``_click(_submit("Login"));``}``// function call``login("sahi_user","secret");`
+// function 
+declarationfunctionlogin($usr,$pwd){
+	_click(_link("Login"));
+  _setValue(_textbox("username"),$usr);
+  _setValue(_password("password"),$pwd);
+  _click(_submit("Login"));
+}
+// function call
+login("sahi_user","secret");`
 ```
 
 在一个 Sahi 代码文件中可以通过**_include**来包含调用其他 Sahi 文件，如：
 
-```
-`_include("includes/common_functions.sah");`
+```js
+_include("includes/common_functions.sah");
 ```
 
 由上面的语法可知，Sahi 是由下划线开头，带上操作或 HTML 元素，非常简单，清晰易懂，这些 API 基本都是能够看字面就能理解它的功能。

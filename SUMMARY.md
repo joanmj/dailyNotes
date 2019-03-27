@@ -1,6 +1,8 @@
 # Summary
 
 * [学习笔记](README.md)
+* [JQuery MiniUI](miniui.md)
+* [EOS](eos.md)
 * 自动化测试
   * [Sahi](Sahi.md)
   * Selenium
