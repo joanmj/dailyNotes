@@ -11,6 +11,7 @@
   * [React](react.md)
 * 数据库
   * [MongoDB](mongodb.md)
+  * [sql](sql.md)
 * 语言
   * [python](python.md)
 
