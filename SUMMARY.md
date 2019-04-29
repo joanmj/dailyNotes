@@ -9,6 +9,7 @@
 * 前端
   * [Node.js](nodejs.md)
   * [React](react.md)
+  * [Chrome extension](extension.md)
 * 数据库
   * [MongoDB](mongodb.md)
   * [sql](sql.md)
