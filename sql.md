@@ -28,6 +28,20 @@ mysql> select @@datadir;
 
 那么my.ini就在data目录的上一层: C:\ProgramData\MySQL\MySQL Server 5.7\
 
+## 打印注释:
+
+```mysql
+show create table docm_comp_doc_td;
+```
+
+或者打印效果更好的:
+
+```mysql
+show full fields from docm_comp_doc_td
+```
+
+
+
 # Centos安装
 
 官方安装指南地址:<https://dev.mysql.com/doc/refman/5.6/en/binary-installation.html>
