@@ -5,7 +5,7 @@
 * [EOS](eos.md)
 * 自动化测试
   * [Sahi](Sahi.md)
-  * Selenium
+  * [Selenium](Selenium.md)
 * 前端
   * [Node.js](nodejs.md)
   * [React](react.md)
@@ -15,5 +15,7 @@
   * [sql](sql.md)
 * 语言
   * [python](python.md)
+* 工具
+  * [服务器访问/下载上传](securecrt.md)
 * [Code](code.md)
-
+* [断点续传](chunked.md)
