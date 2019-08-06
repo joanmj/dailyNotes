@@ -57,8 +57,6 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="code.html" />
-    
     
 
     </head>
@@ -153,14 +151,14 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.2" >
+        <li class="chapter " data-level="1.4.2" data-path="Selenium.html">
             
-                <span>
+                <a href="Selenium.html">
             
                     
                     Selenium
             
-                </span>
+                </a>
             
 
             
@@ -306,12 +304,57 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8" data-path="code.html">
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    工具
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="securecrt.html">
+            
+                <a href="securecrt.html">
+            
+                    
+                    服务器访问/下载上传
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="code.html">
             
                 <a href="code.html">
             
                     
                     Code
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="chunked.html">
+            
+                <a href="chunked.html">
+            
+                    
+                    断点续传
             
                 </a>
             
@@ -364,7 +407,22 @@
     
                                 <section class="normal markdown-section">
                                 
-                                
+                                <ol>
+<li><p>&#x8BFB;&#x53D6;&#x6587;&#x4EF6;&#x65F6;&#x7684;&#x7B2C;&#x4E00;&#x884C;&#x7B2C;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x662F;&quot;\ufeff&quot;,&#x800C;&#x4E0D;&#x662F;&#x5185;&#x5BB9;</p>
+<p>&#x89E3;&#x51B3;&#x65B9;&#x6CD5;:&#x5728;&#x8BFB;&#x53D6;B.txt &#x65F6;,&#x6307;&#x5B9A;&#x7F16;&#x7801;&#x65B9;&#x5F0F;&#x4E3A; &quot;utf-8-sig&quot;&#x5373;&#x53EF;. &#x201D;\ufeff&#x201C;&#x53EB;BOM(&quot;ByteOrder Mark&quot;)&#x7528;&#x6765;&#x58F0;&#x660E;&#x8BE5;&#x6587;&#x4EF6;&#x7684;&#x7F16;&#x7801;&#x4FE1;&#x606F;.&quot;uft-8-sig&quot;&#x4E2D;sig&#x5168;&#x62FC;&#x4E3A; signature &#x4E5F;&#x5C31;&#x662F;&quot;&#x5E26;&#x6709;&#x7B7E;&#x540D;&#x7684;utf-8&quot;, &#x56E0;&#x6B64;&quot;utf-8-sig&quot;&#x8BFB;&#x53D6;&#x5E26;&#x6709;BOM&#x7684;&quot;utf-8&#x6587;&#x4EF6;&#x65F6;&quot;&#x4F1A;&#x628A;BOM&#x5355;&#x72EC;&#x5904;&#x7406;,&#x4E0E;&#x6587;&#x672C;&#x5185;&#x5BB9;&#x9694;&#x79BB;&#x5F00;,&#x4E5F;&#x662F;&#x6211;&#x4EEC;&#x671F;&#x671B;&#x7684;&#x7ED3;&#x679C;.</p>
+<pre><code class="lang-python"><span class="hljs-keyword">with</span> open(<span class="hljs-string">&quot;B.txt&quot;</span>, <span class="hljs-string">&apos;r&apos;</span>, encoding=<span class="hljs-string">&apos;utf-8-sig&apos;</span>) <span class="hljs-keyword">as</span> f:
+    line = f.readline()[<span class="hljs-number">0</span>:<span class="hljs-number">-1</span>]  <span class="hljs-comment">#&#x53BB;&#x6389;&#x672B;&#x5C3E;&#x6362;&#x884C;&#x7B26;</span>
+    print(line)
+    <span class="hljs-keyword">with</span> open(<span class="hljs-string">&quot;%s.txt&quot;</span> % line, <span class="hljs-string">&apos;r&apos;</span>, encoding=<span class="hljs-string">&apos;utf-8&apos;</span>) <span class="hljs-keyword">as</span> f1:
+        print(f1.readline())
+    f1.close()
+f.close()
+</code></pre>
+</li>
+</ol>
+<h2 id="python&#x57FA;&#x7840;">python&#x57FA;&#x7840;</h2>
+<p>python</p>
+
                                 
                                 </section>
                             
@@ -392,10 +450,6 @@
             
                 
                 
-                <a href="code.html" class="navigation navigation-next navigation-unique" aria-label="Next page: Code">
-                    <i class="fa fa-angle-right"></i>
-                </a>
-                
             
         
     </div>
@@ -403,7 +457,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"python","level":"1.7.1","depth":2,"next":{"title":"Code","level":"1.8","depth":1,"path":"code.md","ref":"code.md","articles":[]},"previous":{"title":"语言","level":"1.7","depth":1,"ref":"","articles":[{"title":"python","level":"1.7.1","depth":2,"path":"python.md","ref":"python.md","articles":[]}]},"dir":"neutral"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mermaid"],"pluginsConfig":{"mermaid":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"python.md","mtime":"2019-03-21T09:32:46.621Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-10T09:20:01.904Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"python","level":"1.7.1","depth":2,"next":{"title":"工具","level":"1.8","depth":1,"ref":"","articles":[{"title":"服务器访问/下载上传","level":"1.8.1","depth":2,"path":"securecrt.md","ref":"securecrt.md","articles":[]}]},"previous":{"title":"语言","level":"1.7","depth":1,"ref":"","articles":[{"title":"python","level":"1.7.1","depth":2,"path":"python.md","ref":"python.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mermaid"],"pluginsConfig":{"mermaid":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"python.md","mtime":"2019-08-06T05:53:44.191Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-06T09:35:11.393Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
