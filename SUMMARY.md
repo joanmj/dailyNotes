@@ -7,6 +7,7 @@
   * [Sahi](Sahi.md)
   * [Selenium](Selenium.md)
 * 前端
+  * [EcmaScript6](js6.md)
   * [Node.js](nodejs.md)
   * [React](react.md)
   * [Chrome extension](extension.md)
