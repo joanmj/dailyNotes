@@ -1,3 +1,63 @@
+# JSX语法:
+
+## 基本语法:
+
+和XML语法相同，都是使用成对的标签构成一个树状结构的数据，例如：
+
+```html
+     const element = (
+       <div>
+           <h1>Hello, world!</h1>
+       </div>
+     )
+```
+## 两种标签:
+和（在2.2节详细介绍组件的概念）。当使用DOM类型的标签时，标签的首字母必须小写；当使用React组件类型的标签时，组件名称的首字母必须大写。React
+正是通过首字母的大小写判断渲染的是一个DOM类型的标签还是一个React组件类型的标签。例如：
+### DOM类型的标签（div、span等）
+使用DOM类型的标签时，标签的首字母必须小写；
+```html
+		// DOM类型标签
+        const element = <h1>Hello, world!</h1>;
+```
+### React组件类型的标签
+使用React组件类型的标签时，组件名称的首字母必须大写。
+```html
+         // React组件类型标签
+         const element = <HelloWorld />;
+```
+## JavaScript表达式
+js需要用{}包围;
+只能用单行表达式不能用多行js语句;
+但可以使用三目运算符或逻辑与（&&）运算符代替if语句的作用。
+```html
+         // 通过表达式给标签属性赋值
+         const element = <MyComponent foo={ 1 + 2 } />
+```
+## 标签属性
+### Dom标签的属性:
+原有属性支持, 但有变化:
+1. class需要className
+2. 事件属性名采用驼峰格式，例如onclick 要写成onClick
+### React组件标签属性:
+可以任意自定义标签的属性名, eg
+```html
+	<User name='React' age='4' address='America' >
+```
+## 注释:
+语法:{/* 这里是一个注释 */}
+eg:
+```html
+         const element = (
+           <div>
+               {/* 这里是一个注释 */}
+               <span>React</span>
+           </div>
+         )
+
+```
+jsx语法非必须, react会自动转换成js代码执行;
+
 # 基础环境
 
 1．Node.js
