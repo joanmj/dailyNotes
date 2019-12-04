@@ -28,6 +28,14 @@ mysql> select @@datadir;
 
 那么my.ini就在data目录的上一层: C:\ProgramData\MySQL\MySQL Server 5.7\
 
+查看系统配置变量, group_concat的最长长度:
+```mysql
+ show variables like '%group_concat_max_len%';
+```
+设置系统变量:
+```mysql
+SET [GLOBAL | SESSION] group_concat_max_len = val;
+```
 ## 打印注释:
 
 ```mysql
