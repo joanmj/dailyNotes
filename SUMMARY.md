@@ -13,6 +13,7 @@
   * [Chrome extension](extension.md)
 * 后端
   * [restful](rest.md)
+  * [k8s](cka.md)
 * 数据库
   * [MongoDB](mongodb.md)
   * [sql](sql.md)
@@ -22,3 +23,4 @@
   * [服务器访问/下载上传](securecrt.md)
 * [Code](code.md)
 * [断点续传](chunked.md)
+*

@@ -47,7 +47,25 @@ show create table docm_comp_doc_td;
 ```mysql
 show full fields from docm_comp_doc_td
 ```
+## 插入：
+### 批量插入技巧
+1. 前提：要更新或者忽略的字段必须是主键或者存在唯一索引
+2. sql:
+* 存在就更新：
+~~~sql
+REPLACE INTO tablename(field1,field2,...) VALUES(value1, value2,...)
+~~~
+* 如果存在就忽略：
+~~~sql
+INSERT IGNORE tablename(field1,field2,...) VALUES(value1, value2,...)
+~~~
 
+### 插入前判断是否存在
+~~~sql
+INSERT INTO table(field1, field2, fieldn) SELECT 'field1',
+'field2', 'fieldn' FROM DUAL WHERE NOT EXISTS(SELECT field FROM
+table WHERE field = ?)
+~~~
 ## 查询:
 
 ### 分页:
@@ -129,22 +147,22 @@ Join的方式:
 1.创建测试表：
 
 ```sql
-CREATE TABLE test_ROLLUP_1 (  
-  StateCode  CHAR(6),  
-  DepCode   CHAR(6),  
-  SendMoney  INT  
-);  
+CREATE TABLE test_ROLLUP_1 (
+  StateCode  CHAR(6),
+  DepCode   CHAR(6),
+  SendMoney  INT
+);
 ```
 
 2.插入测试语句：
 
 ```sql
-INSERT INTO test_ROLLUP_1  
-SELECT '100001',  '310001',  3000  UNION ALL  
-SELECT '100001',  '310002',  1500  UNION ALL  
-SELECT '100002',  '320001',  4200  UNION ALL  
-SELECT '100003',  '330001',  1800  UNION ALL  
-SELECT '100003',  '330002',  2100  UNION ALL  
+INSERT INTO test_ROLLUP_1
+SELECT '100001',  '310001',  3000  UNION ALL
+SELECT '100001',  '310002',  1500  UNION ALL
+SELECT '100002',  '320001',  4200  UNION ALL
+SELECT '100003',  '330001',  1800  UNION ALL
+SELECT '100003',  '330002',  2100  UNION ALL
 SELECT '100004',  '340001',  2500;
 ```
 
@@ -153,15 +171,15 @@ SELECT '100004',  '340001',  2500;
 
 
 ```
-SELECT  
-    IFNULL(StateCode, '合计:') AS StateCode,  
-    IFNULL(DepCode, '小计:') AS DepCode,  
-    SUM(SendMoney) AS SendMoney  
-FROM  
-    test_ROLLUP_1  
-GROUP BY  
-    StateCode,  
-    DepCode WITH ROLLUP; 
+SELECT
+    IFNULL(StateCode, '合计:') AS StateCode,
+    IFNULL(DepCode, '小计:') AS DepCode,
+    SUM(SendMoney) AS SendMoney
+FROM
+    test_ROLLUP_1
+GROUP BY
+    StateCode,
+    DepCode WITH ROLLUP;
 ```
 
 效果如图所示：
@@ -336,15 +354,15 @@ If you do not want to use this, either remove it, or use the
 ## 读取配置得到**SqlMapClient：**
 
 ```java
-private static SqlMapClient sqlMapClient = null; 
-static{ 
-  try{ 
-       Reader reader = com.ibatis.common.resource.Resources.getResourceAsReader(“Ibatis总配置文件路径”); 
-       sqlMapClient = com.ibatis.sqlMap.client.SqlMapClientBuilder.builderSqlMapClient(reader); 
-       reader.close(); 
-　　}catch(IOException e){ 
-       异常处理……. 
-　　} 
+private static SqlMapClient sqlMapClient = null;
+static{
+  try{
+       Reader reader = com.ibatis.common.resource.Resources.getResourceAsReader(“Ibatis总配置文件路径”);
+       sqlMapClient = com.ibatis.sqlMap.client.SqlMapClientBuilder.builderSqlMapClient(reader);
+       reader.close();
+　　}catch(IOException e){
+       异常处理…….
+　　}
 }
 ```
 
@@ -356,7 +374,7 @@ Ibatis只能传递一个参数，如果又多个参数需要封装在一个对�
 
    如name like‘%c%’。在Ibatis中有两种写法：
 
-    
+
 
    写法1：在java方法中传递参数时写成：”%字段名%”。
 
@@ -365,12 +383,12 @@ Ibatis只能传递一个参数，如果又多个参数需要封装在一个对�
 2. 查下语句:
 
    ```xml
-   <select id=”Ibatis查询实体操作Id” resultClass=”查询结果类型” > 
-          select * from 实体对应的表名; 
+   <select id=”Ibatis查询实体操作Id” resultClass=”查询结果类型” >
+          select * from 实体对应的表名;
    </select>
    ```
 
-   
+
 
 3. 内嵌参数:
 
@@ -379,12 +397,12 @@ Ibatis只能传递一个参数，如果又多个参数需要封装在一个对�
    例如:
 
    ```xml
-   <statement id=”insertProduct” parameterClass=”Product”> 
-         Insert into Product(PRD_ID,PRD_DESC)  values(#id:Number:-999999#,#desc:varchar:noEntry#); 
-   </statement> 
+   <statement id=”insertProduct” parameterClass=”Product”>
+         Insert into Product(PRD_ID,PRD_DESC)  values(#id:Number:-999999#,#desc:varchar:noEntry#);
+   </statement>
    ```
 
-   
+
 
 4. 定义查询的参数和返回结果:
 
@@ -413,7 +431,7 @@ Ibatis只能传递一个参数，如果又多个参数需要封装在一个对�
    </resultMap>
    ```
 
-   
+
 
 5. 参数:
 
@@ -425,7 +443,7 @@ Ibatis只能传递一个参数，如果又多个参数需要封装在一个对�
 
    `where xxx = 'xxx' `;
 
-   2. `$xxx$` 
+   2. `$xxx$`
 
       则是把xxx作为字符串拼接到你的sql语句中, 比如order by topicId , 语句这样写:
 
@@ -433,17 +451,17 @@ Ibatis只能传递一个参数，如果又多个参数需要封装在一个对�
        order by #xxx#
       ```
 
-       ibatis 就会把他翻译成order by 'topicId' （这样就会报错） 
+       ibatis 就会把他翻译成order by 'topicId' （这样就会报错）
 
       语句这样写:
 
       ```sql
-       order by $xxx$ 
+       order by $xxx$
       ```
 
       ibatis 就会把他翻译成order by topicId
 
-   
+
 
 # 工具
 
@@ -572,5 +590,4 @@ Ibatis只能传递一个参数，如果又多个参数需要封装在一个对�
 
 # 在线练习工具:
 
-http://sqlfiddle.com/ 
-
+http://sqlfiddle.com/
