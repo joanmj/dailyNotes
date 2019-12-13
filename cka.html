@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Code · GitBook</title>
+        <title>k8s · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,8 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="chunked.html" />
     
-    
-    <link rel="prev" href="securecrt.html" />
+    <link rel="prev" href="rest.html" />
     
 
     </head>
@@ -271,7 +269,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.2" data-path="cka.html">
+        <li class="chapter active" data-level="1.6.2" data-path="cka.html">
             
                 <a href="cka.html">
             
@@ -398,7 +396,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.10" data-path="code.html">
+        <li class="chapter " data-level="1.10" data-path="code.html">
             
                 <a href="code.html">
             
@@ -454,7 +452,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Code</a>
+        <a href="." >k8s</a>
     </h1>
 </div>
 
@@ -469,7 +467,66 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p>&#x4E00;&#x4E9B;&#x6709;&#x7528;&#x7684;&#x4EE3;&#x7801;&#x7247;&#x6BB5;, &#x4F9B;&#x590D;&#x7528;;</p>
+                                <p>158</p>
+<h1 id="&#x539F;&#x6709;&#x670D;&#x52A1;&#x5230;microservice&#x67B6;&#x6784;">&#x539F;&#x6709;&#x670D;&#x52A1;&#x5230;microservice&#x67B6;&#x6784;</h1>
+<ul>
+<li>&#x91CD;&#x6784;&#x65B9;&#x5F0F;&#xFF1A;<ol>
+<li>&#x505C;&#x6B62;&#x65B0;&#x529F;&#x80FD;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x5F7B;&#x5E95;&#x91CD;&#x6784;</li>
+<li>&#x65B0;&#x529F;&#x80FD;&#x7528;&#x5FAE;&#x670D;&#x52A1;&#x65B9;&#x5F0F;&#x5B9E;&#x73B0;&#xFF0C;&#x9010;&#x6B65;&#x91CD;&#x6784;&#xFF1B;</li>
+</ol>
+</li>
+<li>&#x6311;&#x6218;&#xFF1A;<ul>
+<li>&#x91CD;&#x6784;&#x65B9;&#x5F0F;<ul>
+<li>&#x7528;&#x539F;&#x8BED;&#x8A00;&#x5B9E;&#x73B0;&#xFF08;&#x91CD;&#x7528;&#x90E8;&#x5206;&#x65E7;&#x4EE3;&#x7801;&#xFF09;&#x66F4;&#x52A0;&#x7ECF;&#x6D4E;&#xFF1B;</li>
+<li>&#x8BBE;&#x8BA1;&#x4E0D;&#x597D;&#x7684;&#x5E94;&#x8BE5;&#x4EE5;&#x65B0;&#x6280;&#x672F;&#x67B6;&#x6784;&#x601D;&#x8DEF;&#x91CD;&#x65B0;&#x8BBE;&#x8BA1;&#x5B9E;&#x73B0;</li>
+<li>&#x4E0E;&#x6570;&#x636E;&#x8FC7;&#x5206;&#x8026;&#x5408;&#x7684;&#x5E94;&#x7528;&#x53EF;&#x80FD;&#x65E0;&#x6CD5;&#x91CD;&#x6784;&#xFF1B;</li>
+</ul>
+</li>
+<li>&#x91CD;&#x6784;&#x5B8C;&#x6210;&#x540E;&#x9009;&#x62E9;&#x673A;&#x5236;/&#x5DE5;&#x5177;&#xFF0C;&#x4FDD;&#x6301;&#x6240;&#x6709;&#x6A21;&#x5757;&#x7684;&#x5F39;&#x6027;&#xFF1B;
+*<h1 id="container-orchestration">container Orchestration</h1>
+</li>
+</ul>
+</li>
+<li><p>Define the concept of container orchestration.
+container
+Microservices
+Container Orchestration
+ &#x5DF2;&#x77E5;&#x7684;orchestrator &#xFF0C;&#x63A8;&#x8350;&#x5B66;&#x4E60;edx151x&#x8BFE;&#x7A0B;<a href="https://www.edx.org/course/introduction-cloud-infrastructure-linuxfoundationx-lfs151-x&#xFF0C;" target="_blank">https://www.edx.org/course/introduction-cloud-infrastructure-linuxfoundationx-lfs151-x&#xFF0C;</a></p>
+</li>
+<li><p>Explain the reasons for doing container orchestration.</p>
+</li>
+<li>Discuss different container orchestration options.</li>
+<li>Discuss different container orchestration deployment options.</li>
+</ul>
+<h1 id="chapter-4-kubernetes-architecture">Chapter 4. Kubernetes Architecture</h1>
+<ul>
+<li>the Kubernetes architecture.<ul>
+<li>high Level arch<ul>
+<li>One or more master nodes</li>
+<li>One or more worker nodes</li>
+<li>Distributed key-value store, such as etcd.
+<img src="assets/cka-431f4ba2.png" alt=""></li>
+</ul>
+</li>
+<li>detail level architecture<ul>
+<li>Master node
+manage state of a Kubernetes cluster;has the following components:<ul>
+<li>API server</li>
+<li>Scheduler</li>
+<li>Controller managers</li>
+<li>etcd.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Explain the different components for master and worker nodes.</li>
+<li>Discuss about cluster state management with etcd.</li>
+<li>Review the Kubernetes network setup requirements.</li>
+</ul>
 
                                 
                                 </section>
@@ -497,14 +554,10 @@
 
             
                 
-                <a href="securecrt.html" class="navigation navigation-prev " aria-label="Previous page: 服务器访问/下载上传">
+                <a href="rest.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: restful">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="chunked.html" class="navigation navigation-next " aria-label="Next page: 断点续传">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -513,7 +566,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Code","level":"1.10","depth":1,"next":{"title":"断点续传","level":"1.11","depth":1,"path":"chunked.md","ref":"chunked.md","articles":[]},"previous":{"title":"服务器访问/下载上传","level":"1.9.1","depth":2,"path":"securecrt.md","ref":"securecrt.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mermaid"],"pluginsConfig":{"mermaid":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"code.md","mtime":"2019-05-08T06:31:29.607Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-13T09:33:56.689Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"k8s","level":"1.6.2","depth":2,"next":{"title":"数据库","level":"1.7","depth":1,"ref":"","articles":[{"title":"MongoDB","level":"1.7.1","depth":2,"path":"mongodb.md","ref":"mongodb.md","articles":[]},{"title":"sql","level":"1.7.2","depth":2,"path":"sql.md","ref":"sql.md","articles":[]}]},"previous":{"title":"restful","level":"1.6.1","depth":2,"path":"rest.md","ref":"rest.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mermaid"],"pluginsConfig":{"mermaid":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"cka.md","mtime":"2019-12-10T10:14:24.714Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-13T09:33:56.689Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
