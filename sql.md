@@ -66,6 +66,27 @@ INSERT INTO table(field1, field2, fieldn) SELECT 'field1',
 'field2', 'fieldn' FROM DUAL WHERE NOT EXISTS(SELECT field FROM
 table WHERE field = ?)
 ~~~
+### 复制某条记录多次插入,同时每次插入时修改一个值
+正确做法:
+如果要修改的值不是查询出来的,那么需要动态造表,用DUAL:
+```sql
+INSERT INTO table (Key, Val1, Val2)
+SELECT d.newKey, t.Val1, t.Val2
+FROM table t
+cross join (select 2 NewKey from dual union all
+            select 3 NewKey from dual union all
+            select 4 NewKey from dual) d;
+```
+如果要修改的值可以查询出来,那么用查询结果插入:
+```sql
+INSERT INTO table (Key, Val1, Val2)
+SELECT d.FKey, t.Val1, t.Val2
+FROM table t
+cross join (select FKey
+            from SomeOtherTable
+            Where ......) d;
+```
+其中cross join是将表1和表2相乘;返回的是笛卡尔积
 ## 查询:
 
 ### 分页:
@@ -191,6 +212,24 @@ GROUP BY
 ```sql
 select *,cast(0 as decimal(18,3)) as pickqty  from gb
 ```
+### 行转列查询
+举例代码：
+```sql
+SELECT user_name ,
+    MAX(CASE course WHEN '数学' THEN score ELSE 0 END ) 数学,
+    MAX(CASE course WHEN '语文' THEN score ELSE 0 END ) 语文,
+    MAX(CASE course WHEN '英语' THEN score ELSE 0 END ) 英语
+FROM test_tb_grade
+GROUP BY USER_NAME;
+```
+说明：
+1. course是表中的列，根据这列的值，查询时创建新的列，因此
+```sql
+ MAX(CASE course WHEN '数学' THEN score ELSE 0 END ) 数学,
+```
+  内容为数学则创建数学列;
+2. 想让多列内容依据user name分组到一行,则需要使用group by;
+以上就完成行转列了
 
 
 
