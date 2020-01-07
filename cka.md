@@ -32,6 +32,7 @@
     * Master node
       manage state of a Kubernetes cluster;has the following components:
       * API server
+        * kube-apiserver
       * Scheduler
       * Controller managers
       * etcd.
