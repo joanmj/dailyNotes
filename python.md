@@ -81,3 +81,49 @@ eval('a+2')
 exec('b'+"3"+' = a**2')
 print b3
 ```
+## partial vs lambda
+1. partial
+ 使用时需要引入:
+
+```py
+from functools import partial
+```
+
+主要用于固定某函数的某一个参数值, 并形成新的函数.
+eg:
+
+```py
+def add(a,b)
+  return a+b;
+from functools import partial
+#以下写法,固定参数a值为1, 新函数addOne值需要一个参数,传入的参数将认为是b的值
+addOne = partial(add, 1)
+addOne(1) #将打印2
+```
+此函数在for语句中遍历并创建tkinter的组件时制定Command函数时很有用, 如果不用将导致传入参数并非指定时的变量值;
+2. lambda
+eg:
+```py
+g = lambda x: x+1
+```
+相当于简写的函数:
+```py
+def g(x):
+  return x+1
+```
+## Variables in Python
+tkinter中提供了一些可以追踪变量值修改的变量类型, 比如StringVar
+StringVar主要有以下几种方法:
+1. set(new val)
+2. get()
+3. trace(mode,callback)
+  mode可以是"r"或者"w"
+eg:
+```python
+def callback(*args):
+  print "variable changed!"
+
+var = StringVar()
+var.trace("w", callback)
+var.set("hello")
+```
