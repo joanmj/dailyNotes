@@ -848,25 +848,15 @@ static{
 Ibatis只能传递一个参数，如果又多个参数需要封装在一个对象中。
 
 1. 模糊查询:
-
    如name like‘%c%’。在Ibatis中有两种写法：
-
-
-
    写法1：在java方法中传递参数时写成：”%字段名%”。
-
    写法2：在Ibatis的sql语句中可以写成如：`where name=’%$字段名$%’`。
-
 2. 查下语句:
-
    ```xml
    <select id=”Ibatis查询实体操作Id” resultClass=”查询结果类型” >
           select * from 实体对应的表名;
    </select>
    ```
-
-
-
 3. 内嵌参数:
 
    语法为：`#参数值：数据库中数据类型：内嵌参数#`
@@ -878,9 +868,6 @@ Ibatis只能传递一个参数，如果又多个参数需要封装在一个对�
          Insert into Product(PRD_ID,PRD_DESC)  values(#id:Number:-999999#,#desc:varchar:noEntry#);
    </statement>
    ```
-
-
-
 4. 定义查询的参数和返回结果:
 
    ```xml
