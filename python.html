@@ -526,11 +526,38 @@ f.close()
 </li>
 </ol>
 <p>3.</p>
+<h2 id="&#x6A21;&#x5757;&#x5B9A;&#x4E49;">&#x6A21;&#x5757;&#x5B9A;&#x4E49;</h2>
+<p>&#x5DE5;&#x7A0B;&#x6587;&#x4EF6;&#x5939; projectA &#x4E0B;, &#x53EF;&#x4EE5;&#x5EFA;&#x5B50;&#x6587;&#x4EF6;&#x5939; modulea,&#x5728;&#x6587;&#x4EF6;&#x5939;&#x4E2D;&#x6DFB;&#x52A0;&#x6A21;&#x5757;&#x521D;&#x59CB;&#x5316;&#x6587;&#x4EF6;<strong>init</strong>.py,&#x91CC;&#x9762;&#x53EF;&#x4EE5;&#x4EC0;&#x4E48;&#x4E5F;&#x4E0D;&#x5199;&#x90FD;&#x884C;,
+&#x544A;&#x8BC9;&#x5916;&#x5C42;, &#x8FD9;&#x4E2A;&#x662F;&#x4E2A;&#x5B50;&#x6A21;&#x5757;; &#x5B50;&#x6A21;&#x5757;&#x5185;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x53EB; xxx.py, &#x5176;&#x4E2D;&#x7684;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x8C03;&#x7528;:</p>
+<pre><code class="lang-py"><span class="hljs-keyword">import</span> modulea.xxx
+</code></pre>
+<p>import&#x65F6;&#x5C3D;&#x91CF; &#x52A0; as &#x522B;&#x79F0;, eg:</p>
+<pre><code class="lang-py"><span class="hljs-keyword">import</span> modulea.xxx <span class="hljs-keyword">as</span> mxx
+mxx.method1();
+</code></pre>
+<h2 id="&#x53D8;&#x91CF;&#x67E5;&#x8BE2;">&#x53D8;&#x91CF;&#x67E5;&#x8BE2;</h2>
+<p>Python &#x53D8;&#x91CF;&#x6709;&#x56DB;&#x7C7B;:</p>
+<ul>
+<li>locals(), &#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x5B57;&#x5178;</li>
+<li>Enclosing, &#x4E0A;&#x4E00;&#x5C42;/&#x4E0A;&#x4E0A;&#x4E00;&#x5C42;</li>
+<li>globals(), &#x5168;&#x5C40;&#x53D8;&#x91CF;
+eg: &#x589E;&#x52A0;&#x5168;&#x5C40;&#x53D8;&#x91CF;:<pre><code class="lang-py">globals()[<span class="hljs-string">&apos;a&apos;</span>] = <span class="hljs-number">1</span>
+<span class="hljs-keyword">print</span> a
+</code></pre>
+&#x4E0D;&#x7BA1;&#x539F;&#x5148;&#x6709;&#x6CA1;&#x5168;&#x5C40;&#x53D8;&#x91CF;a,&#x90FD;&#x6253;&#x5370;&#x4E86; a &#x503C;&#x4E3A; 1;</li>
+<li>built-in, eg:<pre><code class="lang-py">dir(__builtins__)
+</code></pre>
+<h2 id="&#x5B57;&#x7B26;&#x4E32;&#x8868;&#x8FBE;&#x5F0F;&#x6C42;&#x503C;&#x548C;&#x6267;&#x884C;">&#x5B57;&#x7B26;&#x4E32;&#x8868;&#x8FBE;&#x5F0F;&#x6C42;&#x503C;&#x548C;&#x6267;&#x884C;</h2>
+<pre><code class="lang-py">a=<span class="hljs-number">3</span>
+eval(<span class="hljs-string">&apos;a+2&apos;</span>)
+exec(<span class="hljs-string">&apos;b&apos;</span>+<span class="hljs-string">&quot;3&quot;</span>+<span class="hljs-string">&apos; = a**2&apos;</span>)
+<span class="hljs-keyword">print</span> b3
+</code></pre>
 <h2 id="partial-vs-lambda">partial vs lambda</h2>
-<ol>
+</li>
 <li>partial
 &#x4F7F;&#x7528;&#x65F6;&#x9700;&#x8981;&#x5F15;&#x5165;:</li>
-</ol>
+</ul>
 <pre><code class="lang-py"><span class="hljs-keyword">from</span> functools <span class="hljs-keyword">import</span> partial
 </code></pre>
 <p>&#x4E3B;&#x8981;&#x7528;&#x4E8E;&#x56FA;&#x5B9A;&#x67D0;&#x51FD;&#x6570;&#x7684;&#x67D0;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x503C;, &#x5E76;&#x5F62;&#x6210;&#x65B0;&#x7684;&#x51FD;&#x6570;.
@@ -601,7 +628,7 @@ var.set(&quot;hello&quot;)
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"python","level":"1.8.1","depth":2,"next":{"title":"工具","level":"1.9","depth":1,"ref":"","articles":[{"title":"服务器访问/下载上传","level":"1.9.1","depth":2,"path":"securecrt.md","ref":"securecrt.md","articles":[]}]},"previous":{"title":"语言","level":"1.8","depth":1,"ref":"","articles":[{"title":"python","level":"1.8.1","depth":2,"path":"python.md","ref":"python.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mermaid"],"pluginsConfig":{"mermaid":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"python.md","mtime":"2019-12-27T09:20:12.797Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-08T08:54:23.484Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"python","level":"1.8.1","depth":2,"next":{"title":"工具","level":"1.9","depth":1,"ref":"","articles":[{"title":"服务器访问/下载上传","level":"1.9.1","depth":2,"path":"securecrt.md","ref":"securecrt.md","articles":[]}]},"previous":{"title":"语言","level":"1.8","depth":1,"ref":"","articles":[{"title":"python","level":"1.8.1","depth":2,"path":"python.md","ref":"python.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mermaid"],"pluginsConfig":{"mermaid":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"python.md","mtime":"2020-01-09T03:18:43.277Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-09T03:19:32.083Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
