@@ -11,5 +11,12 @@
 	href="<%=contextPath%>/coframe/tools/icons/icon.css" />
 ```
 2. 服务端直接从数据库查询，返回hashMap的数组就可以了；
-
+3. jsp中的java代码嵌入
+Between <%...%>you can write any logic that you want in java.
+Using <%=...%> will output the result of the expression between the brackets to the screen.
+```jsp
+<% System.out.println("Hello World") %>
+等于
+<%= "Hello world" %>
+```
 ##
