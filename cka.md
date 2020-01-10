@@ -1,5 +1,5 @@
-158
-# 原有服务到microservice架构
+# 158
+## 原有服务到microservice架构
 * 重构方式：
   1. 停止新功能的实现，彻底重构
   2. 新功能用微服务方式实现，逐步重构；
@@ -10,7 +10,7 @@
     * 与数据过分耦合的应用可能无法重构；
   * 重构完成后选择机制/工具，保持所有模块的弹性；
   *
-# container Orchestration
+## container Orchestration
 1. Define the concept of container orchestration.
   container
   Microservices
@@ -21,9 +21,9 @@
 3. Discuss different container orchestration options.
 4. Discuss different container orchestration deployment options.
 
-# Chapter 4. Kubernetes Architecture
+## Chapter 4. Kubernetes Architecture
 
-## 4.2 the Kubernetes architecture.
+### 4.2 the Kubernetes architecture.
   * high Level arch
     * One or more master nodes
     * One or more worker nodes
@@ -37,7 +37,7 @@
       * Scheduler
       * Controller managers
       * etcd.
-### 4.2.3 Worker Node
+#### 4.2.3 Worker Node
 A worker node provides a running environment for client applications. Though containerized microservices, these applications are encapsulated in Pods, controlled by the cluster control plane agents running on the master node. Pods are scheduled on worker nodes, where they find required compute, memory and storage resources to run, and networking to talk to each other and the outside world. A Pod is the smallest scheduling unit in Kubernetes. It is a logical collection of one or more containers scheduled together. We will explore them further in later chapters.
 worker节点为客户端应用程序提供运行环境。通过容器化的微服务，这些应用程序被封装在Pods中，由运行在主节点上的集群控制平面代理控制。pod被安排在worker节点上，在那里它们可以找到运行所需的计算、内存和存储资源，并可以通过网络与彼此和外部世界进行通信。Pod是Kubernetes中最小的调度单元。它是一个或多个编排在一起的容器的逻辑集合。我们将在后面的章节中进一步探讨它们。
 ![](assets/cka-40a023f5.png)
@@ -45,7 +45,7 @@ Kubernetes Worker Node
 
 Also, to access the applications from the external world, we connect to worker nodes and not to the master node. We will dive deeper into this in future chapters.
 同时，从外部世界访问应用程序时，我们连接到工作节点而不是主节点。我们将在以后的章节中深入探讨这个问题。
-#### Worker Node Components
+##### Worker Node Components
 A worker node has the following components:
 * Container runtime
 * kubelet
@@ -61,7 +61,7 @@ In the next few sections, we will discuss them in more detail.
 * 用于DNS、Dashboard、集群级监控和日志记录的加载项。
 
 在接下来的几节中，我们将更详细地讨论它们。
-#### Container Runtime
+##### Container Runtime
 Although Kubernetes is described as a "container orchestration engine", it does not have the capability to directly handle containers. In order to run and manage a container's lifecycle, Kubernetes requires a container runtime on the node where a Pod and its containers are to be scheduled. Kubernetes supports many container runtimes:
 
 Docker - although a container platform which uses containerd as a container runtime, it is the most widely used container runtime with Kubernetes
@@ -75,7 +75,7 @@ rktlet - a Kubernetes Container Runtime Interface (CRI) implementation using rkt
 * containerd — 提供健壮性的简单可移植的容器运行时
 * rkt - 一个pod本地容器引擎，它还运行Docker映像
 * rktlet - 一个使用rkt的Kubernetes容器运行时接口（CRI）实现。
-#### kubelet
+##### kubelet
 The kubelet is an agent running on each node and communicates with the control plane components from the master node. It receives Pod definitions, primarily from the API server, and interacts with the container runtime on the node to run containers associated with the Pod. It also monitors the health of the Pod's running containers.
 
 The kubelet connects to the container runtime using Container Runtime Interface (CRI). CRI consists of protocol buffers, gRPC API, and libraries.
@@ -91,7 +91,7 @@ In the next section, we will discuss some of the CRI shims.
 如上所示，充当grpc客户端的kubelet连接到充当grpc服务器的CRI shim，以执行容器和image操作。CRI实现了两个服务：ImageService和RuntimeService。ImageService负责所有与image相关的操作，RuntimeService负责所有与Pod和容器相关的操作。
 容器运行时在Kubernetes中是写死的，但是随着CRI的发展，Kubernetes现在更加灵活，并且使用不同的容器运行时而不需要重新编译。Kubernetes可以使用任何实现CRI的容器运行时来管理pod、容器和容器映像。
 在下一节中，我们将讨论一些CRI Shim。
-####  kubelet - CRI shims
+#####  kubelet - CRI shims
 Below you will find some examples of CRI shims:
 
 * dockershim
@@ -112,12 +112,12 @@ CRI-O enables using any Open Container Initiative (OCI) compatible runtimes with
 CRI-O支持使用任何与Kubernetes兼容的开放容器倡议（OCI）的运行时。在创建本课程时，CRI-O支持runC和Clear Containers作为容器运行时。但是，原则上，任何符合OCI的运行时都可以插入。
 ![](assets/cka-98c93a90.png)
 
-#### kube-proxy
+##### kube-proxy
 The kube-proxy is the network agent which runs on each node responsible for dynamic updates and maintenance of all networking rules on the node. It abstracts the details of Pods networking and forwards connection requests to Pods.
 We will explore Pod networking in more detail in later chapters.
 kube代理是运行在每个节点上的网络代理，负责动态更新和维护节点上的所有网络规则。它抽象了Pods网络的细节，并将连接请求转发给Pods。
 我们将在后面的章节中更详细地探讨Pod网络。
-#### Addons
+##### Addons
 Addons are cluster features and functionality not yet available in Kubernetes, therefore implemented through 3rd-party pods and services.
 
 DNS - cluster DNS is a DNS server required to assign DNS records to Kubernetes objects and resources
@@ -129,7 +129,7 @@ Addon是Kubernetes中尚未提供的集群特性和功能，因此通过第三�
 * Dashboard-一个通用的基于web的集群管理用户界面
 * 监视-收集集群级容器度量并将其保存到中心数据存储
 * 日志记录-收集群集级容器日志，并将其保存到中心日志存储以进行分析。
-### Networking Challenges
+#### Networking Challenges
 Decoupled microservices based applications rely heavily on networking in order to mimic the tight-coupling once available in the monolithic era. Networking, in general, is not the easiest to understand and implement. Kubernetes is no exception - as a containerized microservices orchestrator is needs to address 4 distinct networking challenges:
 
 Container-to-container communication inside Pods
@@ -144,13 +144,13 @@ All these networking challenges must be addressed before deploying a Kubernetes 
 * 外部到服务的通信，以便客户端访问集群中的应用程序。
 在部署Kubernetes集群之前，必须解决所有这些网络挑战。接下来，我们将看看如何解决这些挑战。
 
-#### Container-to-Container Communication Inside Pods
+##### Container-to-Container Communication Inside Pods
 Making use of the underlying host operating system's kernel features, a container runtime creates an isolated network space for each container it starts. On Linux, that isolated network space is referred to as a network namespace. A network namespace is shared across containers, or with the host operating system.
 
 When a Pod is started, a network namespace is created inside the Pod, and all containers running inside the Pod will share that network namespace so that they can talk to each other via localhost.
 利用底层主机操作系统的内核特性，容器运行时为它启动的每个容器创建一个独立的网络空间。在Linux上，隔离的网络空间称为网络命名空间。网络命名空间是跨容器或与主机操作系统共享的。
 当Pod启动时，在Pod内创建一个网络名称空间，运行在Pod内的所有容器都将共享该网络名称空间，以便它们可以通过localhost相互通信。
-#### Pod-to-Pod Communication Across Nodes
+##### Pod-to-Pod Communication Across Nodes
 In a Kubernetes cluster Pods are scheduled on nodes randomly. Regardless of their host node, Pods are expected to be able to communicate with all other Pods in the cluster, all this without the implementation of Network Address Translation (NAT). This is a fundamental requirement of any networking implementation in Kubernetes.
 
 The Kubernetes network model aims to reduce complexity, and it treats Pods as VMs on a network, where each VM receives an IP address - thus each Pod receiving an IP address. This model is called "IP-per-Pod" and ensures Pod-to-Pod communication, just as VMs are able to communicate with each other.
@@ -166,14 +166,14 @@ For more details, you can explore the Kubernetes documentation.
 容器运行时将IP分配的任务发到CNI，CNI连接到底层配置的插件（如Bridge或MACvlan）以获取IP地址。一旦IP地址由相应的插件给出，CNI就会将其转发回请求的容器运行时。
 
 有关更多详细信息，可以浏览Kubernetes文档。
-#### Pod-to-External World Communication
+##### Pod-to-External World Communication
 For a successfully deployed containerized applications running in Pods inside a Kubernetes cluster, it requires accessibility from the outside world. Kubernetes enables external accessibility through services, complex constructs which encapsulate networking rules definitions on cluster nodes. By exposing services to the external world with kube-proxy, applications become accessible from outside the cluster over a virtual IP.
 
 We will have a complete chapter dedicated to this, so we will dive into this later.
 对于在Kubernetes集群内的Pods中运行的成功部署的容器化应用程序，它需要来自外部世界的可访问性。Kubernetes通过服务实现外部可访问性，这些服务是封装集群节点上的网络规则定义的复杂构造。通过使用kube代理将服务公开给外部世界，应用程序可以通过虚拟IP从集群外部访问。
 我们将有一个完整的章节专门讨论这个问题，所以我们稍后将深入讨论这个问题。
-# Chapter 5. Installing Kubernetes
-## Introduction and Learning Objectives
+## Chapter 5. Installing Kubernetes
+### Introduction and Learning Objectives
 In this chapter, we will first discuss about the different configurations in which Kubernetes can be installed. We will then discuss about the infrastructure requirements to install Kubernetes, and we will also look at some of the tools which can help us with the installation.
 在本章中，我们将首先讨论可以安装Kubernetes的不同配置。然后，我们将讨论安装Kubernetes所需的基础设施，我们还将介绍一些可以帮助我们进行安装的工具。
 By the end of this chapter, you should be able to:
@@ -187,8 +187,8 @@ By the end of this chapter, you should be able to:
 * Review Kubernetes installation tools and resources.
 回顾Kubernetes安装工具和资源。
 
-## Installing Kubernetes
-### Kubernetes Configuration
+### Installing Kubernetes
+#### Kubernetes Configuration
 Kubernetes can be installed using different configurations. The four major installation types are briefly presented below:
 可以使用不同的配置安装Kubernetes。以下简要介绍四种主要安装类型：
 * All-in-One Single-Node Installation
@@ -207,7 +207,7 @@ In this setup, we have multiple-master nodes configured in HA mode, but we have 
 多节点etcd、多主多工安装
 In this mode, etcd is configured in clustered HA mode, the master nodes are all configured in HA mode, connecting to multiple worker nodes. This is the most advanced and recommended production setup.
 在此模式下，etcd配置为集群HA模式，主节点都配置为HA模式，连接到多个工作节点。这是最先进和推荐的生产设置。
-### Infrastructure for Kubernetes Installation
+#### Infrastructure for Kubernetes Installation
 Once we decide on the installation type, we also need to make some infrastructure-related decisions, such as:
 一旦我们决定了安装类型，我们还需要做出一些与基础设施相关的决定，例如：
 * Should we set up Kubernetes on bare metal, public cloud, or private cloud?
@@ -220,7 +220,7 @@ And so on.
 等等。
 Explore the Kubernetes documentation for details on choosing the right solution. Next, we will take a closer look at these solutions.
 有关选择正确解决方案的详细信息，请参阅Kubernetes文档。接下来，我们将仔细研究这些解决方案。
-### Localhost Installation
+#### Localhost Installation
 These are only a few localhost installation options available to deploy single- or multi-node Kubernetes clusters on our workstation/laptop:
 以下只是几个本地主机安装选项，可用于在工作站/笔记本电脑上部署单节点或多节点Kubernetes群集：
 * Minikube - single-node local Kubernetes cluster
@@ -231,7 +231,7 @@ Docker桌面-用于Windows和Mac的单节点本地Kubernetes群集
 LXD上的CDK-具有LXD容器的多节点本地群集。
 Minikube is the preferred and recommended way to create an all-in-one Kubernetes setup locally. We will be using it extensively in this course.
 Minikube是在本地创建一体式Kubernetes设置的首选和推荐方法。我们将在本课程中广泛使用它。
-### On-Premise Installation
+#### On-Premise Installation
 Kubernetes can be installed on-premise on VMs and bare metal.
 Kubernetes可以安装在虚拟机和裸机上。
 * On-Premise VMs
@@ -242,7 +242,7 @@ Kubernetes可以安装在通过Vagrant、VMware vSphere、KVM或另一个配置�
 内部裸机
 Kubernetes can be installed on on-premise bare metal, on top of different operating systems, like RHEL, CoreOS, CentOS, Fedora, Ubuntu, etc. Most of the tools used to install Kubernetes on VMs can be used with bare metal installations as well.
 Kubernetes可以安装在本地裸机上，在不同的操作系统之上，如RHEL、CoreOS、CentOS、Fedora、Ubuntu等。大多数用于在vm上安装Kubernetes的工具也可以用于裸机安装。
-### Cloud Installation
+#### Cloud Installation
 Kubernetes can be installed and managed on almost any cloud environment:
 Kubernetes几乎可以在任何云环境中安装和管理：
 * Hosted Solutions
@@ -278,7 +278,7 @@ The On-Premise Solutions install Kubernetes on secure internal private clouds wi
   * IBM Cloud Private
   * OpenShift Container Platform by Red Hat.
   用红帽打开集装箱平台。
-### Kubernetes Installation Tools/Resources
+#### Kubernetes Installation Tools/Resources
 While discussing installation configuration and the underlying infrastructure, let's take a look at some useful tools/resources available:
 在讨论安装配置和底层基础结构时，让我们看看一些有用的工具/资源：
 * kubeadm
@@ -297,11 +297,41 @@ If the existing solutions and tools do not fit our requirements, then we can ins
 如果现有的解决方案和工具不符合我们的要求，那么我们可以从头开始安装Kubernetes（尽管来自KubNeNETV1.12的一个过时的链接，它仍然是一个有效的解决方案）。
 It is worth checking out the Kubernetes The Hard Way GitHub project by Kelsey Hightower, which shares the manual steps involved in bootstrapping a Kubernetes cluster.
 值得一看的是Kelsey Hightower的Kubernetes the Hard Way GitHub项目，该项目共享引导Kubernetes集群所涉及的手动步骤。
-# Chapter 6. Minikube - A Local Single-Node Kubernetes Cluster
-## Introduction and Learning Objectives
-## Minikube - A Local Single-Node Kubernetes Cluster
-## Knowledge Check
-## Knowledge Check  This content is graded
-* Explain the different components for master and worker nodes.
-* Discuss about cluster state management with etcd.
-* Review the Kubernetes network setup requirements.
+## Chapter 6. Minikube - A Local Single-Node Kubernetes Cluster
+### Introduction and Learning Objectives
+As we mentioned in the previous chapter, Minikube is the easiest and most recommended way to run an all-in-one Kubernetes cluster locally on our workstations. In this chapter, we will explore the requirements to install Minikube locally on our workstation, together with the installation instructions to set it up on local Linux, macOS, and Windows operating systems.
+如前一章所述，Minikube是在工作站上本地运行一体式Kubernetes集群的最简单和最推荐的方法。在本章中，我们将探讨在工作站上本地安装Minikube的要求，以及在本地Linux、macOS和Windows操作系统上设置Minikube的安装说明。
+By the end of this chapter, you should be able to:
+在本章结束时，您应该能够：
+* Discuss Minikube.
+讨论Minikube。
+* Install Minikube on local Linux, macOS, and Windows workstation.
+在本地Linux、macOS和Windows工作站上安装Minikube。
+* Verify the local installation.
+验证本地安装。
+### Minikube - A Local Single-Node Kubernetes Cluster
+Minikube is installed and runs directly on a local Linux, macOS, or Windows workstation. However, in order to fully take advantage of all the features Minikube has to offer, a Type-2 Hypervisor should be installed on the local workstation, to run in conjunction with Minikube. This does not mean that we need to create any VMs with guest operating systems with this Hypervisor.
+Minikube是直接在本地Linux、macOS或Windows工作站上安装和运行的。但是，为了充分利用Minikube提供的所有功能，需要在本地工作站上安装一个Type-2管理程序，与Minikube一起运行。这并不意味着我们需要用这个Hypervisor创建任何带有guest操作系统的vm。
+Minikube builds all its infrastructure as long as the Type-2 Hypervisor is installed on our workstation. Minikube invokes the Hypervisor to create a single VM which then hosts a single-node Kubernetes cluster. Thus we need to make sure that we have the necessary hardware and software required by Minikube to build its environment. Below we outline the requirements to run Minikube on our local workstation:
+Minikube构建它的所有基础设施，只要在我们的工作站上安装了Type-2 Hypervisor。Minikube调用Hypervisor创建一个VM，然后托管一个节点Kubernetes集群。因此，我们需要确保我们拥有Minikube构建其环境所需的必要硬件和软件。下面我们概述了在本地工作站上运行Minikube的要求：
+* kubectl
+kubectl is a binary used to access and manage any Kubernetes cluster. It is installed separately from Minikube. Since we will install kubectl after the Minikube installation, we may see warnings during the Minikube initialization - safe to disregard for the time being, but do keep in mind that we will have to install kubectl to be able to manage the Kubernetes cluster. We will explore kubectl in more detail in future chapters.
+kubectl是用于访问和管理任何Kubernetes集群的二进制文件。它与Minikube分开安装。因为我们将在Minikube安装之后安装kubectl，所以我们可能会在Minikube初始化期间看到警告-暂时可以忽略，但请记住，我们必须安装kubectl才能管理Kubernetes集群。我们将在以后的章节中更详细地探讨kubectl。
+* Type-2 Hypervisor
+  * On Linux, VirtualBox or KVM
+在Linux用 VirtualBox或KVM上
+  * On macOS VirtualBox, HyperKit, or VMware Fusion
+在macOS用VirtualBox、HyperKit或VMware Fusion上
+  * On Windows VirtualBox or Hyper-V
+在Windows VirtualBox或Hyper-V上
+  NOTE: Minikube supports a --vm-driver=none option that runs the Kubernetes components directly on the host OS and not inside a VM. With this option a Docker installation is required and a Linux OS on the local workstation, but no hypervisor installation. If you use --vm-driver=none, be sure to specify a bridge network for Docker. Otherwise, it might change between network restarts, causing loss of connectivity to your cluster.
+  注意：Minikube支持一个--vm driver=none选项，该选项直接在主机操作系统上运行Kubernetes组件，而不是在vm中运行。使用此选项，需要安装Docker和本地工作站上的Linux操作系统，但不需要安装hypervisor。如果使用--vm driver=none，请确保为Docker指定a bridge network。否则，它可能在网络重新启动之后发生变化，导致与群集的连接丢失。
+* VT-x/AMD-v virtualization must be enabled on the local workstation in BIOS
+必须在BIOS中的本地工作站上启用VT-x/AMD-v虚拟化
+* Internet connection on first Minikube run - to download packages, dependencies, updates and pull images needed to initialize the Minikube Kubernetes cluster. Subsequent runs will require an internet connection only when new Docker images need to be pulled from a container repository or when deployed containerized applications need it. Once an image has been pulled it can be reused without an internet connection.
+第一次Minikube运行时的Internet连接-下载初始化Minikube Kubernetes集群所需的包、依赖项、更新和拉取图像。只有在需要从容器存储库中提取新的Docker映像或部署的容器化应用程序需要时，后续运行才需要internet连接。一旦图像被提取，就可以在没有互联网连接的情况下重复使用。
+
+In this chapter, we use VirtualBox as hypervisor on all three operating systems - Linux, macOS, and Windows, to allow Minikube to provision the VM which hosts the single-node Kubernetes cluster.
+在本章中，我们使用VirtualBox作为所有三个操作系统（Linux、macOS和Windows）上的管理程序，以允许Minikube提供托管单节点Kubernetes集群的VM。
+Read more about Minikube from the official Kubernetes documentation or GitHub.
+从官方的Kubernetes文档或GitHub中阅读更多关于Minikube的信息。

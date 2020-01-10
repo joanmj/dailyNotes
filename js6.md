@@ -57,7 +57,7 @@ var f = (x, y) => { x++; y--; return x + y; }
 
    1. 数组解构: let [a,b,c] = [1, 2, 3];
 
-   2. 对象解构: 
+   2. 对象解构:
           let name = 'Lily';
           let age = 4;
           let person = {name, age};
@@ -97,7 +97,7 @@ var f = (x, y) => { x++; y--; return x + y; }
 
 9. class定义:
 
-   1. 构造函数:constructor(name, age) 
+   1. 构造函数:constructor(name, age)
    2. 数据成员:无需声明, 直接this.argName, this.name;
    3. 方法声明, 无需关键字, getName(){return this.name;}
    4. 通过extends关键字实现继承, 构造函数内调用super(arg)
@@ -106,5 +106,11 @@ var f = (x, y) => { x++; y--; return x + y; }
 
     1. 引入默认接口: import foo from './a';a的全名是a.js, 对外export接口foo
     2. 引入普通接口: import {bar} from './a'; bar是a.js里的其他方法;
-    3. 定义导出默认接口:export default foo; 
-    4. 
+    3. 定义导出默认接口:export default foo;
+
+# js
+## jQuery
+### 遍历对象或者数组:
+jQuery.each(obj, function(i, val) {
+    text = text + "Key:" + i + ", Value:" + val;
+});
