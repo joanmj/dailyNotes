@@ -493,8 +493,8 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p>158</p>
-<h1 id="&#x539F;&#x6709;&#x670D;&#x52A1;&#x5230;microservice&#x67B6;&#x6784;">&#x539F;&#x6709;&#x670D;&#x52A1;&#x5230;microservice&#x67B6;&#x6784;</h1>
+                                <h1 id="158">158</h1>
+<h2 id="&#x539F;&#x6709;&#x670D;&#x52A1;&#x5230;microservice&#x67B6;&#x6784;">&#x539F;&#x6709;&#x670D;&#x52A1;&#x5230;microservice&#x67B6;&#x6784;</h2>
 <ul>
 <li>&#x91CD;&#x6784;&#x65B9;&#x5F0F;&#xFF1A;<ol>
 <li>&#x505C;&#x6B62;&#x65B0;&#x529F;&#x80FD;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x5F7B;&#x5E95;&#x91CD;&#x6784;</li>
@@ -509,7 +509,7 @@
 </ul>
 </li>
 <li>&#x91CD;&#x6784;&#x5B8C;&#x6210;&#x540E;&#x9009;&#x62E9;&#x673A;&#x5236;/&#x5DE5;&#x5177;&#xFF0C;&#x4FDD;&#x6301;&#x6240;&#x6709;&#x6A21;&#x5757;&#x7684;&#x5F39;&#x6027;&#xFF1B;
-*<h1 id="container-orchestration">container Orchestration</h1>
+*<h2 id="container-orchestration">container Orchestration</h2>
 </li>
 </ul>
 </li>
@@ -524,8 +524,8 @@ Container Orchestration
 <li>Discuss different container orchestration options.</li>
 <li>Discuss different container orchestration deployment options.</li>
 </ul>
-<h1 id="chapter-4-kubernetes-architecture">Chapter 4. Kubernetes Architecture</h1>
-<h2 id="42-the-kubernetes-architecture">4.2 the Kubernetes architecture.</h2>
+<h2 id="chapter-4-kubernetes-architecture">Chapter 4. Kubernetes Architecture</h2>
+<h3 id="42-the-kubernetes-architecture">4.2 the Kubernetes architecture.</h3>
 <ul>
 <li>high Level arch<ul>
 <li>One or more master nodes</li>
@@ -543,7 +543,7 @@ manage state of a Kubernetes cluster;has the following components:<ul>
 </li>
 <li>Scheduler</li>
 <li>Controller managers</li>
-<li>etcd.<h3 id="423-worker-node">4.2.3 Worker Node</h3>
+<li>etcd.<h4 id="423-worker-node">4.2.3 Worker Node</h4>
 A worker node provides a running environment for client applications. Though containerized microservices, these applications are encapsulated in Pods, controlled by the cluster control plane agents running on the master node. Pods are scheduled on worker nodes, where they find required compute, memory and storage resources to run, and networking to talk to each other and the outside world. A Pod is the smallest scheduling unit in Kubernetes. It is a logical collection of one or more containers scheduled together. We will explore them further in later chapters.
 worker&#x8282;&#x70B9;&#x4E3A;&#x5BA2;&#x6237;&#x7AEF;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x63D0;&#x4F9B;&#x8FD0;&#x884C;&#x73AF;&#x5883;&#x3002;&#x901A;&#x8FC7;&#x5BB9;&#x5668;&#x5316;&#x7684;&#x5FAE;&#x670D;&#x52A1;&#xFF0C;&#x8FD9;&#x4E9B;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x88AB;&#x5C01;&#x88C5;&#x5728;Pods&#x4E2D;&#xFF0C;&#x7531;&#x8FD0;&#x884C;&#x5728;&#x4E3B;&#x8282;&#x70B9;&#x4E0A;&#x7684;&#x96C6;&#x7FA4;&#x63A7;&#x5236;&#x5E73;&#x9762;&#x4EE3;&#x7406;&#x63A7;&#x5236;&#x3002;pod&#x88AB;&#x5B89;&#x6392;&#x5728;worker&#x8282;&#x70B9;&#x4E0A;&#xFF0C;&#x5728;&#x90A3;&#x91CC;&#x5B83;&#x4EEC;&#x53EF;&#x4EE5;&#x627E;&#x5230;&#x8FD0;&#x884C;&#x6240;&#x9700;&#x7684;&#x8BA1;&#x7B97;&#x3001;&#x5185;&#x5B58;&#x548C;&#x5B58;&#x50A8;&#x8D44;&#x6E90;&#xFF0C;&#x5E76;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x7F51;&#x7EDC;&#x4E0E;&#x5F7C;&#x6B64;&#x548C;&#x5916;&#x90E8;&#x4E16;&#x754C;&#x8FDB;&#x884C;&#x901A;&#x4FE1;&#x3002;Pod&#x662F;Kubernetes&#x4E2D;&#x6700;&#x5C0F;&#x7684;&#x8C03;&#x5EA6;&#x5355;&#x5143;&#x3002;&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x7F16;&#x6392;&#x5728;&#x4E00;&#x8D77;&#x7684;&#x5BB9;&#x5668;&#x7684;&#x903B;&#x8F91;&#x96C6;&#x5408;&#x3002;&#x6211;&#x4EEC;&#x5C06;&#x5728;&#x540E;&#x9762;&#x7684;&#x7AE0;&#x8282;&#x4E2D;&#x8FDB;&#x4E00;&#x6B65;&#x63A2;&#x8BA8;&#x5B83;&#x4EEC;&#x3002;
 <img src="assets/cka-40a023f5.png" alt="">
@@ -555,7 +555,7 @@ Kubernetes Worker Node</li>
 </ul>
 <p>Also, to access the applications from the external world, we connect to worker nodes and not to the master node. We will dive deeper into this in future chapters.
 &#x540C;&#x65F6;&#xFF0C;&#x4ECE;&#x5916;&#x90E8;&#x4E16;&#x754C;&#x8BBF;&#x95EE;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x8FDE;&#x63A5;&#x5230;&#x5DE5;&#x4F5C;&#x8282;&#x70B9;&#x800C;&#x4E0D;&#x662F;&#x4E3B;&#x8282;&#x70B9;&#x3002;&#x6211;&#x4EEC;&#x5C06;&#x5728;&#x4EE5;&#x540E;&#x7684;&#x7AE0;&#x8282;&#x4E2D;&#x6DF1;&#x5165;&#x63A2;&#x8BA8;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x3002;</p>
-<h4 id="worker-node-components">Worker Node Components</h4>
+<h5 id="worker-node-components">Worker Node Components</h5>
 <p>A worker node has the following components:</p>
 <ul>
 <li>Container runtime</li>
@@ -572,7 +572,7 @@ Kubernetes Worker Node</li>
 <li>&#x7528;&#x4E8E;DNS&#x3001;Dashboard&#x3001;&#x96C6;&#x7FA4;&#x7EA7;&#x76D1;&#x63A7;&#x548C;&#x65E5;&#x5FD7;&#x8BB0;&#x5F55;&#x7684;&#x52A0;&#x8F7D;&#x9879;&#x3002;</li>
 </ul>
 <p>&#x5728;&#x63A5;&#x4E0B;&#x6765;&#x7684;&#x51E0;&#x8282;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x66F4;&#x8BE6;&#x7EC6;&#x5730;&#x8BA8;&#x8BBA;&#x5B83;&#x4EEC;&#x3002;</p>
-<h4 id="container-runtime">Container Runtime</h4>
+<h5 id="container-runtime">Container Runtime</h5>
 <p>Although Kubernetes is described as a &quot;container orchestration engine&quot;, it does not have the capability to directly handle containers. In order to run and manage a container&apos;s lifecycle, Kubernetes requires a container runtime on the node where a Pod and its containers are to be scheduled. Kubernetes supports many container runtimes:</p>
 <p>Docker - although a container platform which uses containerd as a container runtime, it is the most widely used container runtime with Kubernetes
 CRI-O - a lightweight container runtime for Kubernetes, it also supports Docker image registries
@@ -585,7 +585,7 @@ rktlet - a Kubernetes Container Runtime Interface (CRI) implementation using rkt
 <li>CRI-O-&#x4E00;&#x4E2A;&#x7528;&#x4E8E;Kubernetes&#x7684;&#x8F7B;&#x91CF;&#x7EA7;&#x5BB9;&#x5668;&#x8FD0;&#x884C;&#x65F6;&#xFF0C;&#x5B83;&#x8FD8;&#x652F;&#x6301;Docker&#x6620;&#x50CF;&#x6CE8;&#x518C;</li>
 <li>containerd &#x2014; &#x63D0;&#x4F9B;&#x5065;&#x58EE;&#x6027;&#x7684;&#x7B80;&#x5355;&#x53EF;&#x79FB;&#x690D;&#x7684;&#x5BB9;&#x5668;&#x8FD0;&#x884C;&#x65F6;</li>
 <li>rkt - &#x4E00;&#x4E2A;pod&#x672C;&#x5730;&#x5BB9;&#x5668;&#x5F15;&#x64CE;&#xFF0C;&#x5B83;&#x8FD8;&#x8FD0;&#x884C;Docker&#x6620;&#x50CF;</li>
-<li>rktlet - &#x4E00;&#x4E2A;&#x4F7F;&#x7528;rkt&#x7684;Kubernetes&#x5BB9;&#x5668;&#x8FD0;&#x884C;&#x65F6;&#x63A5;&#x53E3;&#xFF08;CRI&#xFF09;&#x5B9E;&#x73B0;&#x3002;<h4 id="kubelet">kubelet</h4>
+<li>rktlet - &#x4E00;&#x4E2A;&#x4F7F;&#x7528;rkt&#x7684;Kubernetes&#x5BB9;&#x5668;&#x8FD0;&#x884C;&#x65F6;&#x63A5;&#x53E3;&#xFF08;CRI&#xFF09;&#x5B9E;&#x73B0;&#x3002;<h5 id="kubelet">kubelet</h5>
 The kubelet is an agent running on each node and communicates with the control plane components from the master node. It receives Pod definitions, primarily from the API server, and interacts with the container runtime on the node to run containers associated with the Pod. It also monitors the health of the Pod&apos;s running containers.</li>
 </ul>
 <p>The kubelet connects to the container runtime using Container Runtime Interface (CRI). CRI consists of protocol buffers, gRPC API, and libraries.</p>
@@ -600,7 +600,7 @@ In the next section, we will discuss some of the CRI shims.
 &#x5982;&#x4E0A;&#x6240;&#x793A;&#xFF0C;&#x5145;&#x5F53;grpc&#x5BA2;&#x6237;&#x7AEF;&#x7684;kubelet&#x8FDE;&#x63A5;&#x5230;&#x5145;&#x5F53;grpc&#x670D;&#x52A1;&#x5668;&#x7684;CRI shim&#xFF0C;&#x4EE5;&#x6267;&#x884C;&#x5BB9;&#x5668;&#x548C;image&#x64CD;&#x4F5C;&#x3002;CRI&#x5B9E;&#x73B0;&#x4E86;&#x4E24;&#x4E2A;&#x670D;&#x52A1;&#xFF1A;ImageService&#x548C;RuntimeService&#x3002;ImageService&#x8D1F;&#x8D23;&#x6240;&#x6709;&#x4E0E;image&#x76F8;&#x5173;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;RuntimeService&#x8D1F;&#x8D23;&#x6240;&#x6709;&#x4E0E;Pod&#x548C;&#x5BB9;&#x5668;&#x76F8;&#x5173;&#x7684;&#x64CD;&#x4F5C;&#x3002;
 &#x5BB9;&#x5668;&#x8FD0;&#x884C;&#x65F6;&#x5728;Kubernetes&#x4E2D;&#x662F;&#x5199;&#x6B7B;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x968F;&#x7740;CRI&#x7684;&#x53D1;&#x5C55;&#xFF0C;Kubernetes&#x73B0;&#x5728;&#x66F4;&#x52A0;&#x7075;&#x6D3B;&#xFF0C;&#x5E76;&#x4E14;&#x4F7F;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x5BB9;&#x5668;&#x8FD0;&#x884C;&#x65F6;&#x800C;&#x4E0D;&#x9700;&#x8981;&#x91CD;&#x65B0;&#x7F16;&#x8BD1;&#x3002;Kubernetes&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4EFB;&#x4F55;&#x5B9E;&#x73B0;CRI&#x7684;&#x5BB9;&#x5668;&#x8FD0;&#x884C;&#x65F6;&#x6765;&#x7BA1;&#x7406;pod&#x3001;&#x5BB9;&#x5668;&#x548C;&#x5BB9;&#x5668;&#x6620;&#x50CF;&#x3002;
 &#x5728;&#x4E0B;&#x4E00;&#x8282;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x8BA8;&#x8BBA;&#x4E00;&#x4E9B;CRI Shim&#x3002;</p>
-<h4 id="kubelet---cri-shims">kubelet - CRI shims</h4>
+<h5 id="kubelet---cri-shims">kubelet - CRI shims</h5>
 <p>Below you will find some examples of CRI shims:</p>
 <ul>
 <li>dockershim
@@ -620,12 +620,12 @@ CRI-O enables using any Open Container Initiative (OCI) compatible runtimes with
 CRI-O enables using any Open Container Initiative (OCI) compatible runtimes with Kubernetes. At the time this course was created, CRI-O supported runC and Clear Containers as container runtimes. However, in principle, any OCI-compliant runtime can be plugged-in.
 CRI-O&#x652F;&#x6301;&#x4F7F;&#x7528;&#x4EFB;&#x4F55;&#x4E0E;Kubernetes&#x517C;&#x5BB9;&#x7684;&#x5F00;&#x653E;&#x5BB9;&#x5668;&#x5021;&#x8BAE;&#xFF08;OCI&#xFF09;&#x7684;&#x8FD0;&#x884C;&#x65F6;&#x3002;&#x5728;&#x521B;&#x5EFA;&#x672C;&#x8BFE;&#x7A0B;&#x65F6;&#xFF0C;CRI-O&#x652F;&#x6301;runC&#x548C;Clear Containers&#x4F5C;&#x4E3A;&#x5BB9;&#x5668;&#x8FD0;&#x884C;&#x65F6;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x539F;&#x5219;&#x4E0A;&#xFF0C;&#x4EFB;&#x4F55;&#x7B26;&#x5408;OCI&#x7684;&#x8FD0;&#x884C;&#x65F6;&#x90FD;&#x53EF;&#x4EE5;&#x63D2;&#x5165;&#x3002;
 <img src="assets/cka-98c93a90.png" alt=""></p>
-<h4 id="kube-proxy">kube-proxy</h4>
+<h5 id="kube-proxy">kube-proxy</h5>
 <p>The kube-proxy is the network agent which runs on each node responsible for dynamic updates and maintenance of all networking rules on the node. It abstracts the details of Pods networking and forwards connection requests to Pods.
 We will explore Pod networking in more detail in later chapters.
 kube&#x4EE3;&#x7406;&#x662F;&#x8FD0;&#x884C;&#x5728;&#x6BCF;&#x4E2A;&#x8282;&#x70B9;&#x4E0A;&#x7684;&#x7F51;&#x7EDC;&#x4EE3;&#x7406;&#xFF0C;&#x8D1F;&#x8D23;&#x52A8;&#x6001;&#x66F4;&#x65B0;&#x548C;&#x7EF4;&#x62A4;&#x8282;&#x70B9;&#x4E0A;&#x7684;&#x6240;&#x6709;&#x7F51;&#x7EDC;&#x89C4;&#x5219;&#x3002;&#x5B83;&#x62BD;&#x8C61;&#x4E86;Pods&#x7F51;&#x7EDC;&#x7684;&#x7EC6;&#x8282;&#xFF0C;&#x5E76;&#x5C06;&#x8FDE;&#x63A5;&#x8BF7;&#x6C42;&#x8F6C;&#x53D1;&#x7ED9;Pods&#x3002;
 &#x6211;&#x4EEC;&#x5C06;&#x5728;&#x540E;&#x9762;&#x7684;&#x7AE0;&#x8282;&#x4E2D;&#x66F4;&#x8BE6;&#x7EC6;&#x5730;&#x63A2;&#x8BA8;Pod&#x7F51;&#x7EDC;&#x3002;</p>
-<h4 id="addons">Addons</h4>
+<h5 id="addons">Addons</h5>
 <p>Addons are cluster features and functionality not yet available in Kubernetes, therefore implemented through 3rd-party pods and services.</p>
 <p>DNS - cluster DNS is a DNS server required to assign DNS records to Kubernetes objects and resources
 Dashboard - a general purposed web-based user interface for cluster management
@@ -636,7 +636,7 @@ Addon&#x662F;Kubernetes&#x4E2D;&#x5C1A;&#x672A;&#x63D0;&#x4F9B;&#x7684;&#x96C6;&
 <li>DNS-&#x96C6;&#x7FA4;DNS&#x662F;&#x5C06;DNS&#x8BB0;&#x5F55;&#x5206;&#x914D;&#x7ED9;Kubernetes&#x5BF9;&#x8C61;&#x548C;&#x8D44;&#x6E90;&#x6240;&#x9700;&#x7684;DNS&#x670D;&#x52A1;&#x5668;</li>
 <li>Dashboard-&#x4E00;&#x4E2A;&#x901A;&#x7528;&#x7684;&#x57FA;&#x4E8E;web&#x7684;&#x96C6;&#x7FA4;&#x7BA1;&#x7406;&#x7528;&#x6237;&#x754C;&#x9762;</li>
 <li>&#x76D1;&#x89C6;-&#x6536;&#x96C6;&#x96C6;&#x7FA4;&#x7EA7;&#x5BB9;&#x5668;&#x5EA6;&#x91CF;&#x5E76;&#x5C06;&#x5176;&#x4FDD;&#x5B58;&#x5230;&#x4E2D;&#x5FC3;&#x6570;&#x636E;&#x5B58;&#x50A8;</li>
-<li>&#x65E5;&#x5FD7;&#x8BB0;&#x5F55;-&#x6536;&#x96C6;&#x7FA4;&#x96C6;&#x7EA7;&#x5BB9;&#x5668;&#x65E5;&#x5FD7;&#xFF0C;&#x5E76;&#x5C06;&#x5176;&#x4FDD;&#x5B58;&#x5230;&#x4E2D;&#x5FC3;&#x65E5;&#x5FD7;&#x5B58;&#x50A8;&#x4EE5;&#x8FDB;&#x884C;&#x5206;&#x6790;&#x3002;<h3 id="networking-challenges">Networking Challenges</h3>
+<li>&#x65E5;&#x5FD7;&#x8BB0;&#x5F55;-&#x6536;&#x96C6;&#x7FA4;&#x96C6;&#x7EA7;&#x5BB9;&#x5668;&#x65E5;&#x5FD7;&#xFF0C;&#x5E76;&#x5C06;&#x5176;&#x4FDD;&#x5B58;&#x5230;&#x4E2D;&#x5FC3;&#x65E5;&#x5FD7;&#x5B58;&#x50A8;&#x4EE5;&#x8FDB;&#x884C;&#x5206;&#x6790;&#x3002;<h4 id="networking-challenges">Networking Challenges</h4>
 Decoupled microservices based applications rely heavily on networking in order to mimic the tight-coupling once available in the monolithic era. Networking, in general, is not the easiest to understand and implement. Kubernetes is no exception - as a containerized microservices orchestrator is needs to address 4 distinct networking challenges:</li>
 </ul>
 <p>Container-to-container communication inside Pods
@@ -652,12 +652,12 @@ All these networking challenges must be addressed before deploying a Kubernetes 
 <li>&#x5916;&#x90E8;&#x5230;&#x670D;&#x52A1;&#x7684;&#x901A;&#x4FE1;&#xFF0C;&#x4EE5;&#x4FBF;&#x5BA2;&#x6237;&#x7AEF;&#x8BBF;&#x95EE;&#x96C6;&#x7FA4;&#x4E2D;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x3002;
 &#x5728;&#x90E8;&#x7F72;Kubernetes&#x96C6;&#x7FA4;&#x4E4B;&#x524D;&#xFF0C;&#x5FC5;&#x987B;&#x89E3;&#x51B3;&#x6240;&#x6709;&#x8FD9;&#x4E9B;&#x7F51;&#x7EDC;&#x6311;&#x6218;&#x3002;&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x770B;&#x770B;&#x5982;&#x4F55;&#x89E3;&#x51B3;&#x8FD9;&#x4E9B;&#x6311;&#x6218;&#x3002;</li>
 </ul>
-<h4 id="container-to-container-communication-inside-pods">Container-to-Container Communication Inside Pods</h4>
+<h5 id="container-to-container-communication-inside-pods">Container-to-Container Communication Inside Pods</h5>
 <p>Making use of the underlying host operating system&apos;s kernel features, a container runtime creates an isolated network space for each container it starts. On Linux, that isolated network space is referred to as a network namespace. A network namespace is shared across containers, or with the host operating system.</p>
 <p>When a Pod is started, a network namespace is created inside the Pod, and all containers running inside the Pod will share that network namespace so that they can talk to each other via localhost.
 &#x5229;&#x7528;&#x5E95;&#x5C42;&#x4E3B;&#x673A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7684;&#x5185;&#x6838;&#x7279;&#x6027;&#xFF0C;&#x5BB9;&#x5668;&#x8FD0;&#x884C;&#x65F6;&#x4E3A;&#x5B83;&#x542F;&#x52A8;&#x7684;&#x6BCF;&#x4E2A;&#x5BB9;&#x5668;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x72EC;&#x7ACB;&#x7684;&#x7F51;&#x7EDC;&#x7A7A;&#x95F4;&#x3002;&#x5728;Linux&#x4E0A;&#xFF0C;&#x9694;&#x79BB;&#x7684;&#x7F51;&#x7EDC;&#x7A7A;&#x95F4;&#x79F0;&#x4E3A;&#x7F51;&#x7EDC;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x3002;&#x7F51;&#x7EDC;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x662F;&#x8DE8;&#x5BB9;&#x5668;&#x6216;&#x4E0E;&#x4E3B;&#x673A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5171;&#x4EAB;&#x7684;&#x3002;
 &#x5F53;Pod&#x542F;&#x52A8;&#x65F6;&#xFF0C;&#x5728;Pod&#x5185;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7F51;&#x7EDC;&#x540D;&#x79F0;&#x7A7A;&#x95F4;&#xFF0C;&#x8FD0;&#x884C;&#x5728;Pod&#x5185;&#x7684;&#x6240;&#x6709;&#x5BB9;&#x5668;&#x90FD;&#x5C06;&#x5171;&#x4EAB;&#x8BE5;&#x7F51;&#x7EDC;&#x540D;&#x79F0;&#x7A7A;&#x95F4;&#xFF0C;&#x4EE5;&#x4FBF;&#x5B83;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;localhost&#x76F8;&#x4E92;&#x901A;&#x4FE1;&#x3002;</p>
-<h4 id="pod-to-pod-communication-across-nodes">Pod-to-Pod Communication Across Nodes</h4>
+<h5 id="pod-to-pod-communication-across-nodes">Pod-to-Pod Communication Across Nodes</h5>
 <p>In a Kubernetes cluster Pods are scheduled on nodes randomly. Regardless of their host node, Pods are expected to be able to communicate with all other Pods in the cluster, all this without the implementation of Network Address Translation (NAT). This is a fundamental requirement of any networking implementation in Kubernetes.</p>
 <p>The Kubernetes network model aims to reduce complexity, and it treats Pods as VMs on a network, where each VM receives an IP address - thus each Pod receiving an IP address. This model is called &quot;IP-per-Pod&quot; and ensures Pod-to-Pod communication, just as VMs are able to communicate with each other.</p>
 <p>Let&apos;s not forget about containers though. They share the Pod&apos;s network namespace and must coordinate ports assignment inside the Pod just as applications would on a VM, all while being able to communicate with each other on localhost - inside the Pod. However, containers are integrated with the overall Kubernetes networking model through the use of the Container Network Interface (CNI) supported by CNI plugins. CNI is a set of a specification and libraries which allow plugins to configure the networking for containers. While there are a few core plugins, most CNI plugins are 3rd-party Software Defined Networking (SDN) solutions implementing the Kubernetes networking model. In addition to addressing the fundamental requirement of the networking model, some networking solutions offer support for Network Policies. Flannel, Weave, Calico are only a few of the SDN solutions available for Kubernetes clusters.
@@ -669,13 +669,13 @@ The container runtime offloads the IP assignment to CNI, which connects to the u
 <p>For more details, you can explore the Kubernetes documentation.
 &#x5BB9;&#x5668;&#x8FD0;&#x884C;&#x65F6;&#x5C06;IP&#x5206;&#x914D;&#x7684;&#x4EFB;&#x52A1;&#x53D1;&#x5230;CNI&#xFF0C;CNI&#x8FDE;&#x63A5;&#x5230;&#x5E95;&#x5C42;&#x914D;&#x7F6E;&#x7684;&#x63D2;&#x4EF6;&#xFF08;&#x5982;Bridge&#x6216;MACvlan&#xFF09;&#x4EE5;&#x83B7;&#x53D6;IP&#x5730;&#x5740;&#x3002;&#x4E00;&#x65E6;IP&#x5730;&#x5740;&#x7531;&#x76F8;&#x5E94;&#x7684;&#x63D2;&#x4EF6;&#x7ED9;&#x51FA;&#xFF0C;CNI&#x5C31;&#x4F1A;&#x5C06;&#x5176;&#x8F6C;&#x53D1;&#x56DE;&#x8BF7;&#x6C42;&#x7684;&#x5BB9;&#x5668;&#x8FD0;&#x884C;&#x65F6;&#x3002;</p>
 <p>&#x6709;&#x5173;&#x66F4;&#x591A;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#xFF0C;&#x53EF;&#x4EE5;&#x6D4F;&#x89C8;Kubernetes&#x6587;&#x6863;&#x3002;</p>
-<h4 id="pod-to-external-world-communication">Pod-to-External World Communication</h4>
+<h5 id="pod-to-external-world-communication">Pod-to-External World Communication</h5>
 <p>For a successfully deployed containerized applications running in Pods inside a Kubernetes cluster, it requires accessibility from the outside world. Kubernetes enables external accessibility through services, complex constructs which encapsulate networking rules definitions on cluster nodes. By exposing services to the external world with kube-proxy, applications become accessible from outside the cluster over a virtual IP.</p>
 <p>We will have a complete chapter dedicated to this, so we will dive into this later.
 &#x5BF9;&#x4E8E;&#x5728;Kubernetes&#x96C6;&#x7FA4;&#x5185;&#x7684;Pods&#x4E2D;&#x8FD0;&#x884C;&#x7684;&#x6210;&#x529F;&#x90E8;&#x7F72;&#x7684;&#x5BB9;&#x5668;&#x5316;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#xFF0C;&#x5B83;&#x9700;&#x8981;&#x6765;&#x81EA;&#x5916;&#x90E8;&#x4E16;&#x754C;&#x7684;&#x53EF;&#x8BBF;&#x95EE;&#x6027;&#x3002;Kubernetes&#x901A;&#x8FC7;&#x670D;&#x52A1;&#x5B9E;&#x73B0;&#x5916;&#x90E8;&#x53EF;&#x8BBF;&#x95EE;&#x6027;&#xFF0C;&#x8FD9;&#x4E9B;&#x670D;&#x52A1;&#x662F;&#x5C01;&#x88C5;&#x96C6;&#x7FA4;&#x8282;&#x70B9;&#x4E0A;&#x7684;&#x7F51;&#x7EDC;&#x89C4;&#x5219;&#x5B9A;&#x4E49;&#x7684;&#x590D;&#x6742;&#x6784;&#x9020;&#x3002;&#x901A;&#x8FC7;&#x4F7F;&#x7528;kube&#x4EE3;&#x7406;&#x5C06;&#x670D;&#x52A1;&#x516C;&#x5F00;&#x7ED9;&#x5916;&#x90E8;&#x4E16;&#x754C;&#xFF0C;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x865A;&#x62DF;IP&#x4ECE;&#x96C6;&#x7FA4;&#x5916;&#x90E8;&#x8BBF;&#x95EE;&#x3002;
 &#x6211;&#x4EEC;&#x5C06;&#x6709;&#x4E00;&#x4E2A;&#x5B8C;&#x6574;&#x7684;&#x7AE0;&#x8282;&#x4E13;&#x95E8;&#x8BA8;&#x8BBA;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x7A0D;&#x540E;&#x5C06;&#x6DF1;&#x5165;&#x8BA8;&#x8BBA;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x3002;</p>
-<h1 id="chapter-5-installing-kubernetes">Chapter 5. Installing Kubernetes</h1>
-<h2 id="introduction-and-learning-objectives">Introduction and Learning Objectives</h2>
+<h2 id="chapter-5-installing-kubernetes">Chapter 5. Installing Kubernetes</h2>
+<h3 id="introduction-and-learning-objectives">Introduction and Learning Objectives</h3>
 <p>In this chapter, we will first discuss about the different configurations in which Kubernetes can be installed. We will then discuss about the infrastructure requirements to install Kubernetes, and we will also look at some of the tools which can help us with the installation.
 &#x5728;&#x672C;&#x7AE0;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x9996;&#x5148;&#x8BA8;&#x8BBA;&#x53EF;&#x4EE5;&#x5B89;&#x88C5;Kubernetes&#x7684;&#x4E0D;&#x540C;&#x914D;&#x7F6E;&#x3002;&#x7136;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x8BA8;&#x8BBA;&#x5B89;&#x88C5;Kubernetes&#x6240;&#x9700;&#x7684;&#x57FA;&#x7840;&#x8BBE;&#x65BD;&#xFF0C;&#x6211;&#x4EEC;&#x8FD8;&#x5C06;&#x4ECB;&#x7ECD;&#x4E00;&#x4E9B;&#x53EF;&#x4EE5;&#x5E2E;&#x52A9;&#x6211;&#x4EEC;&#x8FDB;&#x884C;&#x5B89;&#x88C5;&#x7684;&#x5DE5;&#x5177;&#x3002;
 By the end of this chapter, you should be able to:
@@ -690,8 +690,8 @@ By the end of this chapter, you should be able to:
 <li>Review Kubernetes installation tools and resources.
 &#x56DE;&#x987E;Kubernetes&#x5B89;&#x88C5;&#x5DE5;&#x5177;&#x548C;&#x8D44;&#x6E90;&#x3002;</li>
 </ul>
-<h2 id="installing-kubernetes">Installing Kubernetes</h2>
-<h3 id="kubernetes-configuration">Kubernetes Configuration</h3>
+<h3 id="installing-kubernetes">Installing Kubernetes</h3>
+<h4 id="kubernetes-configuration">Kubernetes Configuration</h4>
 <p>Kubernetes can be installed using different configurations. The four major installation types are briefly presented below:
 &#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x914D;&#x7F6E;&#x5B89;&#x88C5;Kubernetes&#x3002;&#x4EE5;&#x4E0B;&#x7B80;&#x8981;&#x4ECB;&#x7ECD;&#x56DB;&#x79CD;&#x4E3B;&#x8981;&#x5B89;&#x88C5;&#x7C7B;&#x578B;&#xFF1A;</p>
 <ul>
@@ -710,7 +710,7 @@ In this setup, we have multiple-master nodes configured in HA mode, but we have 
 <li>Multi-Node etcd, Multi-Master and Multi-Worker Installation
 &#x591A;&#x8282;&#x70B9;etcd&#x3001;&#x591A;&#x4E3B;&#x591A;&#x5DE5;&#x5B89;&#x88C5;
 In this mode, etcd is configured in clustered HA mode, the master nodes are all configured in HA mode, connecting to multiple worker nodes. This is the most advanced and recommended production setup.
-&#x5728;&#x6B64;&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;etcd&#x914D;&#x7F6E;&#x4E3A;&#x96C6;&#x7FA4;HA&#x6A21;&#x5F0F;&#xFF0C;&#x4E3B;&#x8282;&#x70B9;&#x90FD;&#x914D;&#x7F6E;&#x4E3A;HA&#x6A21;&#x5F0F;&#xFF0C;&#x8FDE;&#x63A5;&#x5230;&#x591A;&#x4E2A;&#x5DE5;&#x4F5C;&#x8282;&#x70B9;&#x3002;&#x8FD9;&#x662F;&#x6700;&#x5148;&#x8FDB;&#x548C;&#x63A8;&#x8350;&#x7684;&#x751F;&#x4EA7;&#x8BBE;&#x7F6E;&#x3002;<h3 id="infrastructure-for-kubernetes-installation">Infrastructure for Kubernetes Installation</h3>
+&#x5728;&#x6B64;&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;etcd&#x914D;&#x7F6E;&#x4E3A;&#x96C6;&#x7FA4;HA&#x6A21;&#x5F0F;&#xFF0C;&#x4E3B;&#x8282;&#x70B9;&#x90FD;&#x914D;&#x7F6E;&#x4E3A;HA&#x6A21;&#x5F0F;&#xFF0C;&#x8FDE;&#x63A5;&#x5230;&#x591A;&#x4E2A;&#x5DE5;&#x4F5C;&#x8282;&#x70B9;&#x3002;&#x8FD9;&#x662F;&#x6700;&#x5148;&#x8FDB;&#x548C;&#x63A8;&#x8350;&#x7684;&#x751F;&#x4EA7;&#x8BBE;&#x7F6E;&#x3002;<h4 id="infrastructure-for-kubernetes-installation">Infrastructure for Kubernetes Installation</h4>
 Once we decide on the installation type, we also need to make some infrastructure-related decisions, such as:
 &#x4E00;&#x65E6;&#x6211;&#x4EEC;&#x51B3;&#x5B9A;&#x4E86;&#x5B89;&#x88C5;&#x7C7B;&#x578B;&#xFF0C;&#x6211;&#x4EEC;&#x8FD8;&#x9700;&#x8981;&#x505A;&#x51FA;&#x4E00;&#x4E9B;&#x4E0E;&#x57FA;&#x7840;&#x8BBE;&#x65BD;&#x76F8;&#x5173;&#x7684;&#x51B3;&#x5B9A;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;</li>
 <li>Should we set up Kubernetes on bare metal, public cloud, or private cloud?
@@ -722,7 +722,7 @@ Once we decide on the installation type, we also need to make some infrastructur
 And so on.
 &#x7B49;&#x7B49;&#x3002;
 Explore the Kubernetes documentation for details on choosing the right solution. Next, we will take a closer look at these solutions.
-&#x6709;&#x5173;&#x9009;&#x62E9;&#x6B63;&#x786E;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x7684;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#xFF0C;&#x8BF7;&#x53C2;&#x9605;Kubernetes&#x6587;&#x6863;&#x3002;&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x4ED4;&#x7EC6;&#x7814;&#x7A76;&#x8FD9;&#x4E9B;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x3002;<h3 id="localhost-installation">Localhost Installation</h3>
+&#x6709;&#x5173;&#x9009;&#x62E9;&#x6B63;&#x786E;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x7684;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#xFF0C;&#x8BF7;&#x53C2;&#x9605;Kubernetes&#x6587;&#x6863;&#x3002;&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x4ED4;&#x7EC6;&#x7814;&#x7A76;&#x8FD9;&#x4E9B;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x3002;<h4 id="localhost-installation">Localhost Installation</h4>
 These are only a few localhost installation options available to deploy single- or multi-node Kubernetes clusters on our workstation/laptop:
 &#x4EE5;&#x4E0B;&#x53EA;&#x662F;&#x51E0;&#x4E2A;&#x672C;&#x5730;&#x4E3B;&#x673A;&#x5B89;&#x88C5;&#x9009;&#x9879;&#xFF0C;&#x53EF;&#x7528;&#x4E8E;&#x5728;&#x5DE5;&#x4F5C;&#x7AD9;/&#x7B14;&#x8BB0;&#x672C;&#x7535;&#x8111;&#x4E0A;&#x90E8;&#x7F72;&#x5355;&#x8282;&#x70B9;&#x6216;&#x591A;&#x8282;&#x70B9;Kubernetes&#x7FA4;&#x96C6;&#xFF1A;</li>
 <li>Minikube - single-node local Kubernetes cluster
@@ -732,7 +732,7 @@ Docker&#x684C;&#x9762;-&#x7528;&#x4E8E;Windows&#x548C;Mac&#x7684;&#x5355;&#x8282
 <li>CDK on LXD - multi-node local cluster with LXD containers.
 LXD&#x4E0A;&#x7684;CDK-&#x5177;&#x6709;LXD&#x5BB9;&#x5668;&#x7684;&#x591A;&#x8282;&#x70B9;&#x672C;&#x5730;&#x7FA4;&#x96C6;&#x3002;
 Minikube is the preferred and recommended way to create an all-in-one Kubernetes setup locally. We will be using it extensively in this course.
-Minikube&#x662F;&#x5728;&#x672C;&#x5730;&#x521B;&#x5EFA;&#x4E00;&#x4F53;&#x5F0F;Kubernetes&#x8BBE;&#x7F6E;&#x7684;&#x9996;&#x9009;&#x548C;&#x63A8;&#x8350;&#x65B9;&#x6CD5;&#x3002;&#x6211;&#x4EEC;&#x5C06;&#x5728;&#x672C;&#x8BFE;&#x7A0B;&#x4E2D;&#x5E7F;&#x6CDB;&#x4F7F;&#x7528;&#x5B83;&#x3002;<h3 id="on-premise-installation">On-Premise Installation</h3>
+Minikube&#x662F;&#x5728;&#x672C;&#x5730;&#x521B;&#x5EFA;&#x4E00;&#x4F53;&#x5F0F;Kubernetes&#x8BBE;&#x7F6E;&#x7684;&#x9996;&#x9009;&#x548C;&#x63A8;&#x8350;&#x65B9;&#x6CD5;&#x3002;&#x6211;&#x4EEC;&#x5C06;&#x5728;&#x672C;&#x8BFE;&#x7A0B;&#x4E2D;&#x5E7F;&#x6CDB;&#x4F7F;&#x7528;&#x5B83;&#x3002;<h4 id="on-premise-installation">On-Premise Installation</h4>
 Kubernetes can be installed on-premise on VMs and bare metal.
 Kubernetes&#x53EF;&#x4EE5;&#x5B89;&#x88C5;&#x5728;&#x865A;&#x62DF;&#x673A;&#x548C;&#x88F8;&#x673A;&#x4E0A;&#x3002;</li>
 <li>On-Premise VMs
@@ -742,7 +742,7 @@ Kubernetes&#x53EF;&#x4EE5;&#x5B89;&#x88C5;&#x5728;&#x901A;&#x8FC7;Vagrant&#x3001
 <li>On-Premise Bare Metal
 &#x5185;&#x90E8;&#x88F8;&#x673A;
 Kubernetes can be installed on on-premise bare metal, on top of different operating systems, like RHEL, CoreOS, CentOS, Fedora, Ubuntu, etc. Most of the tools used to install Kubernetes on VMs can be used with bare metal installations as well.
-Kubernetes&#x53EF;&#x4EE5;&#x5B89;&#x88C5;&#x5728;&#x672C;&#x5730;&#x88F8;&#x673A;&#x4E0A;&#xFF0C;&#x5728;&#x4E0D;&#x540C;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4E4B;&#x4E0A;&#xFF0C;&#x5982;RHEL&#x3001;CoreOS&#x3001;CentOS&#x3001;Fedora&#x3001;Ubuntu&#x7B49;&#x3002;&#x5927;&#x591A;&#x6570;&#x7528;&#x4E8E;&#x5728;vm&#x4E0A;&#x5B89;&#x88C5;Kubernetes&#x7684;&#x5DE5;&#x5177;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x88F8;&#x673A;&#x5B89;&#x88C5;&#x3002;<h3 id="cloud-installation">Cloud Installation</h3>
+Kubernetes&#x53EF;&#x4EE5;&#x5B89;&#x88C5;&#x5728;&#x672C;&#x5730;&#x88F8;&#x673A;&#x4E0A;&#xFF0C;&#x5728;&#x4E0D;&#x540C;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4E4B;&#x4E0A;&#xFF0C;&#x5982;RHEL&#x3001;CoreOS&#x3001;CentOS&#x3001;Fedora&#x3001;Ubuntu&#x7B49;&#x3002;&#x5927;&#x591A;&#x6570;&#x7528;&#x4E8E;&#x5728;vm&#x4E0A;&#x5B89;&#x88C5;Kubernetes&#x7684;&#x5DE5;&#x5177;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x88F8;&#x673A;&#x5B89;&#x88C5;&#x3002;<h4 id="cloud-installation">Cloud Installation</h4>
 Kubernetes can be installed and managed on almost any cloud environment:
 Kubernetes&#x51E0;&#x4E4E;&#x53EF;&#x4EE5;&#x5728;&#x4EFB;&#x4F55;&#x4E91;&#x73AF;&#x5883;&#x4E2D;&#x5B89;&#x88C5;&#x548C;&#x7BA1;&#x7406;&#xFF1A;</li>
 <li>Hosted Solutions
@@ -781,7 +781,7 @@ The On-Premise Solutions install Kubernetes on secure internal private clouds wi
 <li>GKE On-Prem by Google Cloud</li>
 <li>IBM Cloud Private</li>
 <li>OpenShift Container Platform by Red Hat.
-&#x7528;&#x7EA2;&#x5E3D;&#x6253;&#x5F00;&#x96C6;&#x88C5;&#x7BB1;&#x5E73;&#x53F0;&#x3002;<h3 id="kubernetes-installation-toolsresources">Kubernetes Installation Tools/Resources</h3>
+&#x7528;&#x7EA2;&#x5E3D;&#x6253;&#x5F00;&#x96C6;&#x88C5;&#x7BB1;&#x5E73;&#x53F0;&#x3002;<h4 id="kubernetes-installation-toolsresources">Kubernetes Installation Tools/Resources</h4>
 While discussing installation configuration and the underlying infrastructure, let&apos;s take a look at some useful tools/resources available:
 &#x5728;&#x8BA8;&#x8BBA;&#x5B89;&#x88C5;&#x914D;&#x7F6E;&#x548C;&#x5E95;&#x5C42;&#x57FA;&#x7840;&#x7ED3;&#x6784;&#x65F6;&#xFF0C;&#x8BA9;&#x6211;&#x4EEC;&#x770B;&#x770B;&#x4E00;&#x4E9B;&#x6709;&#x7528;&#x7684;&#x5DE5;&#x5177;/&#x8D44;&#x6E90;&#xFF1A;</li>
 </ul>
@@ -801,16 +801,45 @@ With kube-aws we can create, upgrade and destroy Kubernetes clusters on AWS from
 If the existing solutions and tools do not fit our requirements, then we can install Kubernetes from scratch (although a dated link from Kubernetes v1.12, it is still a valid solution).
 &#x5982;&#x679C;&#x73B0;&#x6709;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x548C;&#x5DE5;&#x5177;&#x4E0D;&#x7B26;&#x5408;&#x6211;&#x4EEC;&#x7684;&#x8981;&#x6C42;&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4ECE;&#x5934;&#x5F00;&#x59CB;&#x5B89;&#x88C5;Kubernetes&#xFF08;&#x5C3D;&#x7BA1;&#x6765;&#x81EA;KubNeNETV1.12&#x7684;&#x4E00;&#x4E2A;&#x8FC7;&#x65F6;&#x7684;&#x94FE;&#x63A5;&#xFF0C;&#x5B83;&#x4ECD;&#x7136;&#x662F;&#x4E00;&#x4E2A;&#x6709;&#x6548;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF09;&#x3002;
 It is worth checking out the Kubernetes The Hard Way GitHub project by Kelsey Hightower, which shares the manual steps involved in bootstrapping a Kubernetes cluster.
-&#x503C;&#x5F97;&#x4E00;&#x770B;&#x7684;&#x662F;Kelsey Hightower&#x7684;Kubernetes the Hard Way GitHub&#x9879;&#x76EE;&#xFF0C;&#x8BE5;&#x9879;&#x76EE;&#x5171;&#x4EAB;&#x5F15;&#x5BFC;Kubernetes&#x96C6;&#x7FA4;&#x6240;&#x6D89;&#x53CA;&#x7684;&#x624B;&#x52A8;&#x6B65;&#x9AA4;&#x3002;<h1 id="chapter-6-minikube---a-local-single-node-kubernetes-cluster">Chapter 6. Minikube - A Local Single-Node Kubernetes Cluster</h1>
-<h2 id="introduction-and-learning-objectives">Introduction and Learning Objectives</h2>
-<h2 id="minikube---a-local-single-node-kubernetes-cluster">Minikube - A Local Single-Node Kubernetes Cluster</h2>
-<h2 id="knowledge-check">Knowledge Check</h2>
-<h2 id="knowledge-check--this-content-is-graded">Knowledge Check  This content is graded</h2>
-</li>
-<li>Explain the different components for master and worker nodes.</li>
-<li>Discuss about cluster state management with etcd.</li>
-<li>Review the Kubernetes network setup requirements.</li>
+&#x503C;&#x5F97;&#x4E00;&#x770B;&#x7684;&#x662F;Kelsey Hightower&#x7684;Kubernetes the Hard Way GitHub&#x9879;&#x76EE;&#xFF0C;&#x8BE5;&#x9879;&#x76EE;&#x5171;&#x4EAB;&#x5F15;&#x5BFC;Kubernetes&#x96C6;&#x7FA4;&#x6240;&#x6D89;&#x53CA;&#x7684;&#x624B;&#x52A8;&#x6B65;&#x9AA4;&#x3002;<h2 id="chapter-6-minikube---a-local-single-node-kubernetes-cluster">Chapter 6. Minikube - A Local Single-Node Kubernetes Cluster</h2>
+<h3 id="introduction-and-learning-objectives">Introduction and Learning Objectives</h3>
+As we mentioned in the previous chapter, Minikube is the easiest and most recommended way to run an all-in-one Kubernetes cluster locally on our workstations. In this chapter, we will explore the requirements to install Minikube locally on our workstation, together with the installation instructions to set it up on local Linux, macOS, and Windows operating systems.
+&#x5982;&#x524D;&#x4E00;&#x7AE0;&#x6240;&#x8FF0;&#xFF0C;Minikube&#x662F;&#x5728;&#x5DE5;&#x4F5C;&#x7AD9;&#x4E0A;&#x672C;&#x5730;&#x8FD0;&#x884C;&#x4E00;&#x4F53;&#x5F0F;Kubernetes&#x96C6;&#x7FA4;&#x7684;&#x6700;&#x7B80;&#x5355;&#x548C;&#x6700;&#x63A8;&#x8350;&#x7684;&#x65B9;&#x6CD5;&#x3002;&#x5728;&#x672C;&#x7AE0;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x63A2;&#x8BA8;&#x5728;&#x5DE5;&#x4F5C;&#x7AD9;&#x4E0A;&#x672C;&#x5730;&#x5B89;&#x88C5;Minikube&#x7684;&#x8981;&#x6C42;&#xFF0C;&#x4EE5;&#x53CA;&#x5728;&#x672C;&#x5730;Linux&#x3001;macOS&#x548C;Windows&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4E0A;&#x8BBE;&#x7F6E;Minikube&#x7684;&#x5B89;&#x88C5;&#x8BF4;&#x660E;&#x3002;
+By the end of this chapter, you should be able to:
+&#x5728;&#x672C;&#x7AE0;&#x7ED3;&#x675F;&#x65F6;&#xFF0C;&#x60A8;&#x5E94;&#x8BE5;&#x80FD;&#x591F;&#xFF1A;</li>
+<li>Discuss Minikube.
+&#x8BA8;&#x8BBA;Minikube&#x3002;</li>
+<li>Install Minikube on local Linux, macOS, and Windows workstation.
+&#x5728;&#x672C;&#x5730;Linux&#x3001;macOS&#x548C;Windows&#x5DE5;&#x4F5C;&#x7AD9;&#x4E0A;&#x5B89;&#x88C5;Minikube&#x3002;</li>
+<li>Verify the local installation.
+&#x9A8C;&#x8BC1;&#x672C;&#x5730;&#x5B89;&#x88C5;&#x3002;<h3 id="minikube---a-local-single-node-kubernetes-cluster">Minikube - A Local Single-Node Kubernetes Cluster</h3>
+Minikube is installed and runs directly on a local Linux, macOS, or Windows workstation. However, in order to fully take advantage of all the features Minikube has to offer, a Type-2 Hypervisor should be installed on the local workstation, to run in conjunction with Minikube. This does not mean that we need to create any VMs with guest operating systems with this Hypervisor.
+Minikube&#x662F;&#x76F4;&#x63A5;&#x5728;&#x672C;&#x5730;Linux&#x3001;macOS&#x6216;Windows&#x5DE5;&#x4F5C;&#x7AD9;&#x4E0A;&#x5B89;&#x88C5;&#x548C;&#x8FD0;&#x884C;&#x7684;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x4E3A;&#x4E86;&#x5145;&#x5206;&#x5229;&#x7528;Minikube&#x63D0;&#x4F9B;&#x7684;&#x6240;&#x6709;&#x529F;&#x80FD;&#xFF0C;&#x9700;&#x8981;&#x5728;&#x672C;&#x5730;&#x5DE5;&#x4F5C;&#x7AD9;&#x4E0A;&#x5B89;&#x88C5;&#x4E00;&#x4E2A;Type-2&#x7BA1;&#x7406;&#x7A0B;&#x5E8F;&#xFF0C;&#x4E0E;Minikube&#x4E00;&#x8D77;&#x8FD0;&#x884C;&#x3002;&#x8FD9;&#x5E76;&#x4E0D;&#x610F;&#x5473;&#x7740;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x7528;&#x8FD9;&#x4E2A;Hypervisor&#x521B;&#x5EFA;&#x4EFB;&#x4F55;&#x5E26;&#x6709;guest&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7684;vm&#x3002;
+Minikube builds all its infrastructure as long as the Type-2 Hypervisor is installed on our workstation. Minikube invokes the Hypervisor to create a single VM which then hosts a single-node Kubernetes cluster. Thus we need to make sure that we have the necessary hardware and software required by Minikube to build its environment. Below we outline the requirements to run Minikube on our local workstation:
+Minikube&#x6784;&#x5EFA;&#x5B83;&#x7684;&#x6240;&#x6709;&#x57FA;&#x7840;&#x8BBE;&#x65BD;&#xFF0C;&#x53EA;&#x8981;&#x5728;&#x6211;&#x4EEC;&#x7684;&#x5DE5;&#x4F5C;&#x7AD9;&#x4E0A;&#x5B89;&#x88C5;&#x4E86;Type-2 Hypervisor&#x3002;Minikube&#x8C03;&#x7528;Hypervisor&#x521B;&#x5EFA;&#x4E00;&#x4E2A;VM&#xFF0C;&#x7136;&#x540E;&#x6258;&#x7BA1;&#x4E00;&#x4E2A;&#x8282;&#x70B9;Kubernetes&#x96C6;&#x7FA4;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x786E;&#x4FDD;&#x6211;&#x4EEC;&#x62E5;&#x6709;Minikube&#x6784;&#x5EFA;&#x5176;&#x73AF;&#x5883;&#x6240;&#x9700;&#x7684;&#x5FC5;&#x8981;&#x786C;&#x4EF6;&#x548C;&#x8F6F;&#x4EF6;&#x3002;&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x6982;&#x8FF0;&#x4E86;&#x5728;&#x672C;&#x5730;&#x5DE5;&#x4F5C;&#x7AD9;&#x4E0A;&#x8FD0;&#x884C;Minikube&#x7684;&#x8981;&#x6C42;&#xFF1A;</li>
+<li>kubectl
+kubectl is a binary used to access and manage any Kubernetes cluster. It is installed separately from Minikube. Since we will install kubectl after the Minikube installation, we may see warnings during the Minikube initialization - safe to disregard for the time being, but do keep in mind that we will have to install kubectl to be able to manage the Kubernetes cluster. We will explore kubectl in more detail in future chapters.
+kubectl&#x662F;&#x7528;&#x4E8E;&#x8BBF;&#x95EE;&#x548C;&#x7BA1;&#x7406;&#x4EFB;&#x4F55;Kubernetes&#x96C6;&#x7FA4;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;&#x3002;&#x5B83;&#x4E0E;Minikube&#x5206;&#x5F00;&#x5B89;&#x88C5;&#x3002;&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x5C06;&#x5728;Minikube&#x5B89;&#x88C5;&#x4E4B;&#x540E;&#x5B89;&#x88C5;kubectl&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x53EF;&#x80FD;&#x4F1A;&#x5728;Minikube&#x521D;&#x59CB;&#x5316;&#x671F;&#x95F4;&#x770B;&#x5230;&#x8B66;&#x544A;-&#x6682;&#x65F6;&#x53EF;&#x4EE5;&#x5FFD;&#x7565;&#xFF0C;&#x4F46;&#x8BF7;&#x8BB0;&#x4F4F;&#xFF0C;&#x6211;&#x4EEC;&#x5FC5;&#x987B;&#x5B89;&#x88C5;kubectl&#x624D;&#x80FD;&#x7BA1;&#x7406;Kubernetes&#x96C6;&#x7FA4;&#x3002;&#x6211;&#x4EEC;&#x5C06;&#x5728;&#x4EE5;&#x540E;&#x7684;&#x7AE0;&#x8282;&#x4E2D;&#x66F4;&#x8BE6;&#x7EC6;&#x5730;&#x63A2;&#x8BA8;kubectl&#x3002;</li>
+<li>Type-2 Hypervisor<ul>
+<li>On Linux, VirtualBox or KVM
+&#x5728;Linux&#x7528; VirtualBox&#x6216;KVM&#x4E0A;</li>
+<li>On macOS VirtualBox, HyperKit, or VMware Fusion
+&#x5728;macOS&#x7528;VirtualBox&#x3001;HyperKit&#x6216;VMware Fusion&#x4E0A;</li>
+<li>On Windows VirtualBox or Hyper-V
+&#x5728;Windows VirtualBox&#x6216;Hyper-V&#x4E0A;
+NOTE: Minikube supports a --vm-driver=none option that runs the Kubernetes components directly on the host OS and not inside a VM. With this option a Docker installation is required and a Linux OS on the local workstation, but no hypervisor installation. If you use --vm-driver=none, be sure to specify a bridge network for Docker. Otherwise, it might change between network restarts, causing loss of connectivity to your cluster.
+&#x6CE8;&#x610F;&#xFF1A;Minikube&#x652F;&#x6301;&#x4E00;&#x4E2A;--vm driver=none&#x9009;&#x9879;&#xFF0C;&#x8BE5;&#x9009;&#x9879;&#x76F4;&#x63A5;&#x5728;&#x4E3B;&#x673A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4E0A;&#x8FD0;&#x884C;Kubernetes&#x7EC4;&#x4EF6;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x5728;vm&#x4E2D;&#x8FD0;&#x884C;&#x3002;&#x4F7F;&#x7528;&#x6B64;&#x9009;&#x9879;&#xFF0C;&#x9700;&#x8981;&#x5B89;&#x88C5;Docker&#x548C;&#x672C;&#x5730;&#x5DE5;&#x4F5C;&#x7AD9;&#x4E0A;&#x7684;Linux&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#xFF0C;&#x4F46;&#x4E0D;&#x9700;&#x8981;&#x5B89;&#x88C5;hypervisor&#x3002;&#x5982;&#x679C;&#x4F7F;&#x7528;--vm driver=none&#xFF0C;&#x8BF7;&#x786E;&#x4FDD;&#x4E3A;Docker&#x6307;&#x5B9A;a bridge network&#x3002;&#x5426;&#x5219;&#xFF0C;&#x5B83;&#x53EF;&#x80FD;&#x5728;&#x7F51;&#x7EDC;&#x91CD;&#x65B0;&#x542F;&#x52A8;&#x4E4B;&#x540E;&#x53D1;&#x751F;&#x53D8;&#x5316;&#xFF0C;&#x5BFC;&#x81F4;&#x4E0E;&#x7FA4;&#x96C6;&#x7684;&#x8FDE;&#x63A5;&#x4E22;&#x5931;&#x3002;</li>
 </ul>
+</li>
+<li>VT-x/AMD-v virtualization must be enabled on the local workstation in BIOS
+&#x5FC5;&#x987B;&#x5728;BIOS&#x4E2D;&#x7684;&#x672C;&#x5730;&#x5DE5;&#x4F5C;&#x7AD9;&#x4E0A;&#x542F;&#x7528;VT-x/AMD-v&#x865A;&#x62DF;&#x5316;</li>
+<li>Internet connection on first Minikube run - to download packages, dependencies, updates and pull images needed to initialize the Minikube Kubernetes cluster. Subsequent runs will require an internet connection only when new Docker images need to be pulled from a container repository or when deployed containerized applications need it. Once an image has been pulled it can be reused without an internet connection.
+&#x7B2C;&#x4E00;&#x6B21;Minikube&#x8FD0;&#x884C;&#x65F6;&#x7684;Internet&#x8FDE;&#x63A5;-&#x4E0B;&#x8F7D;&#x521D;&#x59CB;&#x5316;Minikube Kubernetes&#x96C6;&#x7FA4;&#x6240;&#x9700;&#x7684;&#x5305;&#x3001;&#x4F9D;&#x8D56;&#x9879;&#x3001;&#x66F4;&#x65B0;&#x548C;&#x62C9;&#x53D6;&#x56FE;&#x50CF;&#x3002;&#x53EA;&#x6709;&#x5728;&#x9700;&#x8981;&#x4ECE;&#x5BB9;&#x5668;&#x5B58;&#x50A8;&#x5E93;&#x4E2D;&#x63D0;&#x53D6;&#x65B0;&#x7684;Docker&#x6620;&#x50CF;&#x6216;&#x90E8;&#x7F72;&#x7684;&#x5BB9;&#x5668;&#x5316;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x9700;&#x8981;&#x65F6;&#xFF0C;&#x540E;&#x7EED;&#x8FD0;&#x884C;&#x624D;&#x9700;&#x8981;internet&#x8FDE;&#x63A5;&#x3002;&#x4E00;&#x65E6;&#x56FE;&#x50CF;&#x88AB;&#x63D0;&#x53D6;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x5728;&#x6CA1;&#x6709;&#x4E92;&#x8054;&#x7F51;&#x8FDE;&#x63A5;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x91CD;&#x590D;&#x4F7F;&#x7528;&#x3002;</li>
+</ul>
+<p>In this chapter, we use VirtualBox as hypervisor on all three operating systems - Linux, macOS, and Windows, to allow Minikube to provision the VM which hosts the single-node Kubernetes cluster.
+&#x5728;&#x672C;&#x7AE0;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528;VirtualBox&#x4F5C;&#x4E3A;&#x6240;&#x6709;&#x4E09;&#x4E2A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#xFF08;Linux&#x3001;macOS&#x548C;Windows&#xFF09;&#x4E0A;&#x7684;&#x7BA1;&#x7406;&#x7A0B;&#x5E8F;&#xFF0C;&#x4EE5;&#x5141;&#x8BB8;Minikube&#x63D0;&#x4F9B;&#x6258;&#x7BA1;&#x5355;&#x8282;&#x70B9;Kubernetes&#x96C6;&#x7FA4;&#x7684;VM&#x3002;
+Read more about Minikube from the official Kubernetes documentation or GitHub.
+&#x4ECE;&#x5B98;&#x65B9;&#x7684;Kubernetes&#x6587;&#x6863;&#x6216;GitHub&#x4E2D;&#x9605;&#x8BFB;&#x66F4;&#x591A;&#x5173;&#x4E8E;Minikube&#x7684;&#x4FE1;&#x606F;&#x3002;</p>
 
                                 
                                 </section>
@@ -850,7 +879,7 @@ It is worth checking out the Kubernetes The Hard Way GitHub project by Kelsey Hi
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"k8s","level":"1.6.2","depth":2,"next":{"title":"数据库","level":"1.7","depth":1,"ref":"","articles":[{"title":"MongoDB","level":"1.7.1","depth":2,"path":"mongodb.md","ref":"mongodb.md","articles":[]},{"title":"sql","level":"1.7.2","depth":2,"path":"sql.md","ref":"sql.md","articles":[]}]},"previous":{"title":"restful","level":"1.6.1","depth":2,"path":"rest.md","ref":"rest.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mermaid"],"pluginsConfig":{"mermaid":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"cka.md","mtime":"2020-01-09T03:18:50.531Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-09T03:19:32.083Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"k8s","level":"1.6.2","depth":2,"next":{"title":"数据库","level":"1.7","depth":1,"ref":"","articles":[{"title":"MongoDB","level":"1.7.1","depth":2,"path":"mongodb.md","ref":"mongodb.md","articles":[]},{"title":"sql","level":"1.7.2","depth":2,"path":"sql.md","ref":"sql.md","articles":[]}]},"previous":{"title":"restful","level":"1.6.1","depth":2,"path":"rest.md","ref":"rest.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mermaid"],"pluginsConfig":{"mermaid":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"cka.md","mtime":"2020-01-10T09:59:35.053Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-10T10:01:03.204Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

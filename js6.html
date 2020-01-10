@@ -547,7 +547,7 @@ let&#x548C;const&#x90FD;&#x662F;&#x5757;&#x7EA7;&#x4F5C;&#x7528;&#x57DF;, var&#x
 <ol>
 <li><p>&#x6570;&#x7EC4;&#x89E3;&#x6784;: let [a,b,c] = [1, 2, 3];</p>
 </li>
-<li><p>&#x5BF9;&#x8C61;&#x89E3;&#x6784;: </p>
+<li><p>&#x5BF9;&#x8C61;&#x89E3;&#x6784;:</p>
 <pre><code>let name = &apos;Lily&apos;;
 let age = 4;
 let person = {name, age};
@@ -584,7 +584,7 @@ rest  //[&apos;b&apos;, &apos;c&apos;]</p>
 </li>
 <li><p>class&#x5B9A;&#x4E49;:</p>
 <ol>
-<li>&#x6784;&#x9020;&#x51FD;&#x6570;:constructor(name, age) </li>
+<li>&#x6784;&#x9020;&#x51FD;&#x6570;:constructor(name, age)</li>
 <li>&#x6570;&#x636E;&#x6210;&#x5458;:&#x65E0;&#x9700;&#x58F0;&#x660E;, &#x76F4;&#x63A5;this.argName, this.name;</li>
 <li>&#x65B9;&#x6CD5;&#x58F0;&#x660E;, &#x65E0;&#x9700;&#x5173;&#x952E;&#x5B57;, getName(){return this.name;}</li>
 <li>&#x901A;&#x8FC7;extends&#x5173;&#x952E;&#x5B57;&#x5B9E;&#x73B0;&#x7EE7;&#x627F;, &#x6784;&#x9020;&#x51FD;&#x6570;&#x5185;&#x8C03;&#x7528;super(arg)</li>
@@ -594,11 +594,16 @@ rest  //[&apos;b&apos;, &apos;c&apos;]</p>
 <ol>
 <li>&#x5F15;&#x5165;&#x9ED8;&#x8BA4;&#x63A5;&#x53E3;: import foo from &apos;./a&apos;;a&#x7684;&#x5168;&#x540D;&#x662F;a.js, &#x5BF9;&#x5916;export&#x63A5;&#x53E3;foo</li>
 <li>&#x5F15;&#x5165;&#x666E;&#x901A;&#x63A5;&#x53E3;: import {bar} from &apos;./a&apos;; bar&#x662F;a.js&#x91CC;&#x7684;&#x5176;&#x4ED6;&#x65B9;&#x6CD5;;</li>
-<li>&#x5B9A;&#x4E49;&#x5BFC;&#x51FA;&#x9ED8;&#x8BA4;&#x63A5;&#x53E3;:export default foo; </li>
-<li></li>
+<li>&#x5B9A;&#x4E49;&#x5BFC;&#x51FA;&#x9ED8;&#x8BA4;&#x63A5;&#x53E3;:export default foo;</li>
 </ol>
 </li>
 </ol>
+<h1 id="js">js</h1>
+<h2 id="jquery">jQuery</h2>
+<h3 id="&#x904D;&#x5386;&#x5BF9;&#x8C61;&#x6216;&#x8005;&#x6570;&#x7EC4;">&#x904D;&#x5386;&#x5BF9;&#x8C61;&#x6216;&#x8005;&#x6570;&#x7EC4;:</h3>
+<p>jQuery.each(obj, function(i, val) {
+    text = text + &quot;Key:&quot; + i + &quot;, Value:&quot; + val;
+});</p>
 
                                 
                                 </section>
@@ -638,7 +643,7 @@ rest  //[&apos;b&apos;, &apos;c&apos;]</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"EcmaScript6","level":"1.5.1","depth":2,"next":{"title":"Node.js","level":"1.5.2","depth":2,"path":"nodejs.md","ref":"nodejs.md","articles":[]},"previous":{"title":"前端","level":"1.5","depth":1,"ref":"","articles":[{"title":"EcmaScript6","level":"1.5.1","depth":2,"path":"js6.md","ref":"js6.md","articles":[]},{"title":"Node.js","level":"1.5.2","depth":2,"path":"nodejs.md","ref":"nodejs.md","articles":[]},{"title":"React","level":"1.5.3","depth":2,"path":"react.md","ref":"react.md","articles":[]},{"title":"Chrome extension","level":"1.5.4","depth":2,"path":"extension.md","ref":"extension.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mermaid"],"pluginsConfig":{"mermaid":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js6.md","mtime":"2019-09-25T02:21:54.953Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-09T03:19:32.083Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"EcmaScript6","level":"1.5.1","depth":2,"next":{"title":"Node.js","level":"1.5.2","depth":2,"path":"nodejs.md","ref":"nodejs.md","articles":[]},"previous":{"title":"前端","level":"1.5","depth":1,"ref":"","articles":[{"title":"EcmaScript6","level":"1.5.1","depth":2,"path":"js6.md","ref":"js6.md","articles":[]},{"title":"Node.js","level":"1.5.2","depth":2,"path":"nodejs.md","ref":"nodejs.md","articles":[]},{"title":"React","level":"1.5.3","depth":2,"path":"react.md","ref":"react.md","articles":[]},{"title":"Chrome extension","level":"1.5.4","depth":2,"path":"extension.md","ref":"extension.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mermaid"],"pluginsConfig":{"mermaid":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js6.md","mtime":"2020-01-10T08:42:06.441Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-10T10:01:03.204Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
