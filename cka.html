@@ -840,6 +840,213 @@ NOTE: Minikube supports a --vm-driver=none option that runs the Kubernetes compo
 &#x5728;&#x672C;&#x7AE0;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528;VirtualBox&#x4F5C;&#x4E3A;&#x6240;&#x6709;&#x4E09;&#x4E2A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#xFF08;Linux&#x3001;macOS&#x548C;Windows&#xFF09;&#x4E0A;&#x7684;&#x7BA1;&#x7406;&#x7A0B;&#x5E8F;&#xFF0C;&#x4EE5;&#x5141;&#x8BB8;Minikube&#x63D0;&#x4F9B;&#x6258;&#x7BA1;&#x5355;&#x8282;&#x70B9;Kubernetes&#x96C6;&#x7FA4;&#x7684;VM&#x3002;
 Read more about Minikube from the official Kubernetes documentation or GitHub.
 &#x4ECE;&#x5B98;&#x65B9;&#x7684;Kubernetes&#x6587;&#x6863;&#x6216;GitHub&#x4E2D;&#x9605;&#x8BFB;&#x66F4;&#x591A;&#x5173;&#x4E8E;Minikube&#x7684;&#x4FE1;&#x606F;&#x3002;</p>
+<h3 id="installing-minikube-on-linux">Installing Minikube on Linux</h3>
+<p>Let&apos;s learn how to install Minikube v1.0.1 on Ubuntu Linux 18.04 LTS with VirtualBox v6.0 specifically.</p>
+<p>NOTE: For other versions, the installation steps may vary! Check the Minikube installation!</p>
+<p>Install the VirtualBox hypervisor
+Add the source repository for the bionic distribution (Ubuntu 18.04), download and register the public key, update and install:</p>
+<pre><code>$ sudo bash -c &apos;echo &quot;deb https://download.virtualbox.org/virtualbox/debian bionic contrib&quot; &gt;&gt; /etc/apt/sources.list&apos;
+$ wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
+$ sudo apt-get update
+$ sudo apt-get install -y virtualbox-6.0
+</code></pre><p>Install Minikube
+We can download the latest release from the Minikube release page. At the time the course was written, the latest Minikube release was v1.0.1. Once downloaded, we need to make it executable and add it to our PATH:</p>
+<pre><code class="lang-bash">$ curl -Lo minikube https://storage.googleapis.com/minikube/releases/v1.0.1/minikube-linux-amd64 &amp;&amp; chmod +x minikube &amp;&amp; sudo mv minikube /usr/<span class="hljs-built_in">local</span>/bin/
+</code></pre>
+<p>NOTE: Replacing /v1.0.1/ with /latest/ will always download the latest version.</p>
+<p>Start Minikube
+We can start Minikube with the minikube start command (disregard &quot;Unable to read.../docker/config...&quot; and &quot;No matching credentials...&quot; warnings):</p>
+<pre><code>$ minikube start
+minikube v1.0.1 on linux (amd64)
+Downloading Minikube ISO ...
+142.88 MB / 142.88 MB [============================================] 100.00% 0s
+Downloading Kubernetes v1.14.1 images in the background ...
+Creating virtualbox VM (CPUs=2, Memory=2048MB, Disk=20000MB) ...
+&quot;minikube&quot; IP address is 192.168.99.100
+Configuring Docker as the container runtime ...
+Version of container runtime is 18.06.3-ce
+Waiting for image downloads to complete ...
+Preparing Kubernetes environment ...
+Downloading kubeadm v1.14.1
+Downloading kubelet v1.14.1
+Pulling images required by Kubernetes v1.14.1 ...
+Launching Kubernetes v1.14.1 using kubeadm ...
+Waiting for pods: apiserver proxy etcd scheduler controller dns
+Configuring cluster permissions ...
+Verifying component health .....
+kubectl is now configured to use &quot;minikube&quot;
+For best results, install kubectl: https://kubernetes.io/docs/tasks/tools/install-kubectl/
+Done! Thank you for using minikube!
+</code></pre><p>Check the status
+With the minikube status command, we display the status of Minikube:</p>
+<pre><code>$ minikube status
+host: Running
+kubelet: Running
+apiserver: Running
+kubectl: Correctly Configured: pointing to minikube-vm at 192.168.99.100
+</code></pre><p>Stop minikube
+With the minikube stop command, we can stop Minikube:</p>
+<pre><code class="lang-bash">$ minikube stop
+Stopping <span class="hljs-string">&quot;minikube&quot;</span> <span class="hljs-keyword">in</span> virtualbox ...
+<span class="hljs-string">&quot;minikube&quot;</span> stopped.
+</code></pre>
+<h3 id="installing-minikube-on-macos">Installing Minikube on macOS</h3>
+<p>&#x592A;&#x7B80;&#x5355;&#x4E0D;&#x7FFB;&#x8BD1;&#x4E86;
+Let&apos;s learn how to install Minikube v1.0.1 on Mac OS X with VirtualBox v6.0 specifically.</p>
+<p>NOTE: For other versions, the installation steps may vary! Check the Minikube installation!</p>
+<p>Although VirtualBox is the default hypervisor for Minikube, on Mac OS X we can configure Minikube at startup to use another hypervisor, with the --vm-driver=xhyve or =hyperkit start option.</p>
+<p>Install the VirtualBox hypervisor for OS X hosts
+Download and install the .dmg package.</p>
+<p>Install Minikube
+We can download the latest release from the Minikube release page. At the time the course was written, the latest Minikube release was v1.0.1. Once downloaded, we need to make it executable and add it to our PATH:</p>
+<pre><code class="lang-bash">$ curl -Lo minikube https://storage.googleapis.com/minikube/releases/v1.0.1/minikube-darwin-amd64 &amp;&amp; chmod +x minikube &amp;&amp; sudo mv minikube /usr/<span class="hljs-built_in">local</span>/bin/
+
+NOTE: Replacing /v1.0.1/ with /latest/ will always download the latest version.
+</code></pre>
+<p>Start Minikube
+We can start Minikube with the minikube start command (disregard &quot;Unable to read.../docker/config...&quot; and &quot;No matching credentials...&quot; warnings):</p>
+<pre><code>$ minikube start
+minikube v1.0.1 on darwin (amd64)
+Downloading Kubernetes v1.14.1 images in the background ...
+Creating virtualbox VM (CPUs=2, Memory=2048MB, Disk=20000MB) ...
+Downloading Minikube ISO ...
+142.88 MB / 142.88 MB [============================================] 100.00% 0s
+&quot;minikube&quot; IP address is 192.168.99.100
+Configuring Docker as the container runtime ...
+Version of container runtime is 18.06.3-ce
+Waiting for image downloads to complete ...
+Preparing Kubernetes environment ...
+Downloading kubeadm v1.14.1
+Downloading kubelet v1.14.1
+Pulling images required by Kubernetes v1.14.1 ...
+Launching Kubernetes v1.14.1 using kubeadm ...
+Waiting for pods: apiserver proxy etcd scheduler controller dns
+Configuring cluster permissions ...
+Verifying component health .....
+kubectl is now configured to use &quot;minikube&quot;
+For best results, install kubectl: https://kubernetes.io/docs/tasks/tools/install-kubectl/
+Done! Thank you for using minikube!
+</code></pre><p>Check the status
+With the minikube status command, we display the status of Minikube:</p>
+<pre><code class="lang-bash">$ minikube status
+host: Running
+kubelet: Running
+apiserver: Running
+kubectl: Correctly Configured: pointing to minikube-vm at 192.168.99.100
+</code></pre>
+<p>Stop minikube
+With the minikube stop command, we can stop Minikube:</p>
+<pre><code class="lang-bash">$ minikube stop
+Stopping <span class="hljs-string">&quot;minikube&quot;</span> <span class="hljs-keyword">in</span> virtualbox ...
+<span class="hljs-string">&quot;minikube&quot;</span> stopped.
+</code></pre>
+<h3 id="installing-minikube-on-windows">Installing Minikube on Windows</h3>
+<p> &#x592A;&#x7B80;&#x5355;&#x4E0D;&#x7FFB;&#x8BD1;&#x4E86;&#x5907;&#x4EFD;&#x4E0B;:
+Let&apos;s learn how to install Minikube 1.0.1 on Windows 10 with VirtualBox v6.0.6 specifically.</p>
+<p>NOTE: For other versions, the installation steps may vary! Check the Minikube installation!</p>
+<p>NOTE: Windows support is currently in experimental phase, and you may encounter issues during installation.</p>
+<p>Install the VirtualBox hypervisor for Windows hosts
+Download and install the .exe package.</p>
+<p>NOTE: Make sure Hyper-V is disabled (if prior installed and used) while running VirtualBox.</p>
+<p>Install Minikube
+We can download the latest release from the Minikube release page. At the time the course was written, the latest Minikube release was v1.0.1. Once downloaded, we need to make sure it is added to our PATH.</p>
+<p>There are two .exe packages available to download for Windows found under Minikube v1.0.1:</p>
+<ul>
+<li><strong>minikube-windows-amd64.exe</strong> which requires to be added to the PATH: manually</li>
+<li><strong>minikube-installer.exe</strong> which automatically adds the executable to the PATH.
+Download and install the minikube-installer.exe package found under Minikube v1.0.1.</li>
+</ul>
+<p>Start Minikube
+We can start Minikube using the minikube start command (disregard the &quot;Unable to read...docker\config...&quot; and &quot;No matching credentials...&quot; warnings). Open the PowerShell using the Run as Administrator option and execute the following command:</p>
+<pre><code class="lang-bash">PS C:\WINDOWS\system32&gt; minikube start
+minikube v1.0.1 on windows (amd64)
+Downloading Kubernetes v1.14.1 images <span class="hljs-keyword">in</span> the background ...
+Creating virtualbox VM (CPUs=2, Memory=2048MB, Disk=20000MB) ...
+Downloading Minikube ISO ...
+ 0 B / 142.88 MB [-----------------------------------------------------]   0.00%
+ 142.88 MB / 142.88 MB [============================================] 100.00% 0s
+<span class="hljs-string">&quot;minikube&quot;</span> IP address is 192.168.99.100
+Configuring Docker as the container runtime ...
+Version of container runtime is 18.06.3-ce
+Waiting <span class="hljs-keyword">for</span> image downloads to complete ...
+Preparing Kubernetes environment ...
+Downloading kubeadm v1.14.1
+Downloading kubelet v1.14.1
+Pulling images required by Kubernetes v1.14.1 ...
+Launching Kubernetes v1.14.1 using kubeadm ...
+Waiting <span class="hljs-keyword">for</span> pods: apiserver proxy etcd scheduler controller dns
+Configuring cluster permissions ...
+Verifying component health .....
+kubectl is now configured to use <span class="hljs-string">&quot;minikube&quot;</span>
+For best results, install kubectl: https://kubernetes.io/docs/tasks/tools/install-kubectl/
+Done! Thank you <span class="hljs-keyword">for</span> using minikube!
+</code></pre>
+<p>Check the status
+We can see the status of Minikube using the minikube status command. Open the PowerShell using the Run as Administrator option and execute the following command:</p>
+<pre><code class="lang-bash">C:\WINDOWS\system32&gt; minikube status
+host: Running
+kubelet: Running
+apiserver: Running
+kubectl: Correctly Configured: pointing to minikube-vm at 192.168.99.100
+</code></pre>
+<p>Stop Minikube
+We can stop Minikube using the minikube stop command. Open the PowerShell using the Run as Administrator option and execute the following command:</p>
+<pre><code class="lang-bash">PS C:\WINDOWS\system32&gt; minikube stop
+Stopping <span class="hljs-string">&quot;minikube&quot;</span> <span class="hljs-keyword">in</span> virtualbox ...
+<span class="hljs-string">&quot;minikube&quot;</span> stopped.
+</code></pre>
+<h3 id="minikube-cri-o">Minikube CRI-O</h3>
+<p>According to the CRI-O website,
+&#x6839;&#x636E;CRI-O&#x7F51;&#x7AD9;&#xFF0C;
+&quot;CRI-O is an implementation of the Kubernetes CRI (Container Runtime Interface) to enable using OCI (Open Container Initiative) compatible runtimes.&quot;
+&#x201C;CRI-O&#x662F;Kubernetes CRI&#xFF08;&#x5BB9;&#x5668;&#x8FD0;&#x884C;&#x65F6;&#x63A5;&#x53E3;&#xFF09;&#x7684;&#x4E00;&#x4E2A;&#x5B9E;&#x73B0;&#xFF0C;&#x7528;&#x4E8E;&#x542F;&#x7528;&#x4E0E;OCI&#xFF08;&#x5F00;&#x653E;&#x5BB9;&#x5668;&#x5021;&#x8BAE;&#xFF09;&#x517C;&#x5BB9;&#x7684;&#x8FD0;&#x884C;&#x65F6;&#x3002;&#x201D;
+Start Minikube with CRI-O as container runtime, instead of Docker, with the following command:
+&#x7528;CRI-O&#x4F5C;&#x4E3A;&#x5BB9;&#x5668;&#x8FD0;&#x884C;&#x65F6;&#x800C;&#x4E0D;&#x662F;Docker&#x542F;&#x52A8;Minikube&#xFF0C;&#x547D;&#x4EE4;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-bash">$ minikube start --container-runtime=cri-o
+minikube v1.0.1 on linux (amd64)
+Downloading Kubernetes v1.14.1 images <span class="hljs-keyword">in</span> the background ...
+Tip: Use <span class="hljs-string">&apos;minikube start -p &lt;name&gt;&apos;</span> to create a new cluster, or <span class="hljs-string">&apos;minikube delete&apos;</span> to delete this one.
+Restarting existing virtualbox VM <span class="hljs-keyword">for</span> <span class="hljs-string">&quot;minikube&quot;</span> ...
+Waiting <span class="hljs-keyword">for</span> SSH access ...
+<span class="hljs-string">&quot;minikube&quot;</span> IP address is 192.168.99.100
+Configuring CRI-O as the container runtime ...
+Version of container runtime is 1.13.5
+Waiting <span class="hljs-keyword">for</span> image downloads to complete ...
+Preparing Kubernetes environment ...
+Pulling images required by Kubernetes v1.14.1 ...
+Relaunching Kubernetes v1.14.1 using kubeadm ...
+Waiting <span class="hljs-keyword">for</span> pods: apiserver etcd scheduler controller
+Updating kube-proxy configuration ...
+Verifying component health ......
+kubectl is now configured to use <span class="hljs-string">&quot;minikube&quot;</span>
+For best results, install kubectl: https://kubernetes.io/docs/tasks/tools/install-kubectl/
+Done! Thank you <span class="hljs-keyword">for</span> using minikube!
+</code></pre>
+<p>Let&apos;s login via ssh into the Minikube&apos;s VM:</p>
+<pre><code class="lang-bash">$ minikube ssh
+
+                         _             _
+            _         _ ( )           ( )
+  ___ ___  (_)  ___  (_)| |/<span class="hljs-string">&apos;)  _   _ | |_      __
+/&apos;</span> _ ` _ `\| |/<span class="hljs-string">&apos; _ `\| || , &lt;  ( ) ( )| &apos;</span>_`\  /<span class="hljs-string">&apos;__`\
+| ( ) ( ) || || ( ) || || |\`\ | (_) || |_) )(  ___/
+(_) (_) (_)(_)(_) (_)(_)(_) (_)`\___/&apos;</span>(_,__/<span class="hljs-string">&apos;`\____)
+
+$ _
+</span></code></pre>
+<p>NOTE: If you try to list containers using the docker command, it will not produce any results, because Docker is not running containers:</p>
+<pre><code class="lang-bash">$ sudo docker container ls
+Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+</code></pre>
+<p>List the containers created via CRI-O container runtime with the following command:</p>
+<pre><code class="lang-bash">$ sudo runc list
+ID                                                                 PID         STATUS      BUNDLE                                                                                                                 CREATED                          OWNER
+1090869caeea44cb179d31b70ba5b6de96f10a8a5f4286536af5dac1c4312030   3661        running     /run/containers/storage/overlay-containers/1090869caeea44cb179d31b70ba5b6de96f10a8a5f4286536af5dac1c4312030/userdata   2019-04-18T20:03:02.199284303Z   root
+1e9f8dce6d535b67822e744204098060ff92e574780a1809adbda48ad8605d06   3614        running     /run/containers/storage/overlay-containers/1e9f8dce6d535b67822e744204098060ff92e574780a1809adbda48ad8605d06/userdata   2019-04-18T20:03:02.129881761Z   root
+1edcfc78bca52be153cc9f525d9<span class="hljs-built_in">fc</span>64be75ccea478897004a5032f37c6c4c9dc   3812        running     /run/containers/storage/overlay-containers/1edcfc78bca52be153cc9f525d9<span class="hljs-built_in">fc</span>64be75ccea478897004a5032f37c6c4c9dc/userdata   2019-04-18T20:03:02.740669541Z   root
+...
+</code></pre>
+<h3 id="installing-minikube-demo">Installing Minikube (Demo)</h3>
 
                                 
                                 </section>
@@ -879,7 +1086,7 @@ Read more about Minikube from the official Kubernetes documentation or GitHub.
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"k8s","level":"1.6.2","depth":2,"next":{"title":"数据库","level":"1.7","depth":1,"ref":"","articles":[{"title":"MongoDB","level":"1.7.1","depth":2,"path":"mongodb.md","ref":"mongodb.md","articles":[]},{"title":"sql","level":"1.7.2","depth":2,"path":"sql.md","ref":"sql.md","articles":[]}]},"previous":{"title":"restful","level":"1.6.1","depth":2,"path":"rest.md","ref":"rest.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mermaid"],"pluginsConfig":{"mermaid":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"cka.md","mtime":"2020-01-10T09:59:35.053Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-10T10:01:03.204Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"k8s","level":"1.6.2","depth":2,"next":{"title":"数据库","level":"1.7","depth":1,"ref":"","articles":[{"title":"MongoDB","level":"1.7.1","depth":2,"path":"mongodb.md","ref":"mongodb.md","articles":[]},{"title":"sql","level":"1.7.2","depth":2,"path":"sql.md","ref":"sql.md","articles":[]}]},"previous":{"title":"restful","level":"1.6.1","depth":2,"path":"rest.md","ref":"rest.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mermaid"],"pluginsConfig":{"mermaid":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"cka.md","mtime":"2020-01-13T07:35:37.556Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-13T10:00:53.868Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
