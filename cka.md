@@ -335,3 +335,243 @@ In this chapter, we use VirtualBox as hypervisor on all three operating systems 
 在本章中，我们使用VirtualBox作为所有三个操作系统（Linux、macOS和Windows）上的管理程序，以允许Minikube提供托管单节点Kubernetes集群的VM。
 Read more about Minikube from the official Kubernetes documentation or GitHub.
 从官方的Kubernetes文档或GitHub中阅读更多关于Minikube的信息。
+###Installing Minikube on Linux
+Let's learn how to install Minikube v1.0.1 on Ubuntu Linux 18.04 LTS with VirtualBox v6.0 specifically.
+
+NOTE: For other versions, the installation steps may vary! Check the Minikube installation!
+
+Install the VirtualBox hypervisor
+Add the source repository for the bionic distribution (Ubuntu 18.04), download and register the public key, update and install:
+```
+$ sudo bash -c 'echo "deb https://download.virtualbox.org/virtualbox/debian bionic contrib" >> /etc/apt/sources.list'
+$ wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
+$ sudo apt-get update
+$ sudo apt-get install -y virtualbox-6.0
+```
+Install Minikube
+We can download the latest release from the Minikube release page. At the time the course was written, the latest Minikube release was v1.0.1. Once downloaded, we need to make it executable and add it to our PATH:
+```bash
+$ curl -Lo minikube https://storage.googleapis.com/minikube/releases/v1.0.1/minikube-linux-amd64 && chmod +x minikube && sudo mv minikube /usr/local/bin/
+```
+NOTE: Replacing /v1.0.1/ with /latest/ will always download the latest version.
+
+Start Minikube
+We can start Minikube with the minikube start command (disregard "Unable to read.../docker/config..." and "No matching credentials..." warnings):
+```
+$ minikube start
+minikube v1.0.1 on linux (amd64)
+Downloading Minikube ISO ...
+142.88 MB / 142.88 MB [============================================] 100.00% 0s
+Downloading Kubernetes v1.14.1 images in the background ...
+Creating virtualbox VM (CPUs=2, Memory=2048MB, Disk=20000MB) ...
+"minikube" IP address is 192.168.99.100
+Configuring Docker as the container runtime ...
+Version of container runtime is 18.06.3-ce
+Waiting for image downloads to complete ...
+Preparing Kubernetes environment ...
+Downloading kubeadm v1.14.1
+Downloading kubelet v1.14.1
+Pulling images required by Kubernetes v1.14.1 ...
+Launching Kubernetes v1.14.1 using kubeadm ...
+Waiting for pods: apiserver proxy etcd scheduler controller dns
+Configuring cluster permissions ...
+Verifying component health .....
+kubectl is now configured to use "minikube"
+For best results, install kubectl: https://kubernetes.io/docs/tasks/tools/install-kubectl/
+Done! Thank you for using minikube!
+```
+Check the status
+With the minikube status command, we display the status of Minikube:
+```
+$ minikube status
+host: Running
+kubelet: Running
+apiserver: Running
+kubectl: Correctly Configured: pointing to minikube-vm at 192.168.99.100
+```
+Stop minikube
+With the minikube stop command, we can stop Minikube:
+```bash
+$ minikube stop
+Stopping "minikube" in virtualbox ...
+"minikube" stopped.
+```
+### Installing Minikube on macOS
+太简单不翻译了
+Let's learn how to install Minikube v1.0.1 on Mac OS X with VirtualBox v6.0 specifically.
+
+NOTE: For other versions, the installation steps may vary! Check the Minikube installation!
+
+Although VirtualBox is the default hypervisor for Minikube, on Mac OS X we can configure Minikube at startup to use another hypervisor, with the --vm-driver=xhyve or =hyperkit start option.
+
+Install the VirtualBox hypervisor for OS X hosts
+Download and install the .dmg package.
+
+Install Minikube
+We can download the latest release from the Minikube release page. At the time the course was written, the latest Minikube release was v1.0.1. Once downloaded, we need to make it executable and add it to our PATH:
+```bash
+$ curl -Lo minikube https://storage.googleapis.com/minikube/releases/v1.0.1/minikube-darwin-amd64 && chmod +x minikube && sudo mv minikube /usr/local/bin/
+
+NOTE: Replacing /v1.0.1/ with /latest/ will always download the latest version.
+```
+Start Minikube
+We can start Minikube with the minikube start command (disregard "Unable to read.../docker/config..." and "No matching credentials..." warnings):
+```
+$ minikube start
+minikube v1.0.1 on darwin (amd64)
+Downloading Kubernetes v1.14.1 images in the background ...
+Creating virtualbox VM (CPUs=2, Memory=2048MB, Disk=20000MB) ...
+Downloading Minikube ISO ...
+142.88 MB / 142.88 MB [============================================] 100.00% 0s
+"minikube" IP address is 192.168.99.100
+Configuring Docker as the container runtime ...
+Version of container runtime is 18.06.3-ce
+Waiting for image downloads to complete ...
+Preparing Kubernetes environment ...
+Downloading kubeadm v1.14.1
+Downloading kubelet v1.14.1
+Pulling images required by Kubernetes v1.14.1 ...
+Launching Kubernetes v1.14.1 using kubeadm ...
+Waiting for pods: apiserver proxy etcd scheduler controller dns
+Configuring cluster permissions ...
+Verifying component health .....
+kubectl is now configured to use "minikube"
+For best results, install kubectl: https://kubernetes.io/docs/tasks/tools/install-kubectl/
+Done! Thank you for using minikube!
+```
+Check the status
+With the minikube status command, we display the status of Minikube:
+```bash
+$ minikube status
+host: Running
+kubelet: Running
+apiserver: Running
+kubectl: Correctly Configured: pointing to minikube-vm at 192.168.99.100
+```
+Stop minikube
+With the minikube stop command, we can stop Minikube:
+```bash
+$ minikube stop
+Stopping "minikube" in virtualbox ...
+"minikube" stopped.
+```
+### Installing Minikube on Windows
+ 太简单不翻译了备份下:
+Let's learn how to install Minikube 1.0.1 on Windows 10 with VirtualBox v6.0.6 specifically.
+
+NOTE: For other versions, the installation steps may vary! Check the Minikube installation!
+
+NOTE: Windows support is currently in experimental phase, and you may encounter issues during installation.
+
+Install the VirtualBox hypervisor for Windows hosts
+Download and install the .exe package.
+
+NOTE: Make sure Hyper-V is disabled (if prior installed and used) while running VirtualBox.
+
+Install Minikube
+We can download the latest release from the Minikube release page. At the time the course was written, the latest Minikube release was v1.0.1. Once downloaded, we need to make sure it is added to our PATH.
+
+There are two .exe packages available to download for Windows found under Minikube v1.0.1:
+
+* **minikube-windows-amd64.exe** which requires to be added to the PATH: manually
+* **minikube-installer.exe** which automatically adds the executable to the PATH.
+Download and install the minikube-installer.exe package found under Minikube v1.0.1.
+
+Start Minikube
+We can start Minikube using the minikube start command (disregard the "Unable to read...docker\\config..." and "No matching credentials..." warnings). Open the PowerShell using the Run as Administrator option and execute the following command:
+```bash
+PS C:\WINDOWS\system32> minikube start
+minikube v1.0.1 on windows (amd64)
+Downloading Kubernetes v1.14.1 images in the background ...
+Creating virtualbox VM (CPUs=2, Memory=2048MB, Disk=20000MB) ...
+Downloading Minikube ISO ...
+ 0 B / 142.88 MB [-----------------------------------------------------]   0.00%
+ 142.88 MB / 142.88 MB [============================================] 100.00% 0s
+"minikube" IP address is 192.168.99.100
+Configuring Docker as the container runtime ...
+Version of container runtime is 18.06.3-ce
+Waiting for image downloads to complete ...
+Preparing Kubernetes environment ...
+Downloading kubeadm v1.14.1
+Downloading kubelet v1.14.1
+Pulling images required by Kubernetes v1.14.1 ...
+Launching Kubernetes v1.14.1 using kubeadm ...
+Waiting for pods: apiserver proxy etcd scheduler controller dns
+Configuring cluster permissions ...
+Verifying component health .....
+kubectl is now configured to use "minikube"
+For best results, install kubectl: https://kubernetes.io/docs/tasks/tools/install-kubectl/
+Done! Thank you for using minikube!
+```
+Check the status
+We can see the status of Minikube using the minikube status command. Open the PowerShell using the Run as Administrator option and execute the following command:
+```bash
+C:\WINDOWS\system32> minikube status
+host: Running
+kubelet: Running
+apiserver: Running
+kubectl: Correctly Configured: pointing to minikube-vm at 192.168.99.100
+```
+Stop Minikube
+We can stop Minikube using the minikube stop command. Open the PowerShell using the Run as Administrator option and execute the following command:
+```bash
+PS C:\WINDOWS\system32> minikube stop
+Stopping "minikube" in virtualbox ...
+"minikube" stopped.
+```
+### Minikube CRI-O
+According to the CRI-O website,
+根据CRI-O网站，
+"CRI-O is an implementation of the Kubernetes CRI (Container Runtime Interface) to enable using OCI (Open Container Initiative) compatible runtimes."
+“CRI-O是Kubernetes CRI（容器运行时接口）的一个实现，用于启用与OCI（开放容器倡议）兼容的运行时。”
+Start Minikube with CRI-O as container runtime, instead of Docker, with the following command:
+用CRI-O作为容器运行时而不是Docker启动Minikube，命令如下：
+```bash
+$ minikube start --container-runtime=cri-o
+minikube v1.0.1 on linux (amd64)
+Downloading Kubernetes v1.14.1 images in the background ...
+Tip: Use 'minikube start -p <name>' to create a new cluster, or 'minikube delete' to delete this one.
+Restarting existing virtualbox VM for "minikube" ...
+Waiting for SSH access ...
+"minikube" IP address is 192.168.99.100
+Configuring CRI-O as the container runtime ...
+Version of container runtime is 1.13.5
+Waiting for image downloads to complete ...
+Preparing Kubernetes environment ...
+Pulling images required by Kubernetes v1.14.1 ...
+Relaunching Kubernetes v1.14.1 using kubeadm ...
+Waiting for pods: apiserver etcd scheduler controller
+Updating kube-proxy configuration ...
+Verifying component health ......
+kubectl is now configured to use "minikube"
+For best results, install kubectl: https://kubernetes.io/docs/tasks/tools/install-kubectl/
+Done! Thank you for using minikube!
+```
+Let's login via ssh into the Minikube's VM:
+```bash
+$ minikube ssh
+
+                         _             _
+            _         _ ( )           ( )
+  ___ ___  (_)  ___  (_)| |/')  _   _ | |_      __
+/' _ ` _ `\| |/' _ `\| || , <  ( ) ( )| '_`\  /'__`\
+| ( ) ( ) || || ( ) || || |\`\ | (_) || |_) )(  ___/
+(_) (_) (_)(_)(_) (_)(_)(_) (_)`\___/'(_,__/'`\____)
+
+$ _
+```
+NOTE: If you try to list containers using the docker command, it will not produce any results, because Docker is not running containers:
+```bash
+$ sudo docker container ls
+Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+```
+List the containers created via CRI-O container runtime with the following command:
+```bash
+$ sudo runc list
+ID                                                                 PID         STATUS      BUNDLE                                                                                                                 CREATED                          OWNER
+1090869caeea44cb179d31b70ba5b6de96f10a8a5f4286536af5dac1c4312030   3661        running     /run/containers/storage/overlay-containers/1090869caeea44cb179d31b70ba5b6de96f10a8a5f4286536af5dac1c4312030/userdata   2019-04-18T20:03:02.199284303Z   root
+1e9f8dce6d535b67822e744204098060ff92e574780a1809adbda48ad8605d06   3614        running     /run/containers/storage/overlay-containers/1e9f8dce6d535b67822e744204098060ff92e574780a1809adbda48ad8605d06/userdata   2019-04-18T20:03:02.129881761Z   root
+1edcfc78bca52be153cc9f525d9fc64be75ccea478897004a5032f37c6c4c9dc   3812        running     /run/containers/storage/overlay-containers/1edcfc78bca52be153cc9f525d9fc64be75ccea478897004a5032f37c6c4c9dc/userdata   2019-04-18T20:03:02.740669541Z   root
+...
+```
+### Installing Minikube (Demo)
