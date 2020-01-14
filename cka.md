@@ -170,7 +170,9 @@ KubNetes网络模型旨在降低复杂性，并将POD视为网络上的VMS，其
 ![](assets/cka-eab0ca88.png)
 [^_^]: # The container runtime offloads the IP assignment to CNI, which connects to the underlying configured plugin, such as Bridge or MACvlan, to get the IP address. Once the IP address is given by the respective plugin, CNI forwards it back to the requested container runtime.
 
-[^_^]: # For more details, you can explore the Kubernetes documentation.
+[^_^]:
+    For more details, you can explore the Kubernetes documentation.
+
 容器运行时将IP分配的任务发到CNI，CNI连接到底层配置的插件（如Bridge或MACvlan）以获取IP地址。一旦IP地址由相应的插件给出，CNI就会将其转发回请求的容器运行时。
 
 有关更多详细信息，可以浏览Kubernetes文档。
