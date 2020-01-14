@@ -38,7 +38,8 @@
       * Controller managers
       * etcd.
 #### 4.2.3 Worker Node
-[^_^]: # A worker node provides a running environment for client applications. Though containerized microservices, these applications are encapsulated in Pods, controlled by the cluster control plane agents running on the master node. Pods are scheduled on worker nodes, where they find required compute, memory and storage resources to run, and networking to talk to each other and the outside world. A Pod is the smallest scheduling unit in Kubernetes. It is a logical collection of one or more containers scheduled together. We will explore them further in later chapters.
+<!--- A worker node provides a running environment for client applications. Though containerized microservices, these applications are encapsulated in Pods, controlled by the cluster control plane agents running on the master node. Pods are scheduled on worker nodes, where they find required compute, memory and storage resources to run, and networking to talk to each other and the outside world. A Pod is the smallest scheduling unit in Kubernetes. It is a logical collection of one or more containers scheduled together. We will explore them further in later chapters.
+--->
 worker节点为客户端应用程序提供运行环境。通过容器化的微服务，这些应用程序被封装在Pods中，由运行在主节点上的集群控制平面代理控制。pod被安排在worker节点上，在那里它们可以找到运行所需的计算、内存和存储资源，并可以通过网络与彼此和外部世界进行通信。Pod是Kubernetes中最小的调度单元。它是一个或多个编排在一起的容器的逻辑集合。我们将在后面的章节中进一步探讨它们。
 ![](assets/cka-40a023f5.png)
 Kubernetes Worker Node
@@ -46,7 +47,7 @@ Kubernetes Worker Node
 [^_^]: # Also, to access the applications from the external world, we connect to worker nodes and not to the master node. We will dive deeper into this in future chapters.
 同时，从外部世界访问应用程序时，我们连接到工作节点而不是主节点。我们将在以后的章节中深入探讨这个问题。
 ##### Worker Node Components
-[^_^]:
+<!---
     A worker node has the following components:
     * Container runtime
     * kubelet
@@ -54,7 +55,7 @@ Kubernetes Worker Node
     * Addons for DNS, Dashboard, cluster-level monitoring and logging.
 
     In the next few sections, we will discuss them in more detail.
-
+--->
 工作节点具有以下组件：
 * 容器运行时
 * kubelet
@@ -63,7 +64,7 @@ Kubernetes Worker Node
 
 在接下来的几节中，我们将更详细地讨论它们。
 ##### Container Runtime
-[^_^]:
+<!---
     Although Kubernetes is described as a "container orchestration engine", it does not have the capability to directly handle containers. In order to run and manage a container's lifecycle, Kubernetes requires a container runtime on the node where a Pod and its containers are to be scheduled. Kubernetes supports many container runtimes:
 
     Docker - although a container platform which uses containerd as a container runtime, it is the most widely used container runtime with Kubernetes
@@ -71,7 +72,7 @@ Kubernetes Worker Node
     containerd - a simple and portable container runtime providing robustness
     rkt - a pod-native container engine, it also runs Docker images
     rktlet - a Kubernetes Container Runtime Interface (CRI) implementation using rkt.
-
+--->
 尽管Kubernetes被描述为一个“容器编排引擎”，但它没有直接处理容器的能力。为了运行和管理容器的生命周期，Kubernetes需要在Pod及其容器的调度节点上有一个容器运行时。Kubernetes支持许多容器运行时：
 * Docker - 虽然是一个使用containerd作为容器运行时的容器平台，但它是Kubernetes最广泛使用的容器运行时
 * CRI-O-一个用于Kubernetes的轻量级容器运行时，它还支持Docker映像注册
@@ -79,19 +80,21 @@ Kubernetes Worker Node
 * rkt - 一个pod本地容器引擎，它还运行Docker映像
 * rktlet - 一个使用rkt的Kubernetes容器运行时接口（CRI）实现。
 ##### kubelet
+<!---
+ The kubelet is an agent running on each node and communicates with the control plane components from the master node. It receives Pod definitions, primarily from the API server, and interacts with the container runtime on the node to run containers associated with the Pod. It also monitors the health of the Pod's running containers.
 
-[^_^]: # The kubelet is an agent running on each node and communicates with the control plane components from the master node. It receives Pod definitions, primarily from the API server, and interacts with the container runtime on the node to run containers associated with the Pod. It also monitors the health of the Pod's running containers.
-
-[^_^]: # The kubelet connects to the container runtime using Container Runtime Interface (CRI). CRI consists of protocol buffers, gRPC API, and libraries.
-
+ The kubelet connects to the container runtime using Container Runtime Interface (CRI). CRI consists of protocol buffers, gRPC API, and libraries.
+--->
 kubelet是运行在每个节点上的代理，并与主节点的控制平面组件通信。它主要从API server接收Pod定义，并与节点上的容器运行时交互以运行与Pod相关的容器。它还监测吊舱运行容器的健康状况。
 kubelet使用容器运行时接口（container runtime Interface，CRI）连接到容器运行时。CRI由协议缓冲区、gRPC API和库组成
 ![](assets/cka-8c8600df.png)
 Container Runtime Interface
 (Retrieved from blog.kubernetes.io)
-[^_^]: # As shown above, the kubelet acting as grpc client connects to the CRI shim acting as grpc server to perform container and image operations. CRI implements two services: ImageService and RuntimeService. The ImageService is responsible for all the image-related operations, while the RuntimeService is responsible for all the Pod and container-related operations.
-[^_^]: # Container runtimes used to be hard-coded in Kubernetes, but with the development of CRI, Kubernetes is more flexible now and uses different container runtimes without the need to recompile. Any container runtime that implements CRI can be used by Kubernetes to manage Pods, containers, and container images.
-[^_^]: # In the next section, we will discuss some of the CRI shims.
+<!---
+ As shown above, the kubelet acting as grpc client connects to the CRI shim acting as grpc server to perform container and image operations. CRI implements two services: ImageService and RuntimeService. The ImageService is responsible for all the image-related operations, while the RuntimeService is responsible for all the Pod and container-related operations.
+ Container runtimes used to be hard-coded in Kubernetes, but with the development of CRI, Kubernetes is more flexible now and uses different container runtimes without the need to recompile. Any container runtime that implements CRI can be used by Kubernetes to manage Pods, containers, and container images.
+ In the next section, we will discuss some of the CRI shims.
+--->
 如上所示，充当grpc客户端的kubelet连接到充当grpc服务器的CRI shim，以执行容器和image操作。CRI实现了两个服务：ImageService和RuntimeService。ImageService负责所有与image相关的操作，RuntimeService负责所有与Pod和容器相关的操作。
 容器运行时在Kubernetes中是写死的，但是随着CRI的发展，Kubernetes现在更加灵活，并且使用不同的容器运行时而不需要重新编译。Kubernetes可以使用任何实现CRI的容器运行时来管理pod、容器和容器映像。
 在下一节中，我们将讨论一些CRI Shim。
@@ -99,44 +102,52 @@ Container Runtime Interface
 Below you will find some examples of CRI shims:
 
 * dockershim
+<!---
 With dockershim, containers are created using Docker installed on the worker nodes. Internally, Docker uses containerd to create and manage containers.
+--->
 ![dockershim](assets/cka-d8d9a7fd.png)
 dockershim
 (Retrieved from blog.kubernetes.io)
 使用dockershim，容器是使用安装在工作节点上的Docker创建的。在内部，Docker使用containerd创建和管理容器。
 * cri-containerd
-[^_^]: # With cri-containerd, we can directly use Docker's smaller offspring containerd to create and manage containers.
+<!--- With cri-containerd, we can directly use Docker's smaller offspring containerd to create and manage containers.
+--->
 使用cri-containerd，我们可以直接使用Docker更小的子程序containerd来创建和管理容器。
 ![](assets/cka-b0c18ed8.png)
 * CRI-O
-[^_^]: # CRI-O enables using any Open Container Initiative (OCI) compatible runtimes with Kubernetes. At the time this course was created, CRI-O supported runC and Clear Containers as container runtimes. However, in principle, any OCI-compliant runtime can be plugged-in.
+<!---
+CRI-O enables using any Open Container Initiative (OCI) compatible runtimes with Kubernetes. At the time this course was created, CRI-O supported runC and Clear Containers as container runtimes. However, in principle, any OCI-compliant runtime can be plugged-in.
 
 CRI-O
-[^_^]: # CRI-O enables using any Open Container Initiative (OCI) compatible runtimes with Kubernetes. At the time this course was created, CRI-O supported runC and Clear Containers as container runtimes. However, in principle, any OCI-compliant runtime can be plugged-in.
+ CRI-O enables using any Open Container Initiative (OCI) compatible runtimes with Kubernetes. At the time this course was created, CRI-O supported runC and Clear Containers as container runtimes. However, in principle, any OCI-compliant runtime can be plugged-in.
+--->
+
 CRI-O支持使用任何与Kubernetes兼容的开放容器倡议（OCI）的运行时。在创建本课程时，CRI-O支持runC和Clear Containers作为容器运行时。但是，原则上，任何符合OCI的运行时都可以插入。
 ![](assets/cka-98c93a90.png)
 
 ##### kube-proxy
+<!---
 [^_^]: # The kube-proxy is the network agent which runs on each node responsible for dynamic updates and maintenance of all networking rules on the node. It abstracts the details of Pods networking and forwards connection requests to Pods.
 [^_^]: # We will explore Pod networking in more detail in later chapters.
+--->
 kube代理是运行在每个节点上的网络代理，负责动态更新和维护节点上的所有网络规则。它抽象了Pods网络的细节，并将连接请求转发给Pods。
 我们将在后面的章节中更详细地探讨Pod网络。
 ##### Addons
-[^_^]: #
+<!---
     Addons are cluster features and functionality not yet available in Kubernetes, therefore implemented through 3rd-party pods and services.
 
     DNS - cluster DNS is a DNS server required to assign DNS records to Kubernetes objects and resources
     Dashboard - a general purposed web-based user interface for cluster management
     Monitoring - collects cluster-level container metrics and saves them to a central data store
     Logging - collects cluster-level container logs and saves them to a central log store for analysis.
-
+--->
 Addon是Kubernetes中尚未提供的集群特性和功能，因此通过第三方pod和服务实现。
 * DNS-集群DNS是将DNS记录分配给Kubernetes对象和资源所需的DNS服务器
 * Dashboard-一个通用的基于web的集群管理用户界面
 * 监视-收集集群级容器度量并将其保存到中心数据存储
 * 日志记录-收集群集级容器日志，并将其保存到中心日志存储以进行分析。
 #### Networking Challenges
-[^_^]: #
+<!---
     Decoupled microservices based applications rely heavily on networking in order to mimic the tight-coupling once available in the monolithic era. Networking, in general, is not the easiest to understand and implement. Kubernetes is no exception - as a containerized microservices orchestrator is needs to address 4 distinct networking challenges:
 
     Container-to-container communication inside Pods
@@ -144,7 +155,7 @@ Addon是Kubernetes中尚未提供的集群特性和功能，因此通过第三�
     Pod-to-Service communication within the same namespace and across cluster namespaces
     External-to-Service communication for clients to access applications in a cluster.
     All these networking challenges must be addressed before deploying a Kubernetes cluster. Next, we will see how we solve these challenges.
-
+--->
 基于解耦的微服务的应用程序在很大程度上依赖于网络，以模拟在单一程序时代曾经存在的紧密耦合。一般来说，网络并不是最容易理解和实现的。Kubernetes也不例外-作为一个容器化的微服务编排器，需要解决4个不同的网络挑战：
 * Pods内容器对容器的通信
 * 同一节点上或集群节点之间的Pod-to-Pod通信
@@ -153,10 +164,12 @@ Addon是Kubernetes中尚未提供的集群特性和功能，因此通过第三�
 在部署Kubernetes集群之前，必须解决所有这些网络挑战。接下来，我们将看看如何解决这些挑战。
 
 ##### Container-to-Container Communication Inside Pods
+<!---
 [^_^]: # Making use of the underlying host operating system's kernel features, a container runtime creates an isolated network space for each container it starts. On Linux, that isolated network space is referred to as a network namespace. A network namespace is shared across containers, or with the host operating system.
 
 [^_^]: # When a Pod is started, a network namespace is created inside the Pod, and all containers running inside the Pod will share that network namespace so that they can talk to each other via localhost.
 利用底层主机操作系统的内核特性，容器运行时为它启动的每个容器创建一个独立的网络空间。在Linux上，隔离的网络空间称为网络命名空间。网络命名空间是跨容器或与主机操作系统共享的。
+--->
 当Pod启动时，在Pod内创建一个网络名称空间，运行在Pod内的所有容器都将共享该网络名称空间，以便它们可以通过localhost相互通信。
 ##### Pod-to-Pod Communication Across Nodes
 <!---
@@ -172,17 +185,19 @@ You can try
 KubNetes网络模型旨在降低复杂性，并将POD视为网络上的VMS，其中每个VM接收IP地址-因此每个POD接收IP地址。这个模型被称为“IP-per-Pod”，确保了Pod到Pod的通信，就像vm能够相互通信一样。
 不过，别忘了容器。它们共享Pod的网络名称空间，必须像VM上的应用程序那样协调Pod内的端口分配，同时能够在本地主机（Pod内）上相互通信。然而，通过使用CNI插件支持的容器网络接口（CNI），容器与整个Kubernetes网络模型集成。CNI是一组规范和库，允许插件为容器配置网络。虽然有一些核心插件，但大多数CNI插件是实现Kubernetes网络模型的第三方软件定义网络（SDN）解决方案。除了满足网络模型的基本要求外，一些网络解决方案还为网络策略提供支持。Flannel, Weave, Calico 只是Kubernetes集群可用的SDN解决方案的其中几个。
 ![](assets/cka-eab0ca88.png)
-[](
+<!---
   The container runtime offloads the IP assignment to CNI, which connects to the underlying configured plugin, such as Bridge or MACvlan, to get the IP address. Once the IP address is given by the respective plugin, CNI forwards it back to the requested container runtime.
   For more details, you can explore the Kubernetes documentation.
-)
+--->
 容器运行时将IP分配的任务发到CNI，CNI连接到底层配置的插件（如Bridge或MACvlan）以获取IP地址。一旦IP地址由相应的插件给出，CNI就会将其转发回请求的容器运行时。
 
 有关更多详细信息，可以浏览Kubernetes文档。
 ##### Pod-to-External World Communication
+<!---
 For a successfully deployed containerized applications running in Pods inside a Kubernetes cluster, it requires accessibility from the outside world. Kubernetes enables external accessibility through services, complex constructs which encapsulate networking rules definitions on cluster nodes. By exposing services to the external world with kube-proxy, applications become accessible from outside the cluster over a virtual IP.
 
 We will have a complete chapter dedicated to this, so we will dive into this later.
+--->
 对于在Kubernetes集群内的Pods中运行的成功部署的容器化应用程序，它需要来自外部世界的可访问性。Kubernetes通过服务实现外部可访问性，这些服务是封装集群节点上的网络规则定义的复杂构造。通过使用kube代理将服务公开给外部世界，应用程序可以通过虚拟IP从集群外部访问。
 我们将有一个完整的章节专门讨论这个问题，所以我们稍后将深入讨论这个问题。
 ## Chapter 5. Installing Kubernetes
@@ -599,5 +614,4 @@ ID                                                                 PID         S
 ```
 
 
-[^_^]:
-    ### Installing Minikube (Demo)
+### Installing Minikube (Demo)
