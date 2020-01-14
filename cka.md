@@ -1,4 +1,50 @@
 # 158
+
+## markdown的注释:
+语法:
+
+```md
+[comment]: <> (This is a comment, it will not be included)
+[comment]: <> (in  the output file unless you use it in)
+[comment]: <> (a reference style link.)
+[//]: <> (This is also a comment.)
+[//]: # (This may be the most platform independent comment)
+```
+显示效果如下:
+
+[comment]: <> (This is a comment, it will not be included)
+[comment]: <> (in  the output file unless you use it in)
+[comment]: <> (a reference style link.)
+[//]: <> (This is also a comment.)
+[//]: # (This may be the most platform independent comment)
+
+```md
+[^_^]:
+    1
+
+[>_<]:
+    2
+
+[>_>]:
+    3
+
+```
+显示是这样:
+[^_^]:
+    1
+
+[>_<]:
+    2
+
+[>_>]:
+    3
+
+其中，这种方法最稳定，适用性最强：
+[//]: # (哈哈我是注释，不会在浏览器中显示。)
+
+这种方法最可爱，超级无敌萌啊：
+[^_^]: # (哈哈我是注释，不会在浏览器中显示。)
+
 ## 原有服务到microservice架构
 * 重构方式：
   1. 停止新功能的实现，彻底重构
@@ -168,7 +214,8 @@ Addon是Kubernetes中尚未提供的集群特性和功能，因此通过第三�
 KubNetes网络模型旨在降低复杂性，并将POD视为网络上的VMS，其中每个VM接收IP地址-因此每个POD接收IP地址。这个模型被称为“IP-per-Pod”，确保了Pod到Pod的通信，就像vm能够相互通信一样。
 不过，别忘了容器。它们共享Pod的网络名称空间，必须像VM上的应用程序那样协调Pod内的端口分配，同时能够在本地主机（Pod内）上相互通信。然而，通过使用CNI插件支持的容器网络接口（CNI），容器与整个Kubernetes网络模型集成。CNI是一组规范和库，允许插件为容器配置网络。虽然有一些核心插件，但大多数CNI插件是实现Kubernetes网络模型的第三方软件定义网络（SDN）解决方案。除了满足网络模型的基本要求外，一些网络解决方案还为网络策略提供支持。Flannel, Weave, Calico 只是Kubernetes集群可用的SDN解决方案的其中几个。
 ![](assets/cka-eab0ca88.png)
-[^_^]: # The container runtime offloads the IP assignment to CNI, which connects to the underlying configured plugin, such as Bridge or MACvlan, to get the IP address. Once the IP address is given by the respective plugin, CNI forwards it back to the requested container runtime.
+[^_^]:
+    The container runtime offloads the IP assignment to CNI, which connects to the underlying configured plugin, such as Bridge or MACvlan, to get the IP address. Once the IP address is given by the respective plugin, CNI forwards it back to the requested container runtime.
 
 [^_^]:
     For more details, you can explore the Kubernetes documentation.
