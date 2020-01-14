@@ -18,6 +18,16 @@
 [//]: <> (This is also a comment.)
 [//]: # (This may be the most platform independent comment)
 
+
+测试:
+
+[xxx]: <> (
+Your comments go here however you cannot leave
+// a blank line so fill blank lines with
+//
+Something
+)
+
 ```md
 [^_^]:
     1
