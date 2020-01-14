@@ -544,9 +544,8 @@ manage state of a Kubernetes cluster;has the following components:<ul>
 <li>Scheduler</li>
 <li>Controller managers</li>
 <li>etcd.<h4 id="423-worker-node">4.2.3 Worker Node</h4>
-<blockquote id="fn__^">
-<sup>_^</sup>. # A worker node provides a running environment for client applications. Though containerized microservices, these applications are encapsulated in Pods, controlled by the cluster control plane agents running on the master node. Pods are scheduled on worker nodes, where they find required compute, memory and storage resources to run, and networking to talk to each other and the outside world. A Pod is the smallest scheduling unit in Kubernetes. It is a logical collection of one or more containers scheduled together. We will explore them further in later chapters.<a href="#reffn__%5E" title="Jump back to footnote [_^] in the text."> &#x21A9;</a>
-</blockquote>
+<!--- A worker node provides a running environment for client applications. Though containerized microservices, these applications are encapsulated in Pods, controlled by the cluster control plane agents running on the master node. Pods are scheduled on worker nodes, where they find required compute, memory and storage resources to run, and networking to talk to each other and the outside world. A Pod is the smallest scheduling unit in Kubernetes. It is a logical collection of one or more containers scheduled together. We will explore them further in later chapters.
+--->
 worker&#x8282;&#x70B9;&#x4E3A;&#x5BA2;&#x6237;&#x7AEF;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x63D0;&#x4F9B;&#x8FD0;&#x884C;&#x73AF;&#x5883;&#x3002;&#x901A;&#x8FC7;&#x5BB9;&#x5668;&#x5316;&#x7684;&#x5FAE;&#x670D;&#x52A1;&#xFF0C;&#x8FD9;&#x4E9B;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x88AB;&#x5C01;&#x88C5;&#x5728;Pods&#x4E2D;&#xFF0C;&#x7531;&#x8FD0;&#x884C;&#x5728;&#x4E3B;&#x8282;&#x70B9;&#x4E0A;&#x7684;&#x96C6;&#x7FA4;&#x63A7;&#x5236;&#x5E73;&#x9762;&#x4EE3;&#x7406;&#x63A7;&#x5236;&#x3002;pod&#x88AB;&#x5B89;&#x6392;&#x5728;worker&#x8282;&#x70B9;&#x4E0A;&#xFF0C;&#x5728;&#x90A3;&#x91CC;&#x5B83;&#x4EEC;&#x53EF;&#x4EE5;&#x627E;&#x5230;&#x8FD0;&#x884C;&#x6240;&#x9700;&#x7684;&#x8BA1;&#x7B97;&#x3001;&#x5185;&#x5B58;&#x548C;&#x5B58;&#x50A8;&#x8D44;&#x6E90;&#xFF0C;&#x5E76;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x7F51;&#x7EDC;&#x4E0E;&#x5F7C;&#x6B64;&#x548C;&#x5916;&#x90E8;&#x4E16;&#x754C;&#x8FDB;&#x884C;&#x901A;&#x4FE1;&#x3002;Pod&#x662F;Kubernetes&#x4E2D;&#x6700;&#x5C0F;&#x7684;&#x8C03;&#x5EA6;&#x5355;&#x5143;&#x3002;&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x7F16;&#x6392;&#x5728;&#x4E00;&#x8D77;&#x7684;&#x5BB9;&#x5668;&#x7684;&#x903B;&#x8F91;&#x96C6;&#x5408;&#x3002;&#x6211;&#x4EEC;&#x5C06;&#x5728;&#x540E;&#x9762;&#x7684;&#x7AE0;&#x8282;&#x4E2D;&#x8FDB;&#x4E00;&#x6B65;&#x63A2;&#x8BA8;&#x5B83;&#x4EEC;&#x3002;
 <img src="assets/cka-40a023f5.png" alt="">
 Kubernetes Worker Node</li>
@@ -560,15 +559,16 @@ Kubernetes Worker Node</li>
 </blockquote>
 <p>&#x540C;&#x65F6;&#xFF0C;&#x4ECE;&#x5916;&#x90E8;&#x4E16;&#x754C;&#x8BBF;&#x95EE;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x8FDE;&#x63A5;&#x5230;&#x5DE5;&#x4F5C;&#x8282;&#x70B9;&#x800C;&#x4E0D;&#x662F;&#x4E3B;&#x8282;&#x70B9;&#x3002;&#x6211;&#x4EEC;&#x5C06;&#x5728;&#x4EE5;&#x540E;&#x7684;&#x7AE0;&#x8282;&#x4E2D;&#x6DF1;&#x5165;&#x63A2;&#x8BA8;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x3002;</p>
 <h5 id="worker-node-components">Worker Node Components</h5>
-<p><sup><a href="#fn__%5E" id="reffn__^">_^</a></sup>:
-    A worker node has the following components:</p>
-<pre><code>* Container runtime
-* kubelet
-* kube-proxy
-* Addons for DNS, Dashboard, cluster-level monitoring and logging.
+<!---
+    A worker node has the following components:
+    * Container runtime
+    * kubelet
+    * kube-proxy
+    * Addons for DNS, Dashboard, cluster-level monitoring and logging.
 
-In the next few sections, we will discuss them in more detail.
-</code></pre><p>&#x5DE5;&#x4F5C;&#x8282;&#x70B9;&#x5177;&#x6709;&#x4EE5;&#x4E0B;&#x7EC4;&#x4EF6;&#xFF1A;</p>
+    In the next few sections, we will discuss them in more detail.
+--->
+<p>&#x5DE5;&#x4F5C;&#x8282;&#x70B9;&#x5177;&#x6709;&#x4EE5;&#x4E0B;&#x7EC4;&#x4EF6;&#xFF1A;</p>
 <ul>
 <li>&#x5BB9;&#x5668;&#x8FD0;&#x884C;&#x65F6;</li>
 <li>kubelet</li>
@@ -577,101 +577,100 @@ In the next few sections, we will discuss them in more detail.
 </ul>
 <p>&#x5728;&#x63A5;&#x4E0B;&#x6765;&#x7684;&#x51E0;&#x8282;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x66F4;&#x8BE6;&#x7EC6;&#x5730;&#x8BA8;&#x8BBA;&#x5B83;&#x4EEC;&#x3002;</p>
 <h5 id="container-runtime">Container Runtime</h5>
-<p><sup><a href="#fn__%5E" id="reffn__^">_^</a></sup>:
-    Although Kubernetes is described as a &quot;container orchestration engine&quot;, it does not have the capability to directly handle containers. In order to run and manage a container&apos;s lifecycle, Kubernetes requires a container runtime on the node where a Pod and its containers are to be scheduled. Kubernetes supports many container runtimes:</p>
-<pre><code>Docker - although a container platform which uses containerd as a container runtime, it is the most widely used container runtime with Kubernetes
-CRI-O - a lightweight container runtime for Kubernetes, it also supports Docker image registries
-containerd - a simple and portable container runtime providing robustness
-rkt - a pod-native container engine, it also runs Docker images
-rktlet - a Kubernetes Container Runtime Interface (CRI) implementation using rkt.
-</code></pre><p>&#x5C3D;&#x7BA1;Kubernetes&#x88AB;&#x63CF;&#x8FF0;&#x4E3A;&#x4E00;&#x4E2A;&#x201C;&#x5BB9;&#x5668;&#x7F16;&#x6392;&#x5F15;&#x64CE;&#x201D;&#xFF0C;&#x4F46;&#x5B83;&#x6CA1;&#x6709;&#x76F4;&#x63A5;&#x5904;&#x7406;&#x5BB9;&#x5668;&#x7684;&#x80FD;&#x529B;&#x3002;&#x4E3A;&#x4E86;&#x8FD0;&#x884C;&#x548C;&#x7BA1;&#x7406;&#x5BB9;&#x5668;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#xFF0C;Kubernetes&#x9700;&#x8981;&#x5728;Pod&#x53CA;&#x5176;&#x5BB9;&#x5668;&#x7684;&#x8C03;&#x5EA6;&#x8282;&#x70B9;&#x4E0A;&#x6709;&#x4E00;&#x4E2A;&#x5BB9;&#x5668;&#x8FD0;&#x884C;&#x65F6;&#x3002;Kubernetes&#x652F;&#x6301;&#x8BB8;&#x591A;&#x5BB9;&#x5668;&#x8FD0;&#x884C;&#x65F6;&#xFF1A;</p>
+<!---
+    Although Kubernetes is described as a "container orchestration engine", it does not have the capability to directly handle containers. In order to run and manage a container's lifecycle, Kubernetes requires a container runtime on the node where a Pod and its containers are to be scheduled. Kubernetes supports many container runtimes:
+
+    Docker - although a container platform which uses containerd as a container runtime, it is the most widely used container runtime with Kubernetes
+    CRI-O - a lightweight container runtime for Kubernetes, it also supports Docker image registries
+    containerd - a simple and portable container runtime providing robustness
+    rkt - a pod-native container engine, it also runs Docker images
+    rktlet - a Kubernetes Container Runtime Interface (CRI) implementation using rkt.
+--->
+<p>&#x5C3D;&#x7BA1;Kubernetes&#x88AB;&#x63CF;&#x8FF0;&#x4E3A;&#x4E00;&#x4E2A;&#x201C;&#x5BB9;&#x5668;&#x7F16;&#x6392;&#x5F15;&#x64CE;&#x201D;&#xFF0C;&#x4F46;&#x5B83;&#x6CA1;&#x6709;&#x76F4;&#x63A5;&#x5904;&#x7406;&#x5BB9;&#x5668;&#x7684;&#x80FD;&#x529B;&#x3002;&#x4E3A;&#x4E86;&#x8FD0;&#x884C;&#x548C;&#x7BA1;&#x7406;&#x5BB9;&#x5668;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#xFF0C;Kubernetes&#x9700;&#x8981;&#x5728;Pod&#x53CA;&#x5176;&#x5BB9;&#x5668;&#x7684;&#x8C03;&#x5EA6;&#x8282;&#x70B9;&#x4E0A;&#x6709;&#x4E00;&#x4E2A;&#x5BB9;&#x5668;&#x8FD0;&#x884C;&#x65F6;&#x3002;Kubernetes&#x652F;&#x6301;&#x8BB8;&#x591A;&#x5BB9;&#x5668;&#x8FD0;&#x884C;&#x65F6;&#xFF1A;</p>
 <ul>
 <li>Docker - &#x867D;&#x7136;&#x662F;&#x4E00;&#x4E2A;&#x4F7F;&#x7528;containerd&#x4F5C;&#x4E3A;&#x5BB9;&#x5668;&#x8FD0;&#x884C;&#x65F6;&#x7684;&#x5BB9;&#x5668;&#x5E73;&#x53F0;&#xFF0C;&#x4F46;&#x5B83;&#x662F;Kubernetes&#x6700;&#x5E7F;&#x6CDB;&#x4F7F;&#x7528;&#x7684;&#x5BB9;&#x5668;&#x8FD0;&#x884C;&#x65F6;</li>
 <li>CRI-O-&#x4E00;&#x4E2A;&#x7528;&#x4E8E;Kubernetes&#x7684;&#x8F7B;&#x91CF;&#x7EA7;&#x5BB9;&#x5668;&#x8FD0;&#x884C;&#x65F6;&#xFF0C;&#x5B83;&#x8FD8;&#x652F;&#x6301;Docker&#x6620;&#x50CF;&#x6CE8;&#x518C;</li>
 <li>containerd &#x2014; &#x63D0;&#x4F9B;&#x5065;&#x58EE;&#x6027;&#x7684;&#x7B80;&#x5355;&#x53EF;&#x79FB;&#x690D;&#x7684;&#x5BB9;&#x5668;&#x8FD0;&#x884C;&#x65F6;</li>
 <li>rkt - &#x4E00;&#x4E2A;pod&#x672C;&#x5730;&#x5BB9;&#x5668;&#x5F15;&#x64CE;&#xFF0C;&#x5B83;&#x8FD8;&#x8FD0;&#x884C;Docker&#x6620;&#x50CF;</li>
-<li>rktlet - &#x4E00;&#x4E2A;&#x4F7F;&#x7528;rkt&#x7684;Kubernetes&#x5BB9;&#x5668;&#x8FD0;&#x884C;&#x65F6;&#x63A5;&#x53E3;&#xFF08;CRI&#xFF09;&#x5B9E;&#x73B0;&#x3002;<h5 id="kubelet">kubelet</h5>
-</li>
-</ul>
-<blockquote id="fn__^">
-<sup>_^</sup>. # The kubelet is an agent running on each node and communicates with the control plane components from the master node. It receives Pod definitions, primarily from the API server, and interacts with the container runtime on the node to run containers associated with the Pod. It also monitors the health of the Pod&apos;s running containers.<a href="#reffn__%5E" title="Jump back to footnote [_^] in the text."> &#x21A9;</a>
-</blockquote>
-<blockquote id="fn__^">
-<sup>_^</sup>. # The kubelet connects to the container runtime using Container Runtime Interface (CRI). CRI consists of protocol buffers, gRPC API, and libraries.<a href="#reffn__%5E" title="Jump back to footnote [_^] in the text."> &#x21A9;</a>
-</blockquote>
+<li><p>rktlet - &#x4E00;&#x4E2A;&#x4F7F;&#x7528;rkt&#x7684;Kubernetes&#x5BB9;&#x5668;&#x8FD0;&#x884C;&#x65F6;&#x63A5;&#x53E3;&#xFF08;CRI&#xFF09;&#x5B9E;&#x73B0;&#x3002;</p>
+<h5 id="kubelet">kubelet</h5>
+<!---
+The kubelet is an agent running on each node and communicates with the control plane components from the master node. It receives Pod definitions, primarily from the API server, and interacts with the container runtime on the node to run containers associated with the Pod. It also monitors the health of the Pod's running containers.
+
+The kubelet connects to the container runtime using Container Runtime Interface (CRI). CRI consists of protocol buffers, gRPC API, and libraries.
+--->
 <p>kubelet&#x662F;&#x8FD0;&#x884C;&#x5728;&#x6BCF;&#x4E2A;&#x8282;&#x70B9;&#x4E0A;&#x7684;&#x4EE3;&#x7406;&#xFF0C;&#x5E76;&#x4E0E;&#x4E3B;&#x8282;&#x70B9;&#x7684;&#x63A7;&#x5236;&#x5E73;&#x9762;&#x7EC4;&#x4EF6;&#x901A;&#x4FE1;&#x3002;&#x5B83;&#x4E3B;&#x8981;&#x4ECE;API server&#x63A5;&#x6536;Pod&#x5B9A;&#x4E49;&#xFF0C;&#x5E76;&#x4E0E;&#x8282;&#x70B9;&#x4E0A;&#x7684;&#x5BB9;&#x5668;&#x8FD0;&#x884C;&#x65F6;&#x4EA4;&#x4E92;&#x4EE5;&#x8FD0;&#x884C;&#x4E0E;Pod&#x76F8;&#x5173;&#x7684;&#x5BB9;&#x5668;&#x3002;&#x5B83;&#x8FD8;&#x76D1;&#x6D4B;&#x540A;&#x8231;&#x8FD0;&#x884C;&#x5BB9;&#x5668;&#x7684;&#x5065;&#x5EB7;&#x72B6;&#x51B5;&#x3002;
 kubelet&#x4F7F;&#x7528;&#x5BB9;&#x5668;&#x8FD0;&#x884C;&#x65F6;&#x63A5;&#x53E3;&#xFF08;container runtime Interface&#xFF0C;CRI&#xFF09;&#x8FDE;&#x63A5;&#x5230;&#x5BB9;&#x5668;&#x8FD0;&#x884C;&#x65F6;&#x3002;CRI&#x7531;&#x534F;&#x8BAE;&#x7F13;&#x51B2;&#x533A;&#x3001;gRPC API&#x548C;&#x5E93;&#x7EC4;&#x6210;
 <img src="assets/cka-8c8600df.png" alt="">
 Container Runtime Interface
-(Retrieved from blog.kubernetes.io)
-<sup><a href="#fn__%5E" id="reffn__^">_^</a></sup>: # As shown above, the kubelet acting as grpc client connects to the CRI shim acting as grpc server to perform container and image operations. CRI implements two services: ImageService and RuntimeService. The ImageService is responsible for all the image-related operations, while the RuntimeService is responsible for all the Pod and container-related operations.
-<sup><a href="#fn__%5E" id="reffn__^">_^</a></sup>: # Container runtimes used to be hard-coded in Kubernetes, but with the development of CRI, Kubernetes is more flexible now and uses different container runtimes without the need to recompile. Any container runtime that implements CRI can be used by Kubernetes to manage Pods, containers, and container images.
-<sup><a href="#fn__%5E" id="reffn__^">_^</a></sup>: # In the next section, we will discuss some of the CRI shims.
-&#x5982;&#x4E0A;&#x6240;&#x793A;&#xFF0C;&#x5145;&#x5F53;grpc&#x5BA2;&#x6237;&#x7AEF;&#x7684;kubelet&#x8FDE;&#x63A5;&#x5230;&#x5145;&#x5F53;grpc&#x670D;&#x52A1;&#x5668;&#x7684;CRI shim&#xFF0C;&#x4EE5;&#x6267;&#x884C;&#x5BB9;&#x5668;&#x548C;image&#x64CD;&#x4F5C;&#x3002;CRI&#x5B9E;&#x73B0;&#x4E86;&#x4E24;&#x4E2A;&#x670D;&#x52A1;&#xFF1A;ImageService&#x548C;RuntimeService&#x3002;ImageService&#x8D1F;&#x8D23;&#x6240;&#x6709;&#x4E0E;image&#x76F8;&#x5173;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;RuntimeService&#x8D1F;&#x8D23;&#x6240;&#x6709;&#x4E0E;Pod&#x548C;&#x5BB9;&#x5668;&#x76F8;&#x5173;&#x7684;&#x64CD;&#x4F5C;&#x3002;
+(Retrieved from blog.kubernetes.io)</p>
+<!---
+As shown above, the kubelet acting as grpc client connects to the CRI shim acting as grpc server to perform container and image operations. CRI implements two services: ImageService and RuntimeService. The ImageService is responsible for all the image-related operations, while the RuntimeService is responsible for all the Pod and container-related operations.
+Container runtimes used to be hard-coded in Kubernetes, but with the development of CRI, Kubernetes is more flexible now and uses different container runtimes without the need to recompile. Any container runtime that implements CRI can be used by Kubernetes to manage Pods, containers, and container images.
+In the next section, we will discuss some of the CRI shims.
+--->
+<p>&#x5982;&#x4E0A;&#x6240;&#x793A;&#xFF0C;&#x5145;&#x5F53;grpc&#x5BA2;&#x6237;&#x7AEF;&#x7684;kubelet&#x8FDE;&#x63A5;&#x5230;&#x5145;&#x5F53;grpc&#x670D;&#x52A1;&#x5668;&#x7684;CRI shim&#xFF0C;&#x4EE5;&#x6267;&#x884C;&#x5BB9;&#x5668;&#x548C;image&#x64CD;&#x4F5C;&#x3002;CRI&#x5B9E;&#x73B0;&#x4E86;&#x4E24;&#x4E2A;&#x670D;&#x52A1;&#xFF1A;ImageService&#x548C;RuntimeService&#x3002;ImageService&#x8D1F;&#x8D23;&#x6240;&#x6709;&#x4E0E;image&#x76F8;&#x5173;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;RuntimeService&#x8D1F;&#x8D23;&#x6240;&#x6709;&#x4E0E;Pod&#x548C;&#x5BB9;&#x5668;&#x76F8;&#x5173;&#x7684;&#x64CD;&#x4F5C;&#x3002;
 &#x5BB9;&#x5668;&#x8FD0;&#x884C;&#x65F6;&#x5728;Kubernetes&#x4E2D;&#x662F;&#x5199;&#x6B7B;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x968F;&#x7740;CRI&#x7684;&#x53D1;&#x5C55;&#xFF0C;Kubernetes&#x73B0;&#x5728;&#x66F4;&#x52A0;&#x7075;&#x6D3B;&#xFF0C;&#x5E76;&#x4E14;&#x4F7F;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x5BB9;&#x5668;&#x8FD0;&#x884C;&#x65F6;&#x800C;&#x4E0D;&#x9700;&#x8981;&#x91CD;&#x65B0;&#x7F16;&#x8BD1;&#x3002;Kubernetes&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4EFB;&#x4F55;&#x5B9E;&#x73B0;CRI&#x7684;&#x5BB9;&#x5668;&#x8FD0;&#x884C;&#x65F6;&#x6765;&#x7BA1;&#x7406;pod&#x3001;&#x5BB9;&#x5668;&#x548C;&#x5BB9;&#x5668;&#x6620;&#x50CF;&#x3002;
 &#x5728;&#x4E0B;&#x4E00;&#x8282;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x8BA8;&#x8BBA;&#x4E00;&#x4E9B;CRI Shim&#x3002;</p>
 <h5 id="kubelet---cri-shims">kubelet - CRI shims</h5>
 <p>Below you will find some examples of CRI shims:</p>
-<ul>
-<li>dockershim
+</li>
+<li><p>dockershim</p>
+<!---
 With dockershim, containers are created using Docker installed on the worker nodes. Internally, Docker uses containerd to create and manage containers.
-<img src="assets/cka-d8d9a7fd.png" alt="dockershim">
+--->
+<p><img src="assets/cka-d8d9a7fd.png" alt="dockershim">
 dockershim
 (Retrieved from blog.kubernetes.io)
-&#x4F7F;&#x7528;dockershim&#xFF0C;&#x5BB9;&#x5668;&#x662F;&#x4F7F;&#x7528;&#x5B89;&#x88C5;&#x5728;&#x5DE5;&#x4F5C;&#x8282;&#x70B9;&#x4E0A;&#x7684;Docker&#x521B;&#x5EFA;&#x7684;&#x3002;&#x5728;&#x5185;&#x90E8;&#xFF0C;Docker&#x4F7F;&#x7528;containerd&#x521B;&#x5EFA;&#x548C;&#x7BA1;&#x7406;&#x5BB9;&#x5668;&#x3002;</li>
-<li>cri-containerd<blockquote id="fn__^">
-<sup>_^</sup>. # With cri-containerd, we can directly use Docker&apos;s smaller offspring containerd to create and manage containers.<a href="#reffn__%5E" title="Jump back to footnote [_^] in the text."> &#x21A9;</a>
-</blockquote>
+&#x4F7F;&#x7528;dockershim&#xFF0C;&#x5BB9;&#x5668;&#x662F;&#x4F7F;&#x7528;&#x5B89;&#x88C5;&#x5728;&#x5DE5;&#x4F5C;&#x8282;&#x70B9;&#x4E0A;&#x7684;Docker&#x521B;&#x5EFA;&#x7684;&#x3002;&#x5728;&#x5185;&#x90E8;&#xFF0C;Docker&#x4F7F;&#x7528;containerd&#x521B;&#x5EFA;&#x548C;&#x7BA1;&#x7406;&#x5BB9;&#x5668;&#x3002;</p>
+</li>
+<li>cri-containerd<!--- With cri-containerd, we can directly use Docker's smaller offspring containerd to create and manage containers.
+--->
 &#x4F7F;&#x7528;cri-containerd&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F7F;&#x7528;Docker&#x66F4;&#x5C0F;&#x7684;&#x5B50;&#x7A0B;&#x5E8F;containerd&#x6765;&#x521B;&#x5EFA;&#x548C;&#x7BA1;&#x7406;&#x5BB9;&#x5668;&#x3002;
 <img src="assets/cka-b0c18ed8.png" alt=""></li>
-<li>CRI-O<blockquote id="fn__^">
-<sup>_^</sup>. # CRI-O enables using any Open Container Initiative (OCI) compatible runtimes with Kubernetes. At the time this course was created, CRI-O supported runC and Clear Containers as container runtimes. However, in principle, any OCI-compliant runtime can be plugged-in.<a href="#reffn__%5E" title="Jump back to footnote [_^] in the text."> &#x21A9;</a>
-</blockquote>
-</li>
+<li>CRI-O
+&lt;!---
+CRI-O enables using any Open Container Initiative (OCI) compatible runtimes with Kubernetes. At the time this course was created, CRI-O supported runC and Clear Containers as container runtimes. However, in principle, any OCI-compliant runtime can be plugged-in.</li>
 </ul>
 <p>CRI-O
-<sup><a href="#fn__%5E" id="reffn__^">_^</a></sup>: # CRI-O enables using any Open Container Initiative (OCI) compatible runtimes with Kubernetes. At the time this course was created, CRI-O supported runC and Clear Containers as container runtimes. However, in principle, any OCI-compliant runtime can be plugged-in.
-CRI-O&#x652F;&#x6301;&#x4F7F;&#x7528;&#x4EFB;&#x4F55;&#x4E0E;Kubernetes&#x517C;&#x5BB9;&#x7684;&#x5F00;&#x653E;&#x5BB9;&#x5668;&#x5021;&#x8BAE;&#xFF08;OCI&#xFF09;&#x7684;&#x8FD0;&#x884C;&#x65F6;&#x3002;&#x5728;&#x521B;&#x5EFA;&#x672C;&#x8BFE;&#x7A0B;&#x65F6;&#xFF0C;CRI-O&#x652F;&#x6301;runC&#x548C;Clear Containers&#x4F5C;&#x4E3A;&#x5BB9;&#x5668;&#x8FD0;&#x884C;&#x65F6;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x539F;&#x5219;&#x4E0A;&#xFF0C;&#x4EFB;&#x4F55;&#x7B26;&#x5408;OCI&#x7684;&#x8FD0;&#x884C;&#x65F6;&#x90FD;&#x53EF;&#x4EE5;&#x63D2;&#x5165;&#x3002;
+ CRI-O enables using any Open Container Initiative (OCI) compatible runtimes with Kubernetes. At the time this course was created, CRI-O supported runC and Clear Containers as container runtimes. However, in principle, any OCI-compliant runtime can be plugged-in.
+---&gt;</p>
+<p>CRI-O&#x652F;&#x6301;&#x4F7F;&#x7528;&#x4EFB;&#x4F55;&#x4E0E;Kubernetes&#x517C;&#x5BB9;&#x7684;&#x5F00;&#x653E;&#x5BB9;&#x5668;&#x5021;&#x8BAE;&#xFF08;OCI&#xFF09;&#x7684;&#x8FD0;&#x884C;&#x65F6;&#x3002;&#x5728;&#x521B;&#x5EFA;&#x672C;&#x8BFE;&#x7A0B;&#x65F6;&#xFF0C;CRI-O&#x652F;&#x6301;runC&#x548C;Clear Containers&#x4F5C;&#x4E3A;&#x5BB9;&#x5668;&#x8FD0;&#x884C;&#x65F6;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x539F;&#x5219;&#x4E0A;&#xFF0C;&#x4EFB;&#x4F55;&#x7B26;&#x5408;OCI&#x7684;&#x8FD0;&#x884C;&#x65F6;&#x90FD;&#x53EF;&#x4EE5;&#x63D2;&#x5165;&#x3002;
 <img src="assets/cka-98c93a90.png" alt=""></p>
 <h5 id="kube-proxy">kube-proxy</h5>
-<blockquote id="fn__^">
-<sup>_^</sup>. # The kube-proxy is the network agent which runs on each node responsible for dynamic updates and maintenance of all networking rules on the node. It abstracts the details of Pods networking and forwards connection requests to Pods.<a href="#reffn__%5E" title="Jump back to footnote [_^] in the text."> &#x21A9;</a>
-</blockquote>
-<blockquote id="fn__^">
-<sup>_^</sup>. # We will explore Pod networking in more detail in later chapters.<a href="#reffn__%5E" title="Jump back to footnote [_^] in the text."> &#x21A9;</a>
-</blockquote>
+<!---
+[^_^]: # The kube-proxy is the network agent which runs on each node responsible for dynamic updates and maintenance of all networking rules on the node. It abstracts the details of Pods networking and forwards connection requests to Pods.
+[^_^]: # We will explore Pod networking in more detail in later chapters.
+--->
 <p>kube&#x4EE3;&#x7406;&#x662F;&#x8FD0;&#x884C;&#x5728;&#x6BCF;&#x4E2A;&#x8282;&#x70B9;&#x4E0A;&#x7684;&#x7F51;&#x7EDC;&#x4EE3;&#x7406;&#xFF0C;&#x8D1F;&#x8D23;&#x52A8;&#x6001;&#x66F4;&#x65B0;&#x548C;&#x7EF4;&#x62A4;&#x8282;&#x70B9;&#x4E0A;&#x7684;&#x6240;&#x6709;&#x7F51;&#x7EDC;&#x89C4;&#x5219;&#x3002;&#x5B83;&#x62BD;&#x8C61;&#x4E86;Pods&#x7F51;&#x7EDC;&#x7684;&#x7EC6;&#x8282;&#xFF0C;&#x5E76;&#x5C06;&#x8FDE;&#x63A5;&#x8BF7;&#x6C42;&#x8F6C;&#x53D1;&#x7ED9;Pods&#x3002;
 &#x6211;&#x4EEC;&#x5C06;&#x5728;&#x540E;&#x9762;&#x7684;&#x7AE0;&#x8282;&#x4E2D;&#x66F4;&#x8BE6;&#x7EC6;&#x5730;&#x63A2;&#x8BA8;Pod&#x7F51;&#x7EDC;&#x3002;</p>
 <h5 id="addons">Addons</h5>
-<blockquote id="fn__^">
-<sup>_^</sup>. #<a href="#reffn__%5E" title="Jump back to footnote [_^] in the text."> &#x21A9;</a>
-</blockquote>
-<pre><code>Addons are cluster features and functionality not yet available in Kubernetes, therefore implemented through 3rd-party pods and services.
+<!---
+    Addons are cluster features and functionality not yet available in Kubernetes, therefore implemented through 3rd-party pods and services.
 
-DNS - cluster DNS is a DNS server required to assign DNS records to Kubernetes objects and resources
-Dashboard - a general purposed web-based user interface for cluster management
-Monitoring - collects cluster-level container metrics and saves them to a central data store
-Logging - collects cluster-level container logs and saves them to a central log store for analysis.
-</code></pre><p>Addon&#x662F;Kubernetes&#x4E2D;&#x5C1A;&#x672A;&#x63D0;&#x4F9B;&#x7684;&#x96C6;&#x7FA4;&#x7279;&#x6027;&#x548C;&#x529F;&#x80FD;&#xFF0C;&#x56E0;&#x6B64;&#x901A;&#x8FC7;&#x7B2C;&#x4E09;&#x65B9;pod&#x548C;&#x670D;&#x52A1;&#x5B9E;&#x73B0;&#x3002;</p>
+    DNS - cluster DNS is a DNS server required to assign DNS records to Kubernetes objects and resources
+    Dashboard - a general purposed web-based user interface for cluster management
+    Monitoring - collects cluster-level container metrics and saves them to a central data store
+    Logging - collects cluster-level container logs and saves them to a central log store for analysis.
+--->
+<p>Addon&#x662F;Kubernetes&#x4E2D;&#x5C1A;&#x672A;&#x63D0;&#x4F9B;&#x7684;&#x96C6;&#x7FA4;&#x7279;&#x6027;&#x548C;&#x529F;&#x80FD;&#xFF0C;&#x56E0;&#x6B64;&#x901A;&#x8FC7;&#x7B2C;&#x4E09;&#x65B9;pod&#x548C;&#x670D;&#x52A1;&#x5B9E;&#x73B0;&#x3002;</p>
 <ul>
 <li>DNS-&#x96C6;&#x7FA4;DNS&#x662F;&#x5C06;DNS&#x8BB0;&#x5F55;&#x5206;&#x914D;&#x7ED9;Kubernetes&#x5BF9;&#x8C61;&#x548C;&#x8D44;&#x6E90;&#x6240;&#x9700;&#x7684;DNS&#x670D;&#x52A1;&#x5668;</li>
 <li>Dashboard-&#x4E00;&#x4E2A;&#x901A;&#x7528;&#x7684;&#x57FA;&#x4E8E;web&#x7684;&#x96C6;&#x7FA4;&#x7BA1;&#x7406;&#x7528;&#x6237;&#x754C;&#x9762;</li>
 <li>&#x76D1;&#x89C6;-&#x6536;&#x96C6;&#x96C6;&#x7FA4;&#x7EA7;&#x5BB9;&#x5668;&#x5EA6;&#x91CF;&#x5E76;&#x5C06;&#x5176;&#x4FDD;&#x5B58;&#x5230;&#x4E2D;&#x5FC3;&#x6570;&#x636E;&#x5B58;&#x50A8;</li>
-<li>&#x65E5;&#x5FD7;&#x8BB0;&#x5F55;-&#x6536;&#x96C6;&#x7FA4;&#x96C6;&#x7EA7;&#x5BB9;&#x5668;&#x65E5;&#x5FD7;&#xFF0C;&#x5E76;&#x5C06;&#x5176;&#x4FDD;&#x5B58;&#x5230;&#x4E2D;&#x5FC3;&#x65E5;&#x5FD7;&#x5B58;&#x50A8;&#x4EE5;&#x8FDB;&#x884C;&#x5206;&#x6790;&#x3002;<h4 id="networking-challenges">Networking Challenges</h4>
-</li>
-</ul>
-<blockquote id="fn__^">
-<sup>_^</sup>. #<a href="#reffn__%5E" title="Jump back to footnote [_^] in the text."> &#x21A9;</a>
-</blockquote>
-<pre><code>Decoupled microservices based applications rely heavily on networking in order to mimic the tight-coupling once available in the monolithic era. Networking, in general, is not the easiest to understand and implement. Kubernetes is no exception - as a containerized microservices orchestrator is needs to address 4 distinct networking challenges:
+<li><p>&#x65E5;&#x5FD7;&#x8BB0;&#x5F55;-&#x6536;&#x96C6;&#x7FA4;&#x96C6;&#x7EA7;&#x5BB9;&#x5668;&#x65E5;&#x5FD7;&#xFF0C;&#x5E76;&#x5C06;&#x5176;&#x4FDD;&#x5B58;&#x5230;&#x4E2D;&#x5FC3;&#x65E5;&#x5FD7;&#x5B58;&#x50A8;&#x4EE5;&#x8FDB;&#x884C;&#x5206;&#x6790;&#x3002;</p>
+<h4 id="networking-challenges">Networking Challenges</h4>
+<!---
+  Decoupled microservices based applications rely heavily on networking in order to mimic the tight-coupling once available in the monolithic era. Networking, in general, is not the easiest to understand and implement. Kubernetes is no exception - as a containerized microservices orchestrator is needs to address 4 distinct networking challenges:
 
-Container-to-container communication inside Pods
-Pod-to-Pod communication on the same node and across cluster nodes
-Pod-to-Service communication within the same namespace and across cluster namespaces
-External-to-Service communication for clients to access applications in a cluster.
-All these networking challenges must be addressed before deploying a Kubernetes cluster. Next, we will see how we solve these challenges.
-</code></pre><p>&#x57FA;&#x4E8E;&#x89E3;&#x8026;&#x7684;&#x5FAE;&#x670D;&#x52A1;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x5728;&#x5F88;&#x5927;&#x7A0B;&#x5EA6;&#x4E0A;&#x4F9D;&#x8D56;&#x4E8E;&#x7F51;&#x7EDC;&#xFF0C;&#x4EE5;&#x6A21;&#x62DF;&#x5728;&#x5355;&#x4E00;&#x7A0B;&#x5E8F;&#x65F6;&#x4EE3;&#x66FE;&#x7ECF;&#x5B58;&#x5728;&#x7684;&#x7D27;&#x5BC6;&#x8026;&#x5408;&#x3002;&#x4E00;&#x822C;&#x6765;&#x8BF4;&#xFF0C;&#x7F51;&#x7EDC;&#x5E76;&#x4E0D;&#x662F;&#x6700;&#x5BB9;&#x6613;&#x7406;&#x89E3;&#x548C;&#x5B9E;&#x73B0;&#x7684;&#x3002;Kubernetes&#x4E5F;&#x4E0D;&#x4F8B;&#x5916;-&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x5BB9;&#x5668;&#x5316;&#x7684;&#x5FAE;&#x670D;&#x52A1;&#x7F16;&#x6392;&#x5668;&#xFF0C;&#x9700;&#x8981;&#x89E3;&#x51B3;4&#x4E2A;&#x4E0D;&#x540C;&#x7684;&#x7F51;&#x7EDC;&#x6311;&#x6218;&#xFF1A;</p>
-<ul>
+  Container-to-container communication inside Pods
+  Pod-to-Pod communication on the same node and across cluster nodes
+  Pod-to-Service communication within the same namespace and across cluster namespaces
+  External-to-Service communication for clients to access applications in a cluster.
+  All these networking challenges must be addressed before deploying a Kubernetes cluster. Next, we will see how we solve these challenges.
+--->
+<p>&#x57FA;&#x4E8E;&#x89E3;&#x8026;&#x7684;&#x5FAE;&#x670D;&#x52A1;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x5728;&#x5F88;&#x5927;&#x7A0B;&#x5EA6;&#x4E0A;&#x4F9D;&#x8D56;&#x4E8E;&#x7F51;&#x7EDC;&#xFF0C;&#x4EE5;&#x6A21;&#x62DF;&#x5728;&#x5355;&#x4E00;&#x7A0B;&#x5E8F;&#x65F6;&#x4EE3;&#x66FE;&#x7ECF;&#x5B58;&#x5728;&#x7684;&#x7D27;&#x5BC6;&#x8026;&#x5408;&#x3002;&#x4E00;&#x822C;&#x6765;&#x8BF4;&#xFF0C;&#x7F51;&#x7EDC;&#x5E76;&#x4E0D;&#x662F;&#x6700;&#x5BB9;&#x6613;&#x7406;&#x89E3;&#x548C;&#x5B9E;&#x73B0;&#x7684;&#x3002;Kubernetes&#x4E5F;&#x4E0D;&#x4F8B;&#x5916;-&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x5BB9;&#x5668;&#x5316;&#x7684;&#x5FAE;&#x670D;&#x52A1;&#x7F16;&#x6392;&#x5668;&#xFF0C;&#x9700;&#x8981;&#x89E3;&#x51B3;4&#x4E2A;&#x4E0D;&#x540C;&#x7684;&#x7F51;&#x7EDC;&#x6311;&#x6218;&#xFF1A;</p>
+</li>
 <li>Pods&#x5185;&#x5BB9;&#x5668;&#x5BF9;&#x5BB9;&#x5668;&#x7684;&#x901A;&#x4FE1;</li>
 <li>&#x540C;&#x4E00;&#x8282;&#x70B9;&#x4E0A;&#x6216;&#x96C6;&#x7FA4;&#x8282;&#x70B9;&#x4E4B;&#x95F4;&#x7684;Pod-to-Pod&#x901A;&#x4FE1;</li>
 <li>Pod&#x5230;&#x670D;&#x52A1; &#x5728;&#x540C;&#x4E00;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x5185;&#x548C;&#x8DE8;&#x96C6;&#x7FA4;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x7684;&#x901A;&#x4FE1;</li>
@@ -679,14 +678,13 @@ All these networking challenges must be addressed before deploying a Kubernetes 
 &#x5728;&#x90E8;&#x7F72;Kubernetes&#x96C6;&#x7FA4;&#x4E4B;&#x524D;&#xFF0C;&#x5FC5;&#x987B;&#x89E3;&#x51B3;&#x6240;&#x6709;&#x8FD9;&#x4E9B;&#x7F51;&#x7EDC;&#x6311;&#x6218;&#x3002;&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x770B;&#x770B;&#x5982;&#x4F55;&#x89E3;&#x51B3;&#x8FD9;&#x4E9B;&#x6311;&#x6218;&#x3002;</li>
 </ul>
 <h5 id="container-to-container-communication-inside-pods">Container-to-Container Communication Inside Pods</h5>
-<blockquote id="fn__^">
-<sup>_^</sup>. # Making use of the underlying host operating system&apos;s kernel features, a container runtime creates an isolated network space for each container it starts. On Linux, that isolated network space is referred to as a network namespace. A network namespace is shared across containers, or with the host operating system.<a href="#reffn__%5E" title="Jump back to footnote [_^] in the text."> &#x21A9;</a>
-</blockquote>
-<blockquote id="fn__^">
-<sup>_^</sup>. # When a Pod is started, a network namespace is created inside the Pod, and all containers running inside the Pod will share that network namespace so that they can talk to each other via localhost.<a href="#reffn__%5E" title="Jump back to footnote [_^] in the text."> &#x21A9;</a>
-</blockquote>
-<p>&#x5229;&#x7528;&#x5E95;&#x5C42;&#x4E3B;&#x673A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7684;&#x5185;&#x6838;&#x7279;&#x6027;&#xFF0C;&#x5BB9;&#x5668;&#x8FD0;&#x884C;&#x65F6;&#x4E3A;&#x5B83;&#x542F;&#x52A8;&#x7684;&#x6BCF;&#x4E2A;&#x5BB9;&#x5668;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x72EC;&#x7ACB;&#x7684;&#x7F51;&#x7EDC;&#x7A7A;&#x95F4;&#x3002;&#x5728;Linux&#x4E0A;&#xFF0C;&#x9694;&#x79BB;&#x7684;&#x7F51;&#x7EDC;&#x7A7A;&#x95F4;&#x79F0;&#x4E3A;&#x7F51;&#x7EDC;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x3002;&#x7F51;&#x7EDC;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x662F;&#x8DE8;&#x5BB9;&#x5668;&#x6216;&#x4E0E;&#x4E3B;&#x673A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5171;&#x4EAB;&#x7684;&#x3002;
-&#x5F53;Pod&#x542F;&#x52A8;&#x65F6;&#xFF0C;&#x5728;Pod&#x5185;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7F51;&#x7EDC;&#x540D;&#x79F0;&#x7A7A;&#x95F4;&#xFF0C;&#x8FD0;&#x884C;&#x5728;Pod&#x5185;&#x7684;&#x6240;&#x6709;&#x5BB9;&#x5668;&#x90FD;&#x5C06;&#x5171;&#x4EAB;&#x8BE5;&#x7F51;&#x7EDC;&#x540D;&#x79F0;&#x7A7A;&#x95F4;&#xFF0C;&#x4EE5;&#x4FBF;&#x5B83;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;localhost&#x76F8;&#x4E92;&#x901A;&#x4FE1;&#x3002;</p>
+<!---
+[^_^]: # Making use of the underlying host operating system's kernel features, a container runtime creates an isolated network space for each container it starts. On Linux, that isolated network space is referred to as a network namespace. A network namespace is shared across containers, or with the host operating system.
+
+[^_^]: # When a Pod is started, a network namespace is created inside the Pod, and all containers running inside the Pod will share that network namespace so that they can talk to each other via localhost.
+利用底层主机操作系统的内核特性，容器运行时为它启动的每个容器创建一个独立的网络空间。在Linux上，隔离的网络空间称为网络命名空间。网络命名空间是跨容器或与主机操作系统共享的。
+--->
+<p>&#x5F53;Pod&#x542F;&#x52A8;&#x65F6;&#xFF0C;&#x5728;Pod&#x5185;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7F51;&#x7EDC;&#x540D;&#x79F0;&#x7A7A;&#x95F4;&#xFF0C;&#x8FD0;&#x884C;&#x5728;Pod&#x5185;&#x7684;&#x6240;&#x6709;&#x5BB9;&#x5668;&#x90FD;&#x5C06;&#x5171;&#x4EAB;&#x8BE5;&#x7F51;&#x7EDC;&#x540D;&#x79F0;&#x7A7A;&#x95F4;&#xFF0C;&#x4EE5;&#x4FBF;&#x5B83;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;localhost&#x76F8;&#x4E92;&#x901A;&#x4FE1;&#x3002;</p>
 <h5 id="pod-to-pod-communication-across-nodes">Pod-to-Pod Communication Across Nodes</h5>
 <!---
 In a Kubernetes cluster Pods are scheduled on nodes randomly. Regardless of their host node, Pods are expected to be able to communicate with all other Pods in the cluster, all this without the implementation of Network Address Translation (NAT). This is a fundamental requirement of any networking implementation in Kubernetes.
@@ -701,13 +699,19 @@ You can try
 KubNetes&#x7F51;&#x7EDC;&#x6A21;&#x578B;&#x65E8;&#x5728;&#x964D;&#x4F4E;&#x590D;&#x6742;&#x6027;&#xFF0C;&#x5E76;&#x5C06;POD&#x89C6;&#x4E3A;&#x7F51;&#x7EDC;&#x4E0A;&#x7684;VMS&#xFF0C;&#x5176;&#x4E2D;&#x6BCF;&#x4E2A;VM&#x63A5;&#x6536;IP&#x5730;&#x5740;-&#x56E0;&#x6B64;&#x6BCF;&#x4E2A;POD&#x63A5;&#x6536;IP&#x5730;&#x5740;&#x3002;&#x8FD9;&#x4E2A;&#x6A21;&#x578B;&#x88AB;&#x79F0;&#x4E3A;&#x201C;IP-per-Pod&#x201D;&#xFF0C;&#x786E;&#x4FDD;&#x4E86;Pod&#x5230;Pod&#x7684;&#x901A;&#x4FE1;&#xFF0C;&#x5C31;&#x50CF;vm&#x80FD;&#x591F;&#x76F8;&#x4E92;&#x901A;&#x4FE1;&#x4E00;&#x6837;&#x3002;
 &#x4E0D;&#x8FC7;&#xFF0C;&#x522B;&#x5FD8;&#x4E86;&#x5BB9;&#x5668;&#x3002;&#x5B83;&#x4EEC;&#x5171;&#x4EAB;Pod&#x7684;&#x7F51;&#x7EDC;&#x540D;&#x79F0;&#x7A7A;&#x95F4;&#xFF0C;&#x5FC5;&#x987B;&#x50CF;VM&#x4E0A;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x90A3;&#x6837;&#x534F;&#x8C03;Pod&#x5185;&#x7684;&#x7AEF;&#x53E3;&#x5206;&#x914D;&#xFF0C;&#x540C;&#x65F6;&#x80FD;&#x591F;&#x5728;&#x672C;&#x5730;&#x4E3B;&#x673A;&#xFF08;Pod&#x5185;&#xFF09;&#x4E0A;&#x76F8;&#x4E92;&#x901A;&#x4FE1;&#x3002;&#x7136;&#x800C;&#xFF0C;&#x901A;&#x8FC7;&#x4F7F;&#x7528;CNI&#x63D2;&#x4EF6;&#x652F;&#x6301;&#x7684;&#x5BB9;&#x5668;&#x7F51;&#x7EDC;&#x63A5;&#x53E3;&#xFF08;CNI&#xFF09;&#xFF0C;&#x5BB9;&#x5668;&#x4E0E;&#x6574;&#x4E2A;Kubernetes&#x7F51;&#x7EDC;&#x6A21;&#x578B;&#x96C6;&#x6210;&#x3002;CNI&#x662F;&#x4E00;&#x7EC4;&#x89C4;&#x8303;&#x548C;&#x5E93;&#xFF0C;&#x5141;&#x8BB8;&#x63D2;&#x4EF6;&#x4E3A;&#x5BB9;&#x5668;&#x914D;&#x7F6E;&#x7F51;&#x7EDC;&#x3002;&#x867D;&#x7136;&#x6709;&#x4E00;&#x4E9B;&#x6838;&#x5FC3;&#x63D2;&#x4EF6;&#xFF0C;&#x4F46;&#x5927;&#x591A;&#x6570;CNI&#x63D2;&#x4EF6;&#x662F;&#x5B9E;&#x73B0;Kubernetes&#x7F51;&#x7EDC;&#x6A21;&#x578B;&#x7684;&#x7B2C;&#x4E09;&#x65B9;&#x8F6F;&#x4EF6;&#x5B9A;&#x4E49;&#x7F51;&#x7EDC;&#xFF08;SDN&#xFF09;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x3002;&#x9664;&#x4E86;&#x6EE1;&#x8DB3;&#x7F51;&#x7EDC;&#x6A21;&#x578B;&#x7684;&#x57FA;&#x672C;&#x8981;&#x6C42;&#x5916;&#xFF0C;&#x4E00;&#x4E9B;&#x7F51;&#x7EDC;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x8FD8;&#x4E3A;&#x7F51;&#x7EDC;&#x7B56;&#x7565;&#x63D0;&#x4F9B;&#x652F;&#x6301;&#x3002;Flannel, Weave, Calico &#x53EA;&#x662F;Kubernetes&#x96C6;&#x7FA4;&#x53EF;&#x7528;&#x7684;SDN&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x7684;&#x5176;&#x4E2D;&#x51E0;&#x4E2A;&#x3002;
 <img src="assets/cka-eab0ca88.png" alt="">
-<a href="The%20container%20runtime%20offloads%20the%20IP%20assignment%20to%20CNI,%20which%20connects%20to%20the%20underlying%20configured%20plugin,%20such%20as%20Bridge%20or%20MACvlan,%20to%20get%20the%20IP%20address.%20Once%20the%20IP%20address%20is%20given%20by%20the%20respective%20plugin,%20CNI%20forwards%20it%20back%20to%20the%20requested%20container%20runtime.%0A%20%20For%20more%20details,%20you%20can%20explore%20the%20Kubernetes%20documentation."></a>
+<!---
+  The container runtime offloads the IP assignment to CNI, which connects to the underlying configured plugin, such as Bridge or MACvlan, to get the IP address. Once the IP address is given by the respective plugin, CNI forwards it back to the requested container runtime.
+  For more details, you can explore the Kubernetes documentation.
+--->
 &#x5BB9;&#x5668;&#x8FD0;&#x884C;&#x65F6;&#x5C06;IP&#x5206;&#x914D;&#x7684;&#x4EFB;&#x52A1;&#x53D1;&#x5230;CNI&#xFF0C;CNI&#x8FDE;&#x63A5;&#x5230;&#x5E95;&#x5C42;&#x914D;&#x7F6E;&#x7684;&#x63D2;&#x4EF6;&#xFF08;&#x5982;Bridge&#x6216;MACvlan&#xFF09;&#x4EE5;&#x83B7;&#x53D6;IP&#x5730;&#x5740;&#x3002;&#x4E00;&#x65E6;IP&#x5730;&#x5740;&#x7531;&#x76F8;&#x5E94;&#x7684;&#x63D2;&#x4EF6;&#x7ED9;&#x51FA;&#xFF0C;CNI&#x5C31;&#x4F1A;&#x5C06;&#x5176;&#x8F6C;&#x53D1;&#x56DE;&#x8BF7;&#x6C42;&#x7684;&#x5BB9;&#x5668;&#x8FD0;&#x884C;&#x65F6;&#x3002;</p>
 <p>&#x6709;&#x5173;&#x66F4;&#x591A;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#xFF0C;&#x53EF;&#x4EE5;&#x6D4F;&#x89C8;Kubernetes&#x6587;&#x6863;&#x3002;</p>
 <h5 id="pod-to-external-world-communication">Pod-to-External World Communication</h5>
-<p>For a successfully deployed containerized applications running in Pods inside a Kubernetes cluster, it requires accessibility from the outside world. Kubernetes enables external accessibility through services, complex constructs which encapsulate networking rules definitions on cluster nodes. By exposing services to the external world with kube-proxy, applications become accessible from outside the cluster over a virtual IP.</p>
-<p>We will have a complete chapter dedicated to this, so we will dive into this later.
-&#x5BF9;&#x4E8E;&#x5728;Kubernetes&#x96C6;&#x7FA4;&#x5185;&#x7684;Pods&#x4E2D;&#x8FD0;&#x884C;&#x7684;&#x6210;&#x529F;&#x90E8;&#x7F72;&#x7684;&#x5BB9;&#x5668;&#x5316;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#xFF0C;&#x5B83;&#x9700;&#x8981;&#x6765;&#x81EA;&#x5916;&#x90E8;&#x4E16;&#x754C;&#x7684;&#x53EF;&#x8BBF;&#x95EE;&#x6027;&#x3002;Kubernetes&#x901A;&#x8FC7;&#x670D;&#x52A1;&#x5B9E;&#x73B0;&#x5916;&#x90E8;&#x53EF;&#x8BBF;&#x95EE;&#x6027;&#xFF0C;&#x8FD9;&#x4E9B;&#x670D;&#x52A1;&#x662F;&#x5C01;&#x88C5;&#x96C6;&#x7FA4;&#x8282;&#x70B9;&#x4E0A;&#x7684;&#x7F51;&#x7EDC;&#x89C4;&#x5219;&#x5B9A;&#x4E49;&#x7684;&#x590D;&#x6742;&#x6784;&#x9020;&#x3002;&#x901A;&#x8FC7;&#x4F7F;&#x7528;kube&#x4EE3;&#x7406;&#x5C06;&#x670D;&#x52A1;&#x516C;&#x5F00;&#x7ED9;&#x5916;&#x90E8;&#x4E16;&#x754C;&#xFF0C;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x865A;&#x62DF;IP&#x4ECE;&#x96C6;&#x7FA4;&#x5916;&#x90E8;&#x8BBF;&#x95EE;&#x3002;
+<!---
+For a successfully deployed containerized applications running in Pods inside a Kubernetes cluster, it requires accessibility from the outside world. Kubernetes enables external accessibility through services, complex constructs which encapsulate networking rules definitions on cluster nodes. By exposing services to the external world with kube-proxy, applications become accessible from outside the cluster over a virtual IP.
+
+We will have a complete chapter dedicated to this, so we will dive into this later.
+--->
+<p>&#x5BF9;&#x4E8E;&#x5728;Kubernetes&#x96C6;&#x7FA4;&#x5185;&#x7684;Pods&#x4E2D;&#x8FD0;&#x884C;&#x7684;&#x6210;&#x529F;&#x90E8;&#x7F72;&#x7684;&#x5BB9;&#x5668;&#x5316;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#xFF0C;&#x5B83;&#x9700;&#x8981;&#x6765;&#x81EA;&#x5916;&#x90E8;&#x4E16;&#x754C;&#x7684;&#x53EF;&#x8BBF;&#x95EE;&#x6027;&#x3002;Kubernetes&#x901A;&#x8FC7;&#x670D;&#x52A1;&#x5B9E;&#x73B0;&#x5916;&#x90E8;&#x53EF;&#x8BBF;&#x95EE;&#x6027;&#xFF0C;&#x8FD9;&#x4E9B;&#x670D;&#x52A1;&#x662F;&#x5C01;&#x88C5;&#x96C6;&#x7FA4;&#x8282;&#x70B9;&#x4E0A;&#x7684;&#x7F51;&#x7EDC;&#x89C4;&#x5219;&#x5B9A;&#x4E49;&#x7684;&#x590D;&#x6742;&#x6784;&#x9020;&#x3002;&#x901A;&#x8FC7;&#x4F7F;&#x7528;kube&#x4EE3;&#x7406;&#x5C06;&#x670D;&#x52A1;&#x516C;&#x5F00;&#x7ED9;&#x5916;&#x90E8;&#x4E16;&#x754C;&#xFF0C;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x865A;&#x62DF;IP&#x4ECE;&#x96C6;&#x7FA4;&#x5916;&#x90E8;&#x8BBF;&#x95EE;&#x3002;
 &#x6211;&#x4EEC;&#x5C06;&#x6709;&#x4E00;&#x4E2A;&#x5B8C;&#x6574;&#x7684;&#x7AE0;&#x8282;&#x4E13;&#x95E8;&#x8BA8;&#x8BBA;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x7A0D;&#x540E;&#x5C06;&#x6DF1;&#x5165;&#x8BA8;&#x8BBA;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x3002;</p>
 <h2 id="chapter-5-installing-kubernetes">Chapter 5. Installing Kubernetes</h2>
 <h3 id="introduction-and-learning-objectives">Introduction and Learning Objectives</h3>
@@ -1097,9 +1101,8 @@ ID                                                                 PID         S
 1edcfc78bca52be153cc9f525d9<span class="hljs-built_in">fc</span>64be75ccea478897004a5032f37c6c4c9dc   3812        running     /run/containers/storage/overlay-containers/1edcfc78bca52be153cc9f525d9<span class="hljs-built_in">fc</span>64be75ccea478897004a5032f37c6c4c9dc/userdata   2019-04-18T20:03:02.740669541Z   root
 ...
 </code></pre>
-<p><sup><a href="#fn__%5E" id="reffn__^">_^</a></sup>:</p>
-<pre><code>### Installing Minikube (Demo)
-</code></pre>
+<h3 id="installing-minikube-demo">Installing Minikube (Demo)</h3>
+
                                 
                                 </section>
                             
@@ -1138,7 +1141,7 @@ ID                                                                 PID         S
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"k8s","level":"1.6.2","depth":2,"next":{"title":"数据库","level":"1.7","depth":1,"ref":"","articles":[{"title":"MongoDB","level":"1.7.1","depth":2,"path":"mongodb.md","ref":"mongodb.md","articles":[]},{"title":"sql","level":"1.7.2","depth":2,"path":"sql.md","ref":"sql.md","articles":[]}]},"previous":{"title":"restful","level":"1.6.1","depth":2,"path":"rest.md","ref":"rest.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mermaid"],"pluginsConfig":{"mermaid":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"cka.md","mtime":"2020-01-14T09:13:11.390Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-14T09:13:48.094Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"k8s","level":"1.6.2","depth":2,"next":{"title":"数据库","level":"1.7","depth":1,"ref":"","articles":[{"title":"MongoDB","level":"1.7.1","depth":2,"path":"mongodb.md","ref":"mongodb.md","articles":[]},{"title":"sql","level":"1.7.2","depth":2,"path":"sql.md","ref":"sql.md","articles":[]}]},"previous":{"title":"restful","level":"1.6.1","depth":2,"path":"rest.md","ref":"rest.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mermaid"],"pluginsConfig":{"mermaid":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"cka.md","mtime":"2020-01-14T09:18:44.842Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-14T09:19:03.065Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
