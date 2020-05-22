@@ -19,6 +19,7 @@ git diff > ~/1.patch
 git diff --cached HEAD > ~/1.patch
 ```
 应用补丁包：
-```bash
+```![](assets/git-53cea446.reg)bash
 git apply ~/1.patch
 ```
+basskdfj
